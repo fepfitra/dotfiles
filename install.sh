@@ -1,3 +1,3 @@
-cp ./lvim/ ~/.config/lvim/ -fr
-cp ./alacritty/ ~/.config/alacritty/ -fr
-cp ./.dwm/ ~/.config/.dwm/ -fr
+cp ./lvim/ ~/.config/ -frv
+cp ./alacritty/ ~/.config/ -frv
+cp ./.dwm/ ~/ -frv
