@@ -1,1 +1,1 @@
-cp ./lvimConfig.lua ~/.config/lvim/config.lua
+cp ./lvim/ ~/.config/lvim/ -fr
