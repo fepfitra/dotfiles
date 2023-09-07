@@ -1,3 +1,3 @@
 slstatus &
-feh --bg-scale ~/.dwm/background/Mountain.png &
+feh --bg-scale ~/.dwm/background/Mountain.jpg &
 nohup onedriver ~/OneDrive/ &
