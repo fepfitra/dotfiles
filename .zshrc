@@ -12,3 +12,4 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+source /usr/share/nvm/init-nvm.sh
