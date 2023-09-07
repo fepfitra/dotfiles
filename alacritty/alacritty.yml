@@ -26,19 +26,19 @@ scrolling:
 
 font:   
   normal:
-    family: MesloLGS NF
+    family: Fira Code
     style: Regular  
 
   bold:  
-    family: MesloLGS NF
+    family: Fira Code
     style: Bold
  
   italic:  
-    family: MesloLGS NF
+    family: Fira Code
     style: Italic
 
   bold_italic:
-    family: MesloLGS NF
+    family: Fira Code
 
   size: 11.0
 
