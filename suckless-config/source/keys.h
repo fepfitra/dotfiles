@@ -67,7 +67,7 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,             -1,         XK_0,      tag,            {.ui = ~0 } },
 
 		{ MODKEY,                       -1,       XK_e,      spawn,          SHCMD("microsoft-edge-stable &") }, // open ms edge
-		{ MODKEY,                       -1,       XK_n,      spawn,          SHCMD("microsoft-edge-stable &") }, // open nemo
+		{ MODKEY,                       -1,       XK_n,      spawn,          SHCMD("killall pulseaudio") }, // open nemo
 		// { MODKEY,                       XK_a,       XK_t,      spawn,          SHCMD("xdotool key Super_L+9 && alacritty") }, // open alacritty on tag9
 		// { MODKEY,                       -1,         XK_r,      spawn,          SHCMD("xdotool key Super_L+6 && atril") },
 		// { MODKEY,                       XK_b,       XK_b,      spawn,          SHCMD("xdotool key Super_L+3 && brave") }, // open brave on tag3
