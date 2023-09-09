@@ -30,15 +30,15 @@ font:
     style: Regular  
 
   bold:  
-    family: monospace
+    family: Fira Code
     style: Bold
  
   italic:  
-    family: monospace
+    family: Fira Code
     style: Italic
 
   bold_italic:
-    family: monospace
+    family: Fira Code
 
   size: 9.0
 

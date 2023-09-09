@@ -13,3 +13,4 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 
 source /usr/share/nvm/init-nvm.sh
+export PATH="$PATH:/home/fep/GitProject/flutter/bin"

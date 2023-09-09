@@ -18,7 +18,7 @@
 /* commands */
 static const char dmenufont[] = "Fira Code:size=12";
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { TERMINAL, NULL };
+static const char *termcmd[]  = { TERMINAL, "-e", "tmux" };
 
 /* brightness control */
 static const char *inc_light[] = {"light", "-A", "5"};
@@ -74,11 +74,11 @@ static const Key keys[] = {
 		// { MODKEY,                       -1,         XK_d,      spawn,          SHCMD("xdotool key Super_L+2 && discord") }, // open discord on tag2
 		// { MODKEY,                       XK_f,       XK_m,      spawn,          SHCMD("xdotool key Super_L+1 && dolphin") }, // open dolphin on tag1
 		// { MODKEY,                       -1,         XK_g,      spawn,          SHCMD("xdotool key Super_L+5 && github-desktop") }, // open github-desktop on tag5
-        { MODKEY,                       -1,         XK_v,      spawn,          SHCMD("pavucontrol") },
+    { MODKEY,                       -1,         XK_v,      spawn,          SHCMD("pavucontrol") },
 	    // { MODKEY,                       XK_i,       XK_v,      spawn,          SHCMD("gwenview") },
         // { MODKEY,                       XK_j,       XK_b,      spawn,          SHCMD("jetbrains-toolbox") },
 		// { MODKEY,                       XK_n,       XK_v,      spawn,          SHCMD(TERMINAL " -e nvim") },
-		// { ControlMask|ShiftMask,        -1,         XK_s,      spawn,          SHCMD("spectacle") }, // take a screenshot
+		{ ControlMask|ShiftMask,        -1,         XK_s,      spawn,          SHCMD("spectacle") }, // take a screenshot
 		// { MODKEY,                       -1,         XK_s,      spawn,          SHCMD("xdotool key Super_L+8 && brave --app=https://open.spotify.com/collection/tracks") },	// open spotify on tag8 because I love music :D
 
  
@@ -92,12 +92,12 @@ static const Key keys[] = {
 		TAGKEYS(                        -1,         XK_8,                      7)
 		TAGKEYS(                        -1,         XK_9,                      8)
 		
-		// { MODKEY|ShiftMask,             -1,         XK_x,      quit,           {0} }, //logout
-	    // { MODKEY|ControlMask|ShiftMask, -1,         XK_r,      quit,           {1} },	// restart
+		{ MODKEY|ShiftMask,             -1,         XK_x,      quit,           {0} }, //logout
+    { MODKEY|ControlMask|ShiftMask, -1,         XK_r,      quit,           {1} },	// restart
 
-		// { 0,                       		-1, 		XF86XK_AudioRaiseVolume, spawn, 	   {.v = increase_vol } },
-		// { 0,                       		-1, 		XF86XK_AudioLowerVolume, spawn,        {.v = decrease_vol } },
-		// { 0,                       		-1,	        XF86XK_AudioMute, spawn, 			   {.v = mute_vol } },
+		{ 0,                       		-1, 		XF86XK_AudioRaiseVolume, spawn, 	   {.v = increase_vol } },
+		{ 0,                       		-1, 		XF86XK_AudioLowerVolume, spawn,        {.v = decrease_vol } },
+		{ 0,                       		-1,	        XF86XK_AudioMute, spawn, 			   {.v = mute_vol } },
 
 		{ MODKEY,                       		-1, 		XK_plus, spawn, 	   {.v = increase_vol } },
 		{ MODKEY,                       		-1, 		XK_minus, spawn,        {.v = decrease_vol } },
