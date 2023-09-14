@@ -68,8 +68,8 @@ static const Key keys[] = {
 
 		{ MODKEY,                       -1,       XK_e,      spawn,          SHCMD("microsoft-edge-stable &") }, // open ms edge
 		{ MODKEY,                       -1,       XK_n,      spawn,          SHCMD("killall pulseaudio") }, // refresh pulseaudio
-		{ MODKEY,                       -1,       XK_d,      spawn,          SHCMD("dmenuduckduckgo") }, // refresh pulseaudio
-		{ MODKEY,                       -1,       XK_g,      spawn,          SHCMD("dmenugoogle") }, // refresh pulseaudio
+		{ MODKEY|ControlMask,                       -1,       XK_d,      spawn,          SHCMD("dmenuduckduckgo") }, // refresh pulseaudio
+		{ MODKEY|ControlMask,                       -1,       XK_g,      spawn,          SHCMD("dmenugoogle") }, // refresh pulseaudio
 		// { MODKEY,                       XK_a,       XK_t,      spawn,          SHCMD("xdotool key Super_L+9 && alacritty") }, // open alacritty on tag9
 		// { MODKEY,                       -1,         XK_r,      spawn,          SHCMD("xdotool key Super_L+6 && atril") },
 		// { MODKEY,                       XK_b,       XK_b,      spawn,          SHCMD("xdotool key Super_L+3 && brave") }, // open brave on tag3

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Shortening $1"
+curl -F"shorten=$1" https://envs.sh

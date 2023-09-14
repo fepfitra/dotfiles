@@ -1,8 +1,0 @@
-#!/bin/bash
-
-filename=$1;
-pdflatex $filename;
-
-filename=${filename%%.*}
-zathura "$filename.pdf" &
-
