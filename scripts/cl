@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "$(pwd)/$1" | xclip -selection clipboard
+echo -e "$(pwd)/$1 \nLocation has been copied"
