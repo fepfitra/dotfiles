@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Uploading $1"
+curl -F"file=@$1" https://envs.sh

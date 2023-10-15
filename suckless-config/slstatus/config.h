@@ -17,16 +17,16 @@ static const struct arg args[] = {
     { battery_state,    " %s ",       "BAT0" },
     { battery_perc,     "%s%%",        "BAT1" },
     { battery_state,    " %s ",       "BAT1" },
-    { run_command, " %4s ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+    { run_command, "%4s  ", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 
-    { cpu_perc,         "| CPU %s%% ", NULL },
-    { ram_used,         "RAM %s |",       NULL },
+    { cpu_perc,         "| %s%% ", NULL },
+    { ram_used,         "/ %s |",       NULL },
 
-    { datetime,         " %s  ",      "%F" },
+    { datetime,         " %s ",      "%F" },
     { datetime,         " %s  |",     "%T" },
 
     // { keymap,           " %s  ",      NULL },
-    // { username,             "| Fitra Fep  ",  NULL}
+    { username,             " One Focus for All Time  ",  NULL}
 };
 
 /*
