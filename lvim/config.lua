@@ -205,9 +205,10 @@ lvim.plugins = {
   "prettier/vim-prettier",
   "mattn/emmet-vim",
   "mlaursen/vim-react-snippets",
-  "lervag/vimtex",
-  "xuhdev/vim-latex-live-preview",
-  "mg979/vim-visual-multi"
+  -- "lervag/vimtex",
+  -- "xuhdev/vim-latex-live-preview",
+  -- "mg979/vim-visual-multi",
+  "mfussenegger/nvim-dap"
 }
 
 require("flutter-tools").setup {} -- use defaults

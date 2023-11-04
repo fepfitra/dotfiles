@@ -32,7 +32,7 @@ else
     fi
 fi
 unset __conda_setup
-conda activate 3.7.5
+# conda activate 3.7.5
 
 0file() { curl -F"file=@$1" https://envs.sh ; }
 # 0pb() { curl -F"file=@-;" https://envs.sh ; }

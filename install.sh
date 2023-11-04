@@ -1,7 +1,0 @@
-cp ./lvim/ ~/.config/ -frv
-cp ./alacritty/ ~/.config/ -frv
-cp ./picom/ ~/.config/ -frv
-cp ./.dwm/ ~/ -frv
-cp ./.zshrc ~/ -frv
-cp ./.tmux.conf ~/ -frv
-cp ./firaCode ~/.local/share/fonts/ -frv
