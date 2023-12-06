@@ -26,7 +26,7 @@ static const struct arg args[] = {
     { datetime,         " %s  |",     "%T" },
 
     // { keymap,           " %s  ",      NULL },
-    { username,             " One Focus for All Time  ",  NULL}
+    { username,             " One Focus for All Time, Always  ",  NULL}
 };
 
 /*

@@ -18,6 +18,7 @@ export PATH="$PATH:/home/fep/conda"
 
 alias "x=xclip -selection clipboard" 
 fortune
+echo ""
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -38,3 +39,6 @@ unset __conda_setup
 # 0pb() { curl -F"file=@-;" https://envs.sh ; }
 0url() { curl -F"url=$1" https://envs.sh ; }
 0short() { curl -F"shorten=$1" https://envs.sh ; }
+
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
