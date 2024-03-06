@@ -18,6 +18,7 @@ useronly=(
   tmux
   lvim
   qutebrowser
+  rofi
 )
 
 # run the stow command for the passed in directory ($2) in location $1
