@@ -10,6 +10,7 @@ if status is-interactive
   fish_vi_key_bindings
   alias "x=xclip -selection clipboard" 
   alias "cdtemp=cd $(mktemp -d)"
+  alias "lg=lazygit"
   echo ""
 
   set BUN_INSTALL $HOME/.bun
