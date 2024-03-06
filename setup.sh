@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#wource
+#https://dev.to/spacerockmedia/how-i-manage-my-dotfiles-using-gnu-stow-4l59
+
 # make sure we have pulled in and updated any submodules
 git submodule init
 git submodule update
