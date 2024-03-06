@@ -19,6 +19,7 @@ useronly=(
   lvim
   qutebrowser
   rofi
+  i3
 )
 
 # run the stow command for the passed in directory ($2) in location $1
