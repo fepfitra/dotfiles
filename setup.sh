@@ -17,6 +17,7 @@ useronly=(
   fish
   tmux
   lvim
+  qutebrowser
 )
 
 # run the stow command for the passed in directory ($2) in location $1
