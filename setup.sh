@@ -20,6 +20,7 @@ useronly=(
   qutebrowser
   rofi
   i3
+  fonts
 )
 
 # run the stow command for the passed in directory ($2) in location $1
