@@ -1,5 +1,5 @@
-yay -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
-yay -S sddm i3 powerline bumblebee-status
+yay -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2 --noconfirm
+yay -S sddm i3 powerline bumblebee-status --noconfirm
 
 git clone git@github.com:catppuccin/sddm.git
 mv ./sddm/src/* /usr/share/sddm/themes/
