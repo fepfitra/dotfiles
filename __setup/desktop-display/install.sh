@@ -1,5 +1,8 @@
 yay -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2 --noconfirm
-yay -S sddm i3 powerline bumblebee-status --noconfirm
+yay -S sddm i3 powerline bumblebee-status rofi --noconfirm
+yay -S nerd-fonts-cascadia-code woff2-cascadia-code --noconfirm
+yay -S alacritty qutebrowser --noconfirm
+yay -S fish --noconfirm
 
 git clone https://github.com/catppuccin/sddm.git
 sudo rm -rf /usr/share/sddm/themes/*
