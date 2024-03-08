@@ -220,9 +220,10 @@ bar {
         # status_command i3status
 
   font pango:FontAwesome, CascadiaCode 13
-  status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
-    memory battery pasink pasource bluetooth datetime \
+  status_command /usr/bin/bumblebee-status -m wakatime mpd nic disk:root cpu \
+    memory battery pasink pasource bluetooth datetime  \
     -p interval=1 root.path=/ disk.format="{used}/{size}" \
+    wakatime.token='waka_e4a718ea-92fd-4c31-b292-78ada5e004ca'\
     battery.device=BAT0,BAT1 nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
     -t dracula-powerline
 }
