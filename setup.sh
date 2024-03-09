@@ -53,9 +53,5 @@ echo "setup i3 for certain device"
 I3=$(pwd)/i3/.config/i3
 cat $I3/config.base "$I3/config.$(uname -n)" > $I3/config
 
-if [[ "$(uname -n)" = "archer" ]]; then
-  echo "this is $(uname -n)"
-fi
-
 echo ""
 echo "##### ALL DONE"

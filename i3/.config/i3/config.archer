@@ -1,4 +1,6 @@
 #setup for archer
+exec xrandr --output DP-1 --mode 1600x1200 --right-of HDMI-1 --rotate left
+
 bar {
         # status_command i3status
 
