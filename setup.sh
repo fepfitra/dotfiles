@@ -21,20 +21,27 @@ useronly=(
 )
 
 apps=(
-  git
-  base-devel
+  git         #for yay
+  base-devel  #for yay
   yay
-  tmux
-  sddm
-  i3-wm
-  bumblebee-status
+  tmux       
+  sddm        
+  i3-wm       
+  bumblebee-status  
+  alacritty
+  qt5-graphicaleffects
+  qt5-svg
+  qt5-quickcontrols2
+  powerline
   qutebrowser
-  rofi
-  fish
+  rofi        
+  fish        
   anki
   anydesk-bin
   microsoft-edge-stable-bin
-  lunarvim-git
+  vim
+  neovim        #for lunarvim
+  lunarvim-git 
   hashcat-git
   rockyou
   )
