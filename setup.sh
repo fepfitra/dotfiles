@@ -29,6 +29,7 @@ apps=(
   i3-wm       
   bumblebee-status  
   alacritty
+  virtualbox
   qt5-graphicaleffects
   qt5-svg
   qt5-quickcontrols2
