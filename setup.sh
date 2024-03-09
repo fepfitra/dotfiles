@@ -48,5 +48,10 @@ for app in ${useronly[@]}; do
   fi
 done
 
+
+echo "setup i3 for certain device"
+I3=$(pwd)/i3/.config/i3
+cat $I3/config.base "$I3/config.$(uname -n)" > $I3/config
+
 echo ""
 echo "##### ALL DONE"
