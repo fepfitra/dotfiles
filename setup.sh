@@ -45,6 +45,10 @@ apps=(
   lunarvim-git 
   hashcat-git
   rockyou
+  ghidra
+  radare2
+  binwalk
+  steghide
   )
 
 stowit() {
