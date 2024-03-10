@@ -35,7 +35,7 @@ apps=(
   xcursor-themes
   lxappearance
   dracula-gtk-theme
-  catppucin-gtk-theme-mocha
+  catppuccin-gtk-theme-mocha
   )
 
 for app in ${apps[@]}; do
