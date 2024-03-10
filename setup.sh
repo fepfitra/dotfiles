@@ -16,7 +16,6 @@ useronly=(
   lvim
   qutebrowser
   rofi
-  rofi-power-menu
   i3
   fonts
 )
@@ -37,6 +36,7 @@ apps=(
   powerline
   qutebrowser
   rofi        
+  rofi-power-menu
   fish        
   anki
   anydesk-bin
