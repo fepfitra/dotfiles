@@ -1,0 +1,1 @@
+ls . | entr ./setup.sh

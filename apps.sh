@@ -31,6 +31,7 @@ apps=(
   steghide
   discord
   aircrack-ng
+  entr
   )
 
 for app in ${apps[@]}; do
