@@ -6,6 +6,8 @@ apps=(
   tmux       
   sddm        
   i3-wm       
+  i3lock
+  i3lock-fancy
   bumblebee-status  
   alacritty
   virtualbox
