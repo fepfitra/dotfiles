@@ -18,7 +18,6 @@ useronly=(
   rofi
   i3
   fonts
-  cursors
 )
 
 hostnames=(
