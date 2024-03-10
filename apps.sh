@@ -9,10 +9,10 @@ apps=(
   bumblebee-status  
   alacritty
   virtualbox
-  qt5-graphicaleffects
-  qt5-svg
-  qt5-quickcontrols2
-  powerline
+  qt5-graphicaleffects #for sddm theme
+  qt5-svg              #for sddm theme
+  qt5-quickcontrols2   #for sddm theme
+  powerline           #for theme
   qutebrowser
   rofi        
   rofi-power-menu
@@ -54,3 +54,9 @@ for app in ${apps[@]}; do
     fi
   fi
 done
+
+echo "For sddm theme, you have to do it manually, check apps.sh file"
+# git clone https://github.com/catppuccin/sddm.git
+# sudo rm -rf /usr/share/sddm/themes/*
+# sudo mv -f ./sddm/src/* /usr/share/sddm/themes/
+# change theme in /usr/lib/sddm/sddm.conf.d/default.conf
