@@ -30,6 +30,7 @@ apps=(
   binwalk
   steghide
   discord
+  aircrack-ng
   )
 
 for app in ${apps[@]}; do
