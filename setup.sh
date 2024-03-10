@@ -19,6 +19,7 @@ useronly=(
   i3
   fonts
   pip
+  mime
 )
 
 hostnames=(
