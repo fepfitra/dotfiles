@@ -29,6 +29,7 @@ apps=(
   radare2
   binwalk
   steghide
+  discord
   )
 
 for app in ${apps[@]}; do
