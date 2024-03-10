@@ -53,8 +53,8 @@ echo "setup i3 for certain device"
 I3=$(pwd)/i3/.config/i3
 
 [[ $hostnames[@] =~ $(uname -n) ]] && 
-  cat $I3/config.base "$I3/config.$(uname -n)" > $I3/config || 
-  cat $I3/config.base "$I3/config.default" > $I3/config
+  cat $I3/config.base "$I3/config.default" > $I3/config ||
+  cat $I3/config.base "$I3/config.$(uname -n)" > $I3/config
 
 unset I3
 
