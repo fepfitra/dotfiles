@@ -32,6 +32,8 @@ apps=(
   discord
   aircrack-ng
   entr
+  xcursor-themes
+  lxappearance
   )
 
 for app in ${apps[@]}; do
