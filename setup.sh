@@ -16,6 +16,7 @@ useronly=(
   lvim
   qutebrowser
   rofi
+  rofi-power-menu
   i3
   fonts
 )
