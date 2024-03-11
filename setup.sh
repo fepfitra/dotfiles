@@ -50,12 +50,13 @@ for app in ${useronly[@]}; do
   fi
 done
 
-echo "setup i3 for certain device"
-I3=$(pwd)/i3/.config/i3
+I3="$(pwd)/i3/.config/i3"
 
-[[ $hostnames[@] =~ $(uname -n) ]] && 
-  cat $I3/config.base "$I3/config.default" > $I3/config ||
-  cat $I3/config.base "$I3/config.$(uname -n)" > $I3/config
+if [[ " ${hostnames[@]} " =~ " $(uname -n) " ]]; then
+  cat "$I3/config.base" "$I3/config.$(uname -n)" > "$I3/config"
+else
+  cat "$I3/config.base" "$I3/config.default" > "$I3/config"
+fi
 
 unset I3
 
