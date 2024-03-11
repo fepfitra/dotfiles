@@ -38,6 +38,8 @@ apps=(
   lxappearance
   dracula-gtk-theme
   catppuccin-gtk-theme-mocha
+  flameshot
+  scrot
   )
 
 for app in ${apps[@]}; do
