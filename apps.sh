@@ -40,6 +40,7 @@ apps=(
   catppuccin-gtk-theme-mocha
   flameshot
   scrot
+  pandoc
   )
 
 for app in ${apps[@]}; do
