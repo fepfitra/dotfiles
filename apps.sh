@@ -41,6 +41,9 @@ apps=(
   flameshot
   scrot
   pandoc
+  npm
+  nodejs
+  bun
   )
 
 for app in ${apps[@]}; do
