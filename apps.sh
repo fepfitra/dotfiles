@@ -43,7 +43,7 @@ apps=(
   pandoc
   npm
   nodejs
-  bun
+  # bun
   compfy
   )
 
