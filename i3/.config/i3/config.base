@@ -34,6 +34,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec ~/.batt.sh
 exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
+exec compfy &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so

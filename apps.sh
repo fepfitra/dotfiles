@@ -44,6 +44,7 @@ apps=(
   npm
   nodejs
   bun
+  compfy
   )
 
 for app in ${apps[@]}; do
