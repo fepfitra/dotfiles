@@ -65,6 +65,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym $mod+b exec microsoft-edge-stable
 bindsym $mod+n exec qutebrowser
 bindsym $mod+q exec i3lock-fancy
+bindsym $mod+Shift+s exec flameshot gui
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
