@@ -11,17 +11,4 @@ return {
       indent = { enable = true }
     })
   end
-}, {
-"neovim/nvim-lspconfig",
-config = function()
-  require'lspconfig'.pyright.setup{}
-  require'lspconfig'.tsserver.setup{}
-end,
-},
-{
-  'numToStr/Comment.nvim',
-  opts = {
-  -- add any options here
-  },
-  lazy = false,
 }
