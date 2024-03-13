@@ -1,3 +1,3 @@
 return {
-  'moll/vim-bbye',
+	"moll/vim-bbye",
 }
