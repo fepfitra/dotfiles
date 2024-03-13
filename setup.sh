@@ -20,6 +20,7 @@ useronly=(
   fonts
   pip
   mime
+  nvim
 )
 
 hostnames=(
