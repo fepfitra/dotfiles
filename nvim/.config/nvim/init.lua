@@ -23,22 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('plugins')
 
-vim.cmd.colorscheme "catppuccin-mocha"
-require('lualine').setup {
-	options = {
-		theme = "catppuccin"
-	}
-}
-require('bufferline').setup({})
-require('ibl').setup({})
-require('Comment').setup({})
-require('ts_context_commentstring').setup {
-  enable_autocmd = false,
-}
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 -- empty setup using defaults
-require("nvim-tree").setup()
-require("toggleterm").setup()
-require("gitsigns").setup()
-require("mason").setup()
