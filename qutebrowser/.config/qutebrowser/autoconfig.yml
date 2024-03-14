@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  downloads.prevent_mixed_content:
-    global: false
+  content.media.video_capture:
+    http://localhost:3000: true
