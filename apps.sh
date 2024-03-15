@@ -45,6 +45,8 @@ apps=(
   nodejs
   # bun
   compfy
+  tradingview
+  wine
   )
 
 for app in ${apps[@]}; do
