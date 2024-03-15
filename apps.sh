@@ -31,7 +31,7 @@ apps=(
   radare2
   binwalk
   steghide
-  discord
+  discord-electron
   aircrack-ng
   entr
   xcursor-themes
