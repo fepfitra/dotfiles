@@ -47,6 +47,8 @@ apps=(
   compfy
   tradingview
   wine
+  zbar
+  qrencode
   )
 
 for app in ${apps[@]}; do

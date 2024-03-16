@@ -37,8 +37,12 @@ if status is-interactive
       curl -F"shorten=$argv[1]" https://envs.sh
   end
 
-  function realtime
+  function 0realtime
       exec "ls . | entr $argv[1]"
+  end
+
+  function 0qrterm
+      qrencode -t ANSI $argv[1]
   end
 
   set JAVA_HOME /usr/lib/jvm/java-21-openjdk/
