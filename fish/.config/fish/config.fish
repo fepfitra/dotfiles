@@ -11,6 +11,7 @@ if status is-interactive
   alias "x=xclip -selection clipboard" 
   alias "cdtemp=cd $(mktemp -d)"
   alias "lg=lazygit"
+  alias "asu=sudo"
   echo ""
 
   set BUN_INSTALL $HOME/.bun
