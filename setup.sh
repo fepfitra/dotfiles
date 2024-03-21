@@ -21,6 +21,7 @@ useronly=(
   pip
   mime
   nvim
+  zathura
 )
 
 hostnames=(
