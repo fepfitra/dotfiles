@@ -36,6 +36,7 @@ exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
 exec compfy &
 exec discord &
+exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
