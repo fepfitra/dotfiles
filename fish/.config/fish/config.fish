@@ -14,6 +14,8 @@ if status is-interactive
   alias "asu=sudo"
   echo ""
 
+  set PATH /home/fep/.local/bin $PATH
+
   set BUN_INSTALL $HOME/.bun
   set PATH $BUN_INSTALL/bin $PATH
   set DOT $HOME/GitProject/dotfiles/
@@ -46,8 +48,8 @@ if status is-interactive
       qrencode -t ANSI $argv[1]
   end
 
-  set JAVA_HOME /usr/lib/jvm/java-21-openjdk/
-  # set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
+  set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+  set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
   set HADOOP_HOME /usr/local/hadoop
   set HADOOP_INSTALL $HADOOP_HOME
   set HADOOP_MAPRED_HOME $HADOOP_HOME
@@ -62,4 +64,9 @@ if status is-interactive
   set FLUME_HOME /usr/local/flume
   set FLUME_CONF /usr/local/flume/conf/
   set PATH $PATH $FLUME_HOME/bin
+  set CLASSPATH $CLASSPATH $FLUME_HOME/lib/*
+
+  set ZOOKEEPER_HOME /usr/local/zookeeper
+  set PATH $PATH $ZOOKEEPER_HOME/bin
+
 end
