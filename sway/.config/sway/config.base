@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# gaps inner 5px
+gaps inner 5px
 #Hide window title bar
 default_border pixel 1
 default_floating_border pixel 1
@@ -34,8 +34,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec ~/.batt.sh
 exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
-# exec compfy &
-exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
+exec compfy &
 exec discord &
 exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
