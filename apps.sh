@@ -31,7 +31,7 @@ apps=(
   radare2
   binwalk
   steghide
-  discord-electron
+  # discord-electron
   aircrack-ng
   entr
   xcursor-themes
@@ -44,7 +44,7 @@ apps=(
   npm
   nodejs
   # bun
-  compfy
+  picom
   tradingview
   wine
   zbar
