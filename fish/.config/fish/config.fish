@@ -50,7 +50,10 @@ if status is-interactive
 
   set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
   set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
-  set HADOOP_HOME /usr/local/hadoop
+  # set HADOOP_HOME /usr/local/hadoop
+
+  set BIG_DATA_HOME ~/GitProject/big-data-starter/
+  set HADOOP_HOME $BIG_DATA_HOME/hadoop-3.2.1
   set HADOOP_INSTALL $HADOOP_HOME
   set HADOOP_MAPRED_HOME $HADOOP_HOME
   set HADOOP_COMMON_HOME $HADOOP_HOME
@@ -61,12 +64,15 @@ if status is-interactive
   set PATH $PATH $HADOOP_HOME/sbin $HADOOP_HOME/bin
   set PATH $PATH $JAVA_HOME/bin
 
-  set FLUME_HOME /usr/local/flume
-  set FLUME_CONF /usr/local/flume/conf/
-  set PATH $PATH $FLUME_HOME/bin
-  set CLASSPATH $CLASSPATH $FLUME_HOME/lib/*
+  # set FLUME_HOME /usr/local/flume
+  # set FLUME_CONF /usr/local/flume/conf/
+  # set PATH $PATH $FLUME_HOME/bin
+  # set CLASSPATH $CLASSPATH $FLUME_HOME/lib/*
+  #
+  # set ZOOKEEPER_HOME /usr/local/zookeeper
+  # set PATH $PATH $ZOOKEEPER_HOME/bin
 
-  set ZOOKEEPER_HOME /usr/local/zookeeper
-  set PATH $PATH $ZOOKEEPER_HOME/bin
-
+  set FLUME_HOME $BIG_DATA_HOME/apache-flume-1.6.0-bin
+  set FLUME_CONF $FLUME_HOME/conf
+ 
 end
