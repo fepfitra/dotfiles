@@ -17,6 +17,10 @@ useronly=(
   qutebrowser
   rofi
   i3
+  sway
+  tofi
+  fuzzel
+  picom
   fonts
   pip
   mime
@@ -62,6 +66,16 @@ fi
 
 unset I3
 
+
+I3="$(pwd)/sway/.config/sway"
+
+if [[ " ${hostnames[@]} " =~ " $(uname -n) " ]]; then
+  cat "$I3/config.base" "$I3/config.$(uname -n)" > "$I3/config"
+else
+  cat "$I3/config.base" "$I3/config.default" > "$I3/config"
+fi
+
+unset I3
 $(pwd)/apps.sh
 $(pwd)/modules.sh
 

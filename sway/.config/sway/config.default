@@ -1,0 +1,12 @@
+#setup for other
+
+bar {
+        # status_command i3status
+
+  font pango:FontAwesome, CascadiaCode 11
+  status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
+    memory pasink pasource datetime  \
+    -p interval=1 root.path=/ disk.format="{used}/{size}" \
+    nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
+    -t dracula-powerline
+}
