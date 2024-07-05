@@ -21,10 +21,11 @@ return {
 			local lspconfig = require("lspconfig")
 
 			local servers = {
+        "astro",
 				"bashls",
 				"clangd",
 				"gopls",
-				"html",
+				-- "html",
 				"intelephense",
 				"jsonls",
 				"kotlin_language_server",
@@ -35,7 +36,7 @@ return {
 				"tailwindcss",
 				"tsserver",
 				"yamlls",
-        "texlab",
+				"texlab",
 			}
 
 			for _, server in ipairs(servers) do

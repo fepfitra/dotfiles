@@ -20,7 +20,6 @@ useronly=(
   sway
   tofi
   fuzzel
-  picom
   fonts
   pip
   mime

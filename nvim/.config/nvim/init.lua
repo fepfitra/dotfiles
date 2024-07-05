@@ -10,6 +10,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
 vim.cmd("set undofile")
 vim.cmd("set clipboard=unnamedplus")
+-- vim.cmd("set foldmethod=indent")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -28,3 +29,6 @@ vim.g.mapleader = " "
 require("lazy").setup("plugins")
 
 vim.opt.termguicolors = true
+
+vim.keymap.set("n", "<leader>br", ":exec '!'.getline('.')\n", {})
+
