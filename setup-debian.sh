@@ -28,8 +28,5 @@ for app in ${base[@]}; do
   stowit "${HOME}" $app 
 done
 
-$(pwd)/apps.sh
-$(pwd)/modules.sh
-
 echo ""
 echo "##### ALL DONE"
