@@ -10,6 +10,7 @@ base=(
 )
 
 useronly=(
+  alacritty
   git
   fish
   tmux

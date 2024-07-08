@@ -24,7 +24,6 @@ apps=(
   microsoft-edge-stable-bin
   vim
   neovim        #for lunarvim
-  lunarvim-git 
   hashcat-git
   rockyou
   ghidra
@@ -45,8 +44,6 @@ apps=(
   nodejs
   # bun
   picom
-  tradingview
-  wine
   zbar
   qrencode
   )

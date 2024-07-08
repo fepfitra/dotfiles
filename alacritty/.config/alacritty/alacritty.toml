@@ -96,7 +96,7 @@ TERM = "alacritty"
 
 [font]
 builtin_box_drawing = true
-size = 8.5
+size = 7
 
 [font.bold]
 family = "CascadiaCode"

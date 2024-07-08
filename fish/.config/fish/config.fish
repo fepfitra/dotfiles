@@ -51,6 +51,18 @@ function 0qrterm
     qrencode -t ANSI $argv[1]
 end
 
+function bwupdate
+  if [ -e /tmp/Microsoft\ Edge\ Passwords.csv ]
+    echo "Updating bitwarden with Microsoft Edge Passwords.csv file found in /tmp/"
+    bw import lastpasscsv /tmp/Microsoft\ Edge\ Passwords.csv
+    echo "Microsoft Edge Passwords.csv file imported to bitwarden"
+    rm /tmp/Microsoft\ Edge\ Passwords.csv
+    echo "Microsoft Edge Passwords.csv file removed from /tmp/"
+  else
+    echo "No Microsoft Edge Passwords.csv file found in /tmp/"
+  end
+end
+
 set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
 set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
 # set HADOOP_HOME /usr/local/hadoop
