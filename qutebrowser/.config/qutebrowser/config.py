@@ -181,7 +181,8 @@ c.scrolling.smooth = True
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://fitrafep.pages.dev'
+# c.url.start_pages = 'https://fitrafep.pages.dev'
+c.url.start_pages = 'https://fitrafep.com'
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
@@ -559,7 +560,7 @@ c.colors.webpage.bg = '#1e1e2e'
 #   - auto: Use the system-wide color scheme setting.
 #   - light: Force a light theme.
 #   - dark: Force a dark theme.
-c.colors.webpage.preferred_color_scheme = 'dark'
+c.colors.webpage.preferred_color_scheme = 'light'
 
 # Render all web contents using a dark theme. Example configurations
 # from Chromium's `chrome://flags`: - "With simple HSL/CIELAB/RGB-based
@@ -571,4 +572,5 @@ c.colors.webpage.darkmode.enabled = False
 
 # Bindings for normal mode
 config.bind('<Ctrl+b>', 'spawn --userscript qute-bitwarden')
+config.bind('<Ctrl-a>', 'fake-key <Ctrl-a>')
 config.bind('zl', 'spawn --userscript qute-bitwarden')
