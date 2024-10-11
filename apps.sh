@@ -43,7 +43,7 @@ apps=(
   npm
   nodejs
   # bun
-  picom
+  # picom
   zbar
   qrencode
   )

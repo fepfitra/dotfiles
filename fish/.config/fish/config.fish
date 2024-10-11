@@ -3,30 +3,44 @@
 
 if status is-interactive
 end
+set -U fish_greeting
 
-fortune
+fortune | lolcat
 # Commands to run in interactive sessions can go here
 set fish_function_path $fish_function_path "/usr/share/powerline/bindings/fish"
 source /usr/share/powerline/bindings/fish/powerline-setup.fish
 powerline-setup
+zoxide init fish | source
 fish_vi_key_bindings
 alias "x=xclip -selection clipboard" 
 alias "cdtemp=cd $(mktemp -d)"
 alias "lg=lazygit"
 alias "asu=sudo"
+alias "bismillah=sudo"
 echo ""
 
+set GOPATH $HOME/go
 set PATH /home/fep/.local/bin $PATH
+set PATH $GOPATH/bin $PATH
+set PATH /home/fep/.nix-profile/bin $PATH
 
 set BUN_INSTALL $HOME/.bun
 set PATH $BUN_INSTALL/bin $PATH
 source "$HOME/.cargo/env.fish"
 set DOT $HOME/GitProject/dotfiles/
 
+alias "cddot=cd $DOT"
+
 # 0file() { curl -F"file=@$1" https://envs.sh ; }
 # 0pb() { curl -F"file=@-;" https://envs.sh ; }
 # 0url() { curl -F"url=$1" https://envs.sh ; }
 # 0short() { curl -F"shorten=$1" https://envs.sh ; }
+
+function cd
+  builtin cd $argv
+  tmux rename-window $(basename $(pwd))
+end
+
 function 0file
     curl -F"file=@$argv[1]" https://envs.sh
 end
@@ -78,6 +92,7 @@ set YARN_HOME $HADOOP_HOME
 set HADOOP_COMMON_LIB_NATIVE_DIR $HADOOP_HOME/lib/native
 set PATH $PATH $HADOOP_HOME/sbin $HADOOP_HOME/bin
 set PATH $PATH $JAVA_HOME/bin
+
 
 # set FLUME_HOME /usr/local/flume
 # set FLUME_CONF /usr/local/flume/conf/

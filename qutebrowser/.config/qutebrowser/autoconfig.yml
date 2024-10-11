@@ -6,5 +6,13 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      bk: spawn --userscript buku
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
   content.media.video_capture:
     http://localhost:3000: true
