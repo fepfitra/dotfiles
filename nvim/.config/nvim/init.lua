@@ -31,4 +31,4 @@ require("lazy").setup("plugins")
 vim.opt.termguicolors = true
 
 vim.keymap.set("n", "<leader>br", ":exec '!'.getline('.')\n", {})
-echo("init.lua loaded")
+vim.cmd("Screenkey toggle")

@@ -3,49 +3,49 @@ apps=(
   git         #for yay
   base-devel  #for yay
   yay
-  tmux       
+  # tmux       
   sddm        
   i3-wm       
   i3lock
   i3lock-fancy
   bumblebee-status  
-  alacritty
-  virtualbox
+  # alacritty
+  # virtualbox
   qt5-graphicaleffects #for sddm theme
   qt5-svg              #for sddm theme
   qt5-quickcontrols2   #for sddm theme
   powerline           #for theme
-  qutebrowser
+  # qutebrowser
   rofi        
   rofi-power-menu
   fish        
-  anki
-  anydesk-bin
-  microsoft-edge-stable-bin
-  vim
-  neovim        #for lunarvim
-  hashcat-git
-  rockyou
-  ghidra
-  radare2
-  binwalk
-  steghide
+  # anki
+  # anydesk-bin
+  # microsoft-edge-stable-bin
+  # vim
+  # neovim        #for lunarvim
+  # hashcat-git
+  # rockyou
+  # ghidra
+  # radare2
+  # binwalk
+  # steghide
   # discord-electron
-  aircrack-ng
+  # aircrack-ng
   entr
   xcursor-themes
   lxappearance
   dracula-gtk-theme
   catppuccin-gtk-theme-mocha
-  flameshot
+  # flameshot
   scrot
-  pandoc
-  npm
-  nodejs
+  # pandoc
+  # npm
+  # nodejs
   # bun
   # picom
   zbar
-  qrencode
+  # qrencode
   )
 
 for app in ${apps[@]}; do

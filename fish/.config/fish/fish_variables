@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export NIX_PROFILES:/home/fep/\x2enix\x2dprofile
+SETUVAR --export NIX_PROFILES:/nix/var/nix/profiles/default\x20/home/fep/\x2enix\x2dprofile
 SETUVAR --export NIX_SSL_CERT_FILE:/etc/ssl/certs/ca\x2dcertificates\x2ecrt
 SETUVAR Z_DATA_DIR:/home/fep/\x2elocal/share/z
 SETUVAR __fish_initialized:3400

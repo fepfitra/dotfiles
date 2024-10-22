@@ -13,19 +13,19 @@ useronly=(
   alacritty
   git
   fish
-  tmux
-  lvim
-  qutebrowser
-  rofi
+  # tmux
+  # lvim
+  # qutebrowser
+  # rofi
   i3
-  sway
-  tofi
-  fuzzel
+  # sway
+  # tofi
+  # fuzzel
   fonts
   pip
   mime
-  nvim
-  zathura
+  # nvim
+  # zathura
 )
 
 hostnames=(

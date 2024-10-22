@@ -105,7 +105,7 @@ set PATH $PATH $JAVA_HOME/bin
 set FLUME_HOME $BIG_DATA_HOME/apache-flume-1.6.0-bin
 set FLUME_CONF $FLUME_HOME/conf
 
-
+podman completion -f ~/.config/fish/completions/podman.fish fish
 complete -c dvm -n "__fish_use_subcommand" -s h -l help -d 'Print help'
 complete -c dvm -n "__fish_use_subcommand" -s V -l version -d 'Print version'
 complete -c dvm -n "__fish_use_subcommand" -f -a "install" -d 'Install the latest <type> of discord'
