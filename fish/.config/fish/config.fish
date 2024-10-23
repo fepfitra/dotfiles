@@ -1,6 +1,10 @@
 
 # set CLASSPATH $CLASSPATH $FLUME_HOME/lib/*
 
+set LANGUAGE en_US.UTF-8
+set LC_ALL en_US.UTF-8
+set LC_CTYPE C.UTF-8
+
 if status is-interactive
 end
 set -U fish_greeting
