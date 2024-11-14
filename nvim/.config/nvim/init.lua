@@ -11,6 +11,9 @@ vim.cmd("set cursorline")
 vim.cmd("set undofile")
 vim.cmd("set clipboard=unnamedplus")
 
+local options = { noremap = true }
+vim.keymap.set("i","sc", "<Esc>", options)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
