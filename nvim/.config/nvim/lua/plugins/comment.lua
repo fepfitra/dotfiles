@@ -1,58 +1,51 @@
 return {
-	{
-		"numToStr/Comment.nvim",
-		opts = {},
-		lazy = false,
-		config = function()
-			-- local api = require("Comment.api")
-			-- vim.keymap.set("n", "<leader>/", api.toggle.linewise.current)
-			-- vim.keymap.set("v", "<leader>/", api.toggle.linewise.visual)
-			require("Comment").setup({
-				---Add a space b/w comment and the line
-				padding = true,
-				---Whether the cursor should stay at its position
-				sticky = true,
-				---Lines to be ignored while (un)comment
-				ignore = nil,
-				---LHS of toggle mappings in NORMAL mode
-				toggler = {
-					---Line-comment toggle keymap
-					line = "<leader>/",
-					-- -Block-comment toggle keymap
-					block = "<leader>?",
-				},
-				---LHS of operator-pending mappings in NORMAL and VISUAL mode
-				opleader = {
-					---Line-comment keymap
-					line = "<leader>/",
-					---Block-comment keymap
-					block = "<leader>?",
-				},
-				---LHS of extra mappings
-				extra = {
-					---Add comment on the line above
-					above = "gcO",
-					---Add comment on the line below
-					below = "gco",
-					---Add comment at the end of line
-					eol = "gcA",
-				},
-				---Enable keybindings
-				---NOTE: If given `false` then the plugin won't create any mappings
-				mappings = {
-					---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-					basic = true,
-					---Extra mapping; `gco`, `gcO`, `gcA`
-					extra = true,
-				},
-				---Function to call before (un)comment
-				pre_hook = nil,
-				---Function to call after (un)comment
-				post_hook = nil,
-			})
-		end,
-	},
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	},
+  {
+    "numToStr/Comment.nvim",
+    -- lazy = false,
+    config = function()
+      local comment = require("Comment")
+
+      -- Set up the Comment.nvim plugin
+      comment.setup({
+        padding = true,
+        sticky = true,
+        toggler = {
+          line = "<leader>/", -- Line-comment toggle
+          block = "<leader>?", -- Block-comment toggle
+        },
+        opleader = {
+          line = "<leader>/", -- Line-comment in operator-pending mode
+          block = "<leader>?", -- Block-comment in operator-pending mode
+        },
+        extra = {
+          above = "gcO", -- Comment line above
+          below = "gco", -- Comment line below
+          eol = "gcA", -- Comment end of line
+        },
+        mappings = {
+          basic = true,
+          extra = true,
+        },
+
+        -- ignore = nil,
+        -- pre_hook = nil,
+        -- post_hook = nil,
+      })
+
+      -- Use the Comment API safely for keymaps
+      local api = require("Comment.api")
+
+      -- Ensure that the keymaps are correctly set
+      -- vim.keymap.set("n", "<leader>/", function()
+      --   api.toggle.linewise.current()
+      -- end, { desc = "Toggle comment on current line" })
+      --
+      -- vim.keymap.set("v", "<leader>/", function()
+      --   api.toggle.linewise(vim.fn.visualmode())
+      -- end, { desc = "Toggle comment on selection" })
+    end,
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
 }

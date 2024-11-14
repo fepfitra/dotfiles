@@ -13,7 +13,6 @@ useronly=(
   git
   fish
   tmux
-  lvim
   qutebrowser
   rofi
   i3
@@ -21,18 +20,24 @@ useronly=(
   tofi
   fuzzel
   picom
+  # qutebrowser
+  # rofi
+  i3
   fonts
   pip
   mime
   nvim
   zathura
+  nvim-old
+  nvim-new
+  nvim-devaslife
+  nvim-experimental
 )
 
 hostnames=(
-  archer 
+  archer
   archie
-  )
-
+)
 
 stowit() {
   usr=$1
@@ -47,32 +52,31 @@ echo ""
 echo "Stowing apps for user: ${whoami}"
 
 for app in ${base[@]}; do
-  stowit "${HOME}" $app 
+  stowit "${HOME}" $app
 done
 
 for app in ${useronly[@]}; do
   if [[ ! "$(whoami)" = *"root"* ]]; then
-    stowit "${HOME}" $app 
+    stowit "${HOME}" $app
   fi
 done
 
 I3="$(pwd)/i3/.config/i3"
 
 if [[ " ${hostnames[@]} " =~ " $(uname -n) " ]]; then
-  cat "$I3/config.base" "$I3/config.$(uname -n)" > "$I3/config"
+  cat "$I3/config.base" "$I3/config.$(uname -n)" >"$I3/config"
 else
-  cat "$I3/config.base" "$I3/config.default" > "$I3/config"
+  cat "$I3/config.base" "$I3/config.default" >"$I3/config"
 fi
 
 unset I3
 
-
 I3="$(pwd)/sway/.config/sway"
 
 if [[ " ${hostnames[@]} " =~ " $(uname -n) " ]]; then
-  cat "$I3/config.base" "$I3/config.$(uname -n)" > "$I3/config"
+  cat "$I3/config.base" "$I3/config.$(uname -n)" >"$I3/config"
 else
-  cat "$I3/config.base" "$I3/config.default" > "$I3/config"
+  cat "$I3/config.base" "$I3/config.default" >"$I3/config"
 fi
 
 unset I3
