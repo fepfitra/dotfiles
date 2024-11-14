@@ -9,6 +9,15 @@ fortune
 set fish_function_path $fish_function_path /usr/share/powerline/bindings/fish
 source /usr/share/powerline/bindings/fish/powerline-setup.fish
 source /opt/google-cloud-cli/path.fish.inc
+
+set PATH /home/fep/.local/bin $PATH
+
+set BUN_INSTALL $HOME/.bun
+set PATH $BUN_INSTALL/bin $PATH
+source "$HOME/.cargo/env.fish"
+set DOT $HOME/GitProject/dotfiles/
+
+
 powerline-setup
 fish_vi_key_bindings
 alias "x=xclip -selection clipboard"
@@ -19,14 +28,9 @@ alias "bismillah=sudo"
 alias 'lazypodman=DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
 alias 'lp=lazypodman'
 alias "siuu=yay -Syu"
+alias nd="nvapp nvim-devaslife"
+alias "cddot=cd $DOT"
 echo ""
-
-set PATH /home/fep/.local/bin $PATH
-
-set BUN_INSTALL $HOME/.bun
-set PATH $BUN_INSTALL/bin $PATH
-source "$HOME/.cargo/env.fish"
-set DOT $HOME/GitProject/dotfiles/
 
 # 0file() { curl -F"file=@$1" https://envs.sh ; }
 # 0pb() { curl -F"file=@-;" https://envs.sh ; }
