@@ -36,6 +36,12 @@ echo ""
 # 0pb() { curl -F"file=@-;" https://envs.sh ; }
 # 0url() { curl -F"url=$1" https://envs.sh ; }
 # 0short() { curl -F"shorten=$1" https://envs.sh ; }
+#
+function cd
+    builtin cd $argv
+    tmux rename-window (basename (pwd))
+end
+
 function 0file
     curl -F"file=@$argv[1]" https://envs.sh
 end

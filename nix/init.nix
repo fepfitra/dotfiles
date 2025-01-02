@@ -4,7 +4,7 @@ let
   editor = import ./editor/packages.nix { inherit pkgs; };
   fun = import ./fun/packages.nix { inherit pkgs; };
   pentest = import ./pentest/packages.nix { inherit pkgs; };
-  tools = import ./tools/packages.nix { inherit pkgs; };
+  # tools = import ./tools/packages.nix { inherit pkgs; };
   utils = import ./utils/packages.nix { inherit pkgs; };
   prod = import ./prod/packages.nix { inherit pkgs; };
 in 
@@ -17,9 +17,9 @@ in
     NIXPKGS_ALLOW_UNFREE="1";
   };
 
-  imports = [
-    ./utils/fastfetch.nix
-  ];
+  # imports = [
+  #   ./utils/fastfetch.nix
+  # ];
 
   home.packages = with pkgs; [
     anki
@@ -33,7 +33,7 @@ in
   ++ fun
   ++ pentest
   ++ prod
-  ++ tools
+  # ++ tools
   ++ utils
   ;
 }
