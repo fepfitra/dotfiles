@@ -30,6 +30,7 @@ alias 'lp=lazypodman'
 alias "siuu=yay -Syu"
 alias nd="nvapp nvim-devaslife"
 alias "cddot=cd $DOT"
+alias ls="exa"
 echo ""
 
 # 0file() { curl -F"file=@$1" https://envs.sh ; }
