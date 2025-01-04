@@ -35,7 +35,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
 # exec compfy &
-exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
+# exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
 exec discord &
 exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
@@ -65,7 +65,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 
 # Other config
-bindsym $mod+b exec microsoft-edge-stable
+bindsym $mod+b exec zen-browser
 bindsym $mod+n exec qutebrowser
 bindsym $mod+q exec i3lock-fancy
 bindsym $mod+Shift+s exec flameshot gui
@@ -79,7 +79,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec kitty -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
