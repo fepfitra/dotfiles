@@ -1,55 +1,54 @@
-
 apps=(
-  git         #for yay
-  base-devel  #for yay
-  yay
-  tmux       
-  sddm        
-  i3-wm       
+  # bun
+  # discord-electron
+  #anki
+  #anydesk-bin
+  #lunarvim-git
+  #microsoft-edge-stable-bin
+  aircrack-ng
+  alacritty
+  base-devel #for yay
+  binwalk
+  bumblebee-status
+  catppuccin-gtk-theme-mocha
+  dracula-gtk-theme
+  entr
+  fish
+  flameshot
+  ghidra
+  git #for yay
+  hashcat-git
+  i3-wm
   i3lock
   i3lock-fancy
-  bumblebee-status  
-  alacritty
-  virtualbox
-  qt5-graphicaleffects #for sddm theme
-  qt5-svg              #for sddm theme
-  qt5-quickcontrols2   #for sddm theme
-  powerline           #for theme
-  qutebrowser
-  rofi        
-  rofi-power-menu
-  fish        
-  anki
-  anydesk-bin
-  microsoft-edge-stable-bin
-  vim
-  neovim        #for lunarvim
-  lunarvim-git 
-  hashcat-git
-  rockyou
-  ghidra
-  radare2
-  binwalk
-  steghide
-  # discord-electron
-  aircrack-ng
-  entr
-  xcursor-themes
   lxappearance
-  dracula-gtk-theme
-  catppuccin-gtk-theme-mocha
-  flameshot
-  scrot
-  pandoc
-  npm
+  neovim #for lunarvim
   nodejs
-  # bun
+  npm
+  pandoc
   picom
-  tradingview
-  wine
-  zbar
+  powerline #for theme
   qrencode
-  )
+  qt5-graphicaleffects #for sddm theme
+  qt5-quickcontrols2   #for sddm theme
+  qt5-svg              #for sddm theme
+  qutebrowser
+  radare2
+  rockyou
+  rofi
+  rofi-power-menu
+  scrot
+  sddm
+  steghide
+  tmux
+  tradingview
+  vim
+  virtualbox
+  wine
+  xcursor-themes
+  yay
+  zbar
+)
 
 for app in ${apps[@]}; do
   TMP=$(pacman -Q $app)
