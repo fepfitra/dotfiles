@@ -84,6 +84,13 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+-- vim.opt.termguicolors = true
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -91,7 +98,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -155,6 +162,9 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- My own custom settings
+vim.opt.fillchars = { eob = ' ' }
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -327,9 +337,11 @@ require('lazy').setup({
   require 'custom.plugins.lsp',
   require 'custom.plugins.autoformat',
   require 'custom.plugins.autocompletion',
-  require 'custom.themes.tokyonight',
+  -- require 'custom.themes.tokyonight',
+  require 'custom.themes.solarized',
 
   require 'custom.plugins.comments',
+  require 'custom.plugins.lualine',
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
 
@@ -351,6 +363,9 @@ require('lazy').setup({
   require 'custom.plugins.nvim-tree',
   require 'custom.plugins.lazygit',
   require 'custom.plugins.copilot',
+  require 'custom.plugins.smear',
+  require 'custom.plugins.typst',
+  require 'custom.plugins.indentscope',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
