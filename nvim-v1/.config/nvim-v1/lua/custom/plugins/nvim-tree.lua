@@ -1,5 +1,7 @@
 return {
   'nvim-tree/nvim-tree.lua',
+  version = '*',
+  lazy = false,
   config = function()
     require('nvim-tree').setup {
       sort = {
@@ -12,9 +14,9 @@ return {
         group_empty = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
     }
-    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle\n')
+    vim.keymap.set('n', '<Leader>e', '<cmd>NvimTreeToggle<CR>')
   end,
 }
