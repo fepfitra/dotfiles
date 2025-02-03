@@ -59,8 +59,8 @@ return { -- Autocompletion
         ['<C-k>'] = cmp.mapping.select_prev_item(),
 
         -- Scroll the documentation window [b]ack / [f]orward
-        ['<Tab>'] = cmp.mapping.scroll_docs(-4),
-        ['<S-Tab>'] = cmp.mapping.scroll_docs(4),
+        ['<A-k>'] = cmp.mapping.scroll_docs(-4),
+        ['<A-j>'] = cmp.mapping.scroll_docs(4),
 
         -- Accept ([y]es) the completion.
         --  This will auto-import if your LSP supports it.
@@ -101,6 +101,7 @@ return { -- Autocompletion
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
       sources = {
+        { name = 'copilot', group_index = 2 },
         {
           name = 'lazydev',
           -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
