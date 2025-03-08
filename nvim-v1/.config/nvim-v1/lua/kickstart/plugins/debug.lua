@@ -27,7 +27,7 @@ return {
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
     {
-      '<F5>',
+      '<leader>bc',
       function()
         require('dap').continue()
       end,
@@ -55,14 +55,14 @@ return {
       desc = 'Debug: Step Out',
     },
     {
-      '<leader>b',
+      '<leader>bb',
       function()
         require('dap').toggle_breakpoint()
       end,
       desc = 'Debug: Toggle Breakpoint',
     },
     {
-      '<leader>B',
+      '<leader>bB',
       function()
         require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
       end,
@@ -142,6 +142,44 @@ return {
         -- On Windows delve must be run attached or it crashes.
         -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
         detached = vim.fn.has 'win32' == 0,
+      },
+    }
+
+    dap.adapters.lldb = {
+      type = 'executable',
+      command = '/usr/bin/codelldb',
+      name = 'lldb',
+    }
+
+    dap.configurations.rust = {
+      {
+        type = 'lldb',
+        name = 'Debug',
+        request = 'launch',
+        program = '${workspaceFolder}/target/debug/${workspaceFolder:t}',
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+        runInTerminal = false,
+        initCommands = function()
+          -- Find out where to look for the pretty printer Python module
+          local rustc_sysroot = vim.fn.trim(vim.fn.system 'rustc --print sysroot')
+
+          local script_import = 'command script import "' .. rustc_sysroot .. '/lib/rustlib/etc/lldb_lookup.py"'
+          local commands_file = rustc_sysroot .. '/lib/rustlib/etc/lldb_commands'
+
+          local commands = {}
+          local file = io.open(commands_file, 'r')
+          if file then
+            for line in file:lines() do
+              table.insert(commands, line)
+            end
+            file:close()
+          end
+          table.insert(commands, 1, script_import)
+
+          return commands
+        end,
       },
     }
   end,
