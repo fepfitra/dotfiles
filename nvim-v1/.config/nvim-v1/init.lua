@@ -290,6 +290,7 @@ require('lazy').setup({
 
   require 'custom.plugins.comments',
   require 'custom.plugins.lualine',
+  -- require 'custom.plugins.surrond',
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
   require 'custom.themes.solarized',
@@ -305,6 +306,7 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.neo-tree',
   require 'custom.plugins.copilot',
+  require 'custom.plugins.gaslight',
   require 'custom.plugins.hurl',
   require 'custom.plugins.indentscope',
   require 'custom.plugins.lazygit',
@@ -312,6 +314,7 @@ require('lazy').setup({
   require 'custom.plugins.nvim-tree',
   require 'custom.plugins.smear',
   require 'custom.plugins.typst',
+  require 'custom.plugins.wakatime',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
@@ -333,5 +336,11 @@ require('lazy').setup({
   ui = require 'custom.ui',
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'typst',
+  callback = function()
+    vim.bo.commentstring = '// %s'
+  end,
+})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
