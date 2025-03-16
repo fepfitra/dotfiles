@@ -26,13 +26,8 @@ useronly=(
   fonts
   pip
   mime
-  nvim
   zathura
   nvim-v1
-  nvim-old
-  nvim-new
-  nvim-devaslife
-  nvim-experimental
 )
 
 hostnames=(
