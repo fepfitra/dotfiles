@@ -128,7 +128,6 @@ format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
-show_always = true
 time_format = "%R"
 style = "bg:#073642"
 format = '[ ♥ $time ]($style)'
