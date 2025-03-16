@@ -6,8 +6,8 @@ end
 
 fortune
 # Commands to run in interactive sessions can go here
-set fish_function_path $fish_function_path /usr/share/powerline/bindings/fish
-source /usr/share/powerline/bindings/fish/powerline-setup.fish
+#set fish_function_path $fish_function_path /usr/share/powerline/bindings/fish
+#source /usr/share/powerline/bindings/fish/powerline-setup.fish
 source /opt/google-cloud-cli/path.fish.inc
 
 set PATH /home/fep/.local/bin $PATH
@@ -26,8 +26,9 @@ source "$HOME/.cargo/env.fish"
 set DOT $HOME/GitProject/dotfiles/
 
 
-powerline-setup
+#powerline-setup
 fish_vi_key_bindings
+starship init fish | source
 alias "x=xclip -selection clipboard"
 alias "cdtemp=cd $(mktemp -d)"
 alias "lg=lazygit"
