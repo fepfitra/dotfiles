@@ -18,7 +18,7 @@ useronly=(
   i3
   sway
   tofi
-  fuzzel
+  #fuzzel
   picom
   # qutebrowser
   # rofi
@@ -41,19 +41,19 @@ stowit() {
   # -v verbose
   # -R recursive
   # -t target
-  stow -v -R -t ${usr} ${app}
+  stow -v -R -t "${usr}" "${app}"
 }
 
 echo ""
 echo "Stowing apps for user: ${whoami}"
 
-for app in ${base[@]}; do
-  stowit "${HOME}" $app
+for app in "${base[@]}"; do
+  stowit "${HOME}" "$app"
 done
 
-for app in ${useronly[@]}; do
+for app in "${useronly[@]}"; do
   if [[ ! "$(whoami)" = *"root"* ]]; then
-    stowit "${HOME}" $app
+    stowit "${HOME}" "$app"
   fi
 done
 
@@ -76,8 +76,8 @@ else
 fi
 
 unset I3
-$(pwd)/apps.sh
-$(pwd)/modules.sh
+"$(pwd)"/apps.sh
+"$(pwd)"/modules.sh
 
 echo ""
 echo "##### ALL DONE"
