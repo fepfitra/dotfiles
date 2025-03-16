@@ -305,6 +305,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.neo-tree',
+  require 'custom.plugins.colorizer',
   require 'custom.plugins.copilot',
   require 'custom.plugins.gaslight',
   require 'custom.plugins.gdb',
