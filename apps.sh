@@ -9,7 +9,7 @@ apps=(
   alacritty
   base-devel #for yay
   binwalk
-  bumblebee-status
+  #bumblebee-status
   catppuccin-gtk-theme-mocha
   dracula-gtk-theme
   entr
@@ -17,7 +17,7 @@ apps=(
   flameshot
   ghidra
   git #for yay
-  hashcat-git
+  #hashcat-git
   i3-wm
   i3lock
   i3lock-fancy
@@ -27,7 +27,7 @@ apps=(
   npm
   pandoc
   picom
-  powerline #for theme
+  #powerline #for theme
   qrencode
   qt5-graphicaleffects #for sddm theme
   qt5-quickcontrols2   #for sddm theme
@@ -41,7 +41,7 @@ apps=(
   sddm
   steghide
   tmux
-  tradingview
+  #tradingview
   vim
   virtualbox
   wine
@@ -50,8 +50,8 @@ apps=(
   zbar
 )
 
-for app in ${apps[@]}; do
-  TMP=$(pacman -Q $app)
+for app in "${apps[@]}"; do
+  # TMP=$(pacman -Q "$app")
   if [[ $? -eq 0 ]]; then
     echo "app $app is installed"
   else
@@ -69,7 +69,7 @@ for app in ${apps[@]}; do
     elif [[ $app = "base-devel" ]]; then
       pacman -S git --noconfirm --needed
     else
-      yay -S $app --noconfirm
+      yay -S "$app" --noconfirm
     fi
   fi
 done
