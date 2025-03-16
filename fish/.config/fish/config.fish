@@ -11,6 +11,14 @@ source /usr/share/powerline/bindings/fish/powerline-setup.fish
 source /opt/google-cloud-cli/path.fish.inc
 
 set PATH /home/fep/.local/bin $PATH
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
+# Load pyenv automatically by appending
+# the following to ~/.config/fish/config.fish:
+
+pyenv init - fish | source
+
 
 set BUN_INSTALL $HOME/.bun
 set PATH $BUN_INSTALL/bin $PATH
@@ -29,8 +37,10 @@ alias 'lazypodman=DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocke
 alias 'lp=lazypodman'
 alias "siuu=yay -Syu"
 alias nd="nvapp nvim-devaslife"
+alias n1="nvapp nvim-v1"
 alias "cddot=cd $DOT"
 alias ls="exa"
+alias rm="trash"
 echo ""
 
 # 0file() { curl -F"file=@$1" https://envs.sh ; }
@@ -38,6 +48,12 @@ echo ""
 # 0url() { curl -F"url=$1" https://envs.sh ; }
 # 0short() { curl -F"shorten=$1" https://envs.sh ; }
 #
+#
+
+function ccd
+    cd (fd -t d . $HOME | fzf)
+end
+
 function cd
     builtin cd $argv
     tmux rename-window (basename (pwd))
