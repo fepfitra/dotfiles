@@ -10,24 +10,25 @@ base=(
 )
 
 useronly=(
-  git
-  fish
-  tmux
-  qutebrowser
-  rofi
-  i3
-  sway
-  tofi
-  #fuzzel
-  picom
   # qutebrowser
   # rofi
-  i3
+  #fuzzel
+  fish
   fonts
-  pip
+  git
+  i3
+  i3
   mime
-  zathura
   nvim-v1
+  picom
+  pip
+  qutebrowser
+  rofi
+  starship
+  sway
+  tmux
+  tofi
+  zathura
 )
 
 hostnames=(
