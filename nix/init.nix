@@ -27,7 +27,7 @@ in
     kdenlive
     korganizer
     nix
-    qutebrowser
+    #qutebrowser
   ] 
   ++ editor
   ++ fun

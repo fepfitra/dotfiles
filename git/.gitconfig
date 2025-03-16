@@ -10,3 +10,5 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 lg = lg1
 [core]
 	editor = nvim
+[http]
+	version = HTTP/1.1
