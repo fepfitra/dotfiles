@@ -7,5 +7,5 @@ bar {
     memory battery pasink pasource bluetooth datetime  \
     -p interval=1 root.path=/ disk.format="{used}/{size}" \
     battery.device=BAT0,BAT1 nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
-    -t dracula-powerline
+    -t solarized-powerline
 }
