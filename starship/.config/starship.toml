@@ -20,6 +20,7 @@ $nodejs\
 $nim\
 $rust\
 $scala\
+$python\
 [](fg:#2aa198 bg:#859900)\
 $docker_context\
 [](fg:#859900 bg:#073642)\
@@ -132,3 +133,8 @@ time_format = "%R"
 style = "bg:#073642"
 format = '[ ♥ $time ]($style)'
 
+
+[python]
+symbol = "🐍 "
+style = "bg:#2aa198"
+format = '[ $symbol ($version) ]($style)'
