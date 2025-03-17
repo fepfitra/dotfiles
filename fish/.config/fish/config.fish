@@ -1,6 +1,6 @@
 
 # set CLASSPATH $CLASSPATH $FLUME_HOME/lib/*
-
+set fish_greeting
 if status is-interactive
 end
 
