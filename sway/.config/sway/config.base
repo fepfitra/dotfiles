@@ -9,13 +9,39 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-gaps inner 5px
+# gaps inner 5px
 #Hide window title bar
+
 default_border pixel 1
 default_floating_border pixel 1
 for_window [class="^.*"] border pixel 5
+for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+
+blur enable
 
 set $mod Mod4
+
+mode "gromit-mpx" {
+    # toggle painting
+    bindsym f9 exec gromit-mpx --toggle
+    # clear
+    bindsym Shift+f9 exec gromit-mpx --clear
+    # toggle visibility
+    bindsym Ctrl+f9 exec gromit-mpx --visibility
+    # quit
+    bindsym Alt+f9 exec gromit-mpx --quit
+    # undo
+    bindsym f8 exec gromit-mpx --undo
+    # redo
+    bindsym Shift+f8 exec gromit-mpx --redo
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+g mode "gromit-mpx"
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -32,12 +58,17 @@ exec --no-startup-id dex --autostart --environment i3
 
 #battery
 # exec ~/.batt.sh
-exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
+exec swaybg -i ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
-exec compfy &
+# exec compfy &
+# exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
 exec discord &
+exec fcitx5 &
 exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -64,10 +95,12 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 
 # Other config
-bindsym $mod+b exec microsoft-edge-stable
+bindsym $mod+b exec firefox
 bindsym $mod+n exec qutebrowser
 bindsym $mod+q exec i3lock-fancy
-bindsym $mod+Shift+s exec flameshot gui
+#bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Shift+s exec hyprshot -m region --clipboard-only
+bindsym $mod+Shift+a exec hyprshot -m region -o /tmp
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -78,7 +111,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec ghostty -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
