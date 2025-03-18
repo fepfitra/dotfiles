@@ -12,3 +12,6 @@ lg = lg1
 	editor = nvim
 [http]
 	version = HTTP/1.1
+	postBuffer = 157286400
+[pack]
+	window = 1
