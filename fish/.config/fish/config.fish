@@ -5,9 +5,9 @@ if status is-interactive
 end
 
 fortune
-# Commands to run in interactive sessions can go here
-#set fish_function_path $fish_function_path /usr/share/powerline/bindings/fish
-#source /usr/share/powerline/bindings/fish/powerline-setup.fish
+echo -e "\n"
+
+echo "scale=100; 4*a(1)" | bc -l
 source /opt/google-cloud-cli/path.fish.inc
 
 set PATH /home/fep/.local/bin $PATH
@@ -16,7 +16,6 @@ set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 
 # Load pyenv automatically by appending
 # the following to ~/.config/fish/config.fish:
-
 pyenv init - fish | source
 
 
@@ -43,13 +42,6 @@ alias "cddot=cd $DOT"
 alias ls="exa"
 alias rm="trash"
 echo ""
-
-# 0file() { curl -F"file=@$1" https://envs.sh ; }
-# 0pb() { curl -F"file=@-;" https://envs.sh ; }
-# 0url() { curl -F"url=$1" https://envs.sh ; }
-# 0short() { curl -F"shorten=$1" https://envs.sh ; }
-#
-#
 
 function ccd
     cd (fd -t d . $HOME | fzf)
@@ -84,21 +76,21 @@ function 0qrterm
     qrencode -t ANSI $argv[1]
 end
 
-set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
-set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
+#set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+#set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
 # set HADOOP_HOME /usr/local/hadoop
 
-set BIG_DATA_HOME ~/GitProject/big-data-starter/
-set HADOOP_HOME $BIG_DATA_HOME/hadoop-3.2.1
-set HADOOP_INSTALL $HADOOP_HOME
-set HADOOP_MAPRED_HOME $HADOOP_HOME
-set HADOOP_COMMON_HOME $HADOOP_HOME
-set HADOOP_HDFS_HOME $HADOOP_HOME
-set HADOOP_YARN_HOME $HADOOP_HOME
-set YARN_HOME $HADOOP_HOME
-set HADOOP_COMMON_LIB_NATIVE_DIR $HADOOP_HOME/lib/native
-set PATH $PATH $HADOOP_HOME/sbin $HADOOP_HOME/bin
-set PATH $PATH $JAVA_HOME/bin
+#set BIG_DATA_HOME ~/GitProject/big-data-starter/
+#set HADOOP_HOME $BIG_DATA_HOME/hadoop-3.2.1
+#set HADOOP_INSTALL $HADOOP_HOME
+#set HADOOP_MAPRED_HOME $HADOOP_HOME
+#set HADOOP_COMMON_HOME $HADOOP_HOME
+#set HADOOP_HDFS_HOME $HADOOP_HOME
+#set HADOOP_YARN_HOME $HADOOP_HOME
+#set YARN_HOME $HADOOP_HOME
+#set HADOOP_COMMON_LIB_NATIVE_DIR $HADOOP_HOME/lib/native
+#set PATH $PATH $HADOOP_HOME/sbin $HADOOP_HOME/bin
+#set PATH $PATH $JAVA_HOME/bin
 
 # set FLUME_HOME /usr/local/flume
 # set FLUME_CONF /usr/local/flume/conf/
@@ -108,8 +100,8 @@ set PATH $PATH $JAVA_HOME/bin
 # set ZOOKEEPER_HOME /usr/local/zookeeper
 # set PATH $PATH $ZOOKEEPER_HOME/bin
 
-set FLUME_HOME $BIG_DATA_HOME/apache-flume-1.6.0-bin
-set FLUME_CONF $FLUME_HOME/conf
+#set FLUME_HOME $BIG_DATA_HOME/apache-flume-1.6.0-bin
+#set FLUME_CONF $FLUME_HOME/conf
 
 
 complete -c dvm -n __fish_use_subcommand -s h -l help -d 'Print help'
