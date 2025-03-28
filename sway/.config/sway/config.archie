@@ -1,11 +1,2 @@
 #setup for archie
-bar {
-  position top
-  font pango:FontAwesome, CascadiaCode 13
-  status_command i3status-rs ~/.config/i3status-rust/top.toml
-}
-
-bar {
-  font pango:FontAwesome, CascadiaCode 13
-  status_command i3status-rs ~/.config/i3status-rust/bottom.toml
-}
+exec --no-startup-id waybar
