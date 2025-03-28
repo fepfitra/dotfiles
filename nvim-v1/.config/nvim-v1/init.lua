@@ -282,7 +282,9 @@ require('lazy').setup({
   --
   -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
-  require 'custom.plugins.autocompletion',
+  -- require 'custom.plugins.autocompletion',
+  require 'custom.plugins.blink',
+  require 'custom.plugins.blink_cmp',
   require 'custom.plugins.autoformat',
   require 'custom.plugins.lsp',
   require 'custom.plugins.telescope',
@@ -290,7 +292,7 @@ require('lazy').setup({
 
   require 'custom.plugins.comments',
   require 'custom.plugins.lualine',
-  -- require 'custom.plugins.surrond',
+  require 'custom.plugins.surrond',
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
   require 'custom.themes.solarized',
@@ -310,6 +312,7 @@ require('lazy').setup({
   require 'custom.plugins.gaslight',
   require 'custom.plugins.gdb',
   require 'custom.plugins.hurl',
+  -- require 'custom.plugins.image',
   require 'custom.plugins.indentscope',
   require 'custom.plugins.iron',
   require 'custom.plugins.lazygit',
