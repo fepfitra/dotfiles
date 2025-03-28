@@ -38,7 +38,7 @@ return {
         -- Warning: Be aware that your version might be older than the one
         -- required.
         dependencies_bin = {
-          ['tinymist'] = nil,
+          ['tinymist'] = 'tinymist',
           ['websocat'] = nil,
         },
 
