@@ -41,6 +41,7 @@ alias n1="nvapp nvim-v1"
 alias "cddot=cd $DOT"
 alias ls="exa"
 alias rm="trash"
+alias ff="fastfetch"
 echo ""
 
 function ccd
