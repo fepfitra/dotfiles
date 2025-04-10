@@ -13,10 +13,10 @@ useronly=(
   # qutebrowser
   # rofi
   #fuzzel
+  niri
   fish
   fonts
   git
-  i3
   i3
   mime
   nvim-v1
