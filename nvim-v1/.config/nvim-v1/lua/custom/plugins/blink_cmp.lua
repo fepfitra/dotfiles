@@ -54,11 +54,7 @@ return {
       },
       ['<A-j>'] = { 'scroll_documentation_down', 'fallback' },
       ['<A-k>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<CR>'] = {
-        function(cmp)
-          cmp.accept()
-        end,
-      },
+      ['<CR>'] = { 'accept', 'fallback' },
     },
 
     appearance = {
