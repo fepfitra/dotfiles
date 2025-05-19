@@ -345,10 +345,12 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+return { spawn "ghostty" "-e" "tmux"; }
     Mod+P { spawn "rofi" "-mode" "drun,run" "-show" "drun"; }
+    Mod+S { spawn "rofi" "-mode" "drun,run" "-show" "ssh"; }
     Super+Alt+L { spawn "swaylock"; }
 
     Mod+Shift+S { spawn "hyprshot" "-m" "region" "--clipboard-only"; }
-    Mod+Shift+A { spawn "hyprshot" "-m" "region" "-o" "/tmp"; }
+    // Mod+Shift+A { spawn "hyprshot" "-m" "region" "-o" "/tmp"; }
+    Mod+Shift+A { spawn "sh" "-c" "hyprshot -m region -o $(dialogtocli -d)"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
