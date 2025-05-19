@@ -309,7 +309,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.neo-tree',
   require 'custom.plugins.colorizer',
   require 'custom.plugins.copilot',
-  require 'custom.plugins.gaslight',
+  -- require 'custom.plugins.gaslight',
   require 'custom.plugins.gdb',
   require 'custom.plugins.hurl',
   -- require 'custom.plugins.image',
