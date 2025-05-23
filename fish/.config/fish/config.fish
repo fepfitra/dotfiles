@@ -28,6 +28,7 @@ set DOT $HOME/GitProject/dotfiles/
 #powerline-setup
 fish_vi_key_bindings
 starship init fish | source
+zoxide init fish | source
 alias "x=xclip -selection clipboard"
 alias "cdtemp=cd $(mktemp -d)"
 alias "lg=lazygit"
@@ -49,7 +50,8 @@ function ccd
 end
 
 function cd
-    builtin cd $argv
+    # builtin z $argv
+    z $argv
     tmux rename-window (basename (pwd))
 end
 
