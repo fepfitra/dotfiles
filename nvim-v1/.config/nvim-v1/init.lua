@@ -166,6 +166,8 @@ vim.opt.scrolloff = 10
 -- My own custom settings
 vim.opt.fillchars = { eob = ' ' }
 
+vim.lsp.enable 'ty'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -202,6 +204,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- my custom keymap
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
