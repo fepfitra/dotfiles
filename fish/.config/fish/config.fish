@@ -24,6 +24,12 @@ set PATH $BUN_INSTALL/bin $PATH
 source "$HOME/.cargo/env.fish"
 set DOT $HOME/GitProject/dotfiles/
 
+set ANDROID_HOME $HOME/android-sdk
+set PATH $PATH $ANDROID_HOME/platform-tools
+# set JAVA_HOME /usr/lib/jvm/java-17-openjdk
+
+set PATH "$PATH" "$HOME/.pub-cache/bin"
+
 
 #powerline-setup
 fish_vi_key_bindings
@@ -40,7 +46,7 @@ alias "siuu=yay -Syu"
 alias nd="nvapp nvim-devaslife"
 alias n1="nvapp nvim-v1"
 alias "cddot=cd $DOT"
-alias ls="exa"
+alias ls="exa --git --git-repos"
 alias rm="trash"
 alias ff="fastfetch"
 echo ""
@@ -79,7 +85,7 @@ function 0qrterm
     qrencode -t ANSI $argv[1]
 end
 
-#set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
 #set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
 # set HADOOP_HOME /usr/local/hadoop
 
