@@ -89,7 +89,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -165,6 +165,8 @@ vim.opt.scrolloff = 10
 
 -- My own custom settings
 vim.opt.fillchars = { eob = ' ' }
+vim.cmd 'set tabstop=2'
+vim.cmd 'set shiftwidth=2'
 
 vim.lsp.enable 'ty'
 
@@ -236,7 +238,7 @@ require 'lazyinit'
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -299,7 +301,8 @@ require('lazy').setup({
   require 'custom.plugins.surrond',
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
-  require 'custom.themes.solarized',
+  -- require 'custom.themes.solarized',
+  require 'custom.themes.gruvbox',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -330,7 +333,6 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
-  { 'cordx56/rustowl', dependencies = { 'neovim/nvim-lspconfig' } },
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
