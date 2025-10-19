@@ -58,7 +58,7 @@ return {
         -- This function will be called to determine the main file of the typst
         -- project.
         get_main_file = function(path_of_buffer)
-          return path_of_buffer
+          return './main.typ' or './typ.typ'
         end,
       }
     end,
