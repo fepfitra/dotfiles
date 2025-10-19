@@ -258,7 +258,6 @@ environment {
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-i" "~/.config/sway/bg/blue_arch_nowatermark.png"
-spawn-at-startup "onedriver" "./OneDrive"
 spawn-at-startup "fcitx5"
 spawn-at-startup "linux-discord-rich-presence" "--config" "~/.config/linux-discord-rich-presencerc"
 spawn-at-startup "xwayland-satellite"
