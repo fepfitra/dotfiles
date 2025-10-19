@@ -1,0 +1,4 @@
+\defaultfontfeatures[NewCM10-Oblique]{%
+  UprightFont        = {NewCM10-Regular.otf},%
+  FakeSlant          = {0.25}%
+}
