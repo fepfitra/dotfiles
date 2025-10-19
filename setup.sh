@@ -23,6 +23,7 @@ useronly=(
   picom
   pip
   qutebrowser
+	nushell
   rofi
   starship
   sway
