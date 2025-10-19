@@ -1,0 +1,4 @@
+\defaultfontfeatures[NewCM10-BookOblique]{%
+  UprightFont        = {NewCM10-Book.otf},%
+  FakeSlant          = {0.25}%
+}

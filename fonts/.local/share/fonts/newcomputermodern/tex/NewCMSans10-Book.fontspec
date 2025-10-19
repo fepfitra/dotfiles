@@ -1,0 +1,41 @@
+\defaultfontfeatures[NewCMSans10-Book]
+   {
+    Extension      = .otf,
+    		     	     ItalicFont=NewCMSans10-BookOblique,%
+           		     BoldFont=NewCMSans10-Bold,%
+           		     BoldItalicFont=NewCMSans10-BoldOblique,%
+           		     SlantedFont = NewCMSans10-Book,%
+      			     BoldSlantedFont = NewCMSans10-Bold,%
+			     SlantedFeatures = { FakeSlant = 0.25 },%
+			     BoldSlantedFeatures = { FakeSlant = 0.25 },%
+           		     SmallCapsFeatures={Numbers=OldStyle},%
+    SizeFeatures={%
+                  {Size= -8, Font=NewCMSans08-Book,%
+           	  	     ItalicFont=NewCMSans08-BookOblique,%
+           		     BoldFont=NewCMSans10-Bold,%
+           		     BoldItalicFont=NewCMSans10-BoldOblique,%
+           		     SlantedFont = NewCMSans08-Book,%
+      			     BoldSlantedFont = NewCMSans10-Bold,%
+			     SlantedFeatures = { FakeSlant = 0.25 },%
+			     BoldSlantedFeatures = { FakeSlant = 0.25 },%
+           		     SmallCapsFeatures={Numbers=OldStyle}},
+		   {Size= 8, Font=NewCMSans08-Book,%
+          	   	     ItalicFont=NewCMSans08-BookOblique,%
+          		     BoldFont=NewCMSans10-Bold,%
+          		     BoldItalicFont=NewCMSans10-BoldOblique,%
+           		     SlantedFont = NewCMSans08-Book,%
+      			     BoldSlantedFont = NewCMSans10-Bold,%
+			     SlantedFeatures = { FakeSlant = 0.25 },%
+			     BoldSlantedFeatures = { FakeSlant = 0.25 },%
+         		     SmallCapsFeatures={Numbers=OldStyle}},
+		  {Size= 9-, Font=NewCMSans10-Book,%
+           	  	     ItalicFont=NewCMSans10-BookOblique,%
+           		     BoldFont=NewCMSans10-Bold,%
+           		     BoldItalicFont=NewCMSans10-BoldOblique,%
+           		     SlantedFont = NewCMSans10-Book,%
+      			     BoldSlantedFont = NewCMSans10-Bold,%
+			     SlantedFeatures = { FakeSlant = 0.25 },%
+			     BoldSlantedFeatures = { FakeSlant = 0.25 },%
+           		     SmallCapsFeatures={Numbers=OldStyle}}
+			     }}
+

@@ -1,0 +1,13 @@
+\defaultfontfeatures[NewCMMono10-Book]
+	{
+		Extension      = .otf,
+		UprightFont    = NewCMMono10-Book,
+		BoldFont       = NewCMMono10-Bold,
+		ItalicFont     = NewCMMono10-BookItalic,
+		BoldItalicFont = NewCMMono10-BoldOblique,
+		SlantedFont = NewCMMono10-Book,%
+      		BoldSlantedFont = NewCMMono10-Bold,%
+		SlantedFeatures = { FakeSlant = 0.25 },%
+		BoldSlantedFeatures = { FakeSlant = 0.25 },%		
+		SmallCapsFeatures={Numbers=OldStyle},%
+	}
