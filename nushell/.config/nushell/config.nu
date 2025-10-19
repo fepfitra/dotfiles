@@ -30,7 +30,7 @@ source ~/.zoxide.nu
 alias nvim = env NVIM_APPNAME=nvim-v1 nvim
 alias n1 = nvim
 
-alias cdtemp = cd (mktemp -d)
+# alias cdtemp = cd (mktemp -d)
 alias cddot = cd ~/GitProject/dotfiles/
 alias la = ls -la
 alias rm = trash
@@ -41,6 +41,19 @@ alias cd = z
 fortune
 print "\n"
 ^echo "scale=100; 4*a(1)" | bc -l
+
+def --env cdtemp [name?:string] {
+	match $name {
+		null => {
+			let dir = (mktemp -d)
+			cd $dir
+		}
+		_ => {
+			let dir = (mktemp -d -t $"($name).XXX")
+			cd $dir
+		}
+	}
+}
 
 use std/util "path add"
 path add ($env.HOME | path join ".bun" "bin")
