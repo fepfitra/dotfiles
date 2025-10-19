@@ -4,10 +4,10 @@ set fish_greeting
 if status is-interactive
 end
 
-fortune
-echo -e "\n"
+# fortune
+# echo -e "\n"
+# echo "scale=100; 4*a(1)" | bc -l
 
-echo "scale=100; 4*a(1)" | bc -l
 source /opt/google-cloud-cli/path.fish.inc
 
 set PATH /home/fep/.local/bin $PATH
@@ -25,10 +25,16 @@ source "$HOME/.cargo/env.fish"
 set DOT $HOME/GitProject/dotfiles/
 
 set ANDROID_HOME $HOME/android-sdk
+set ANDROID_NDK_HOME $HOME/android-sdk/ndk/26.3.11579264/
+set AARCH64_LINUX_ANDROID_OPENSSL_LIB_DIR
+set OPENSSL_LIB_DIR
+set AARCH64_LINUX_ANDROID_OPENSSL_INCLUDE_DIR
 set PATH $PATH $ANDROID_HOME/platform-tools
 # set JAVA_HOME /usr/lib/jvm/java-17-openjdk
 
 set PATH "$PATH" "$HOME/.pub-cache/bin"
+
+
 
 
 #powerline-setup
@@ -86,6 +92,16 @@ function 0qrterm
 end
 
 set JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+set HADOOP_HOME ~/hadoop/
+set HADOOP_INSTALL $HADOOP_HOME
+set HADOOP_MAPRED_HOME $HADOOP_HOME
+set HADOOP_COMMON_HOME $HADOOP_HOME
+set HADOOP_HDFS_HOME $HADOOP_HOME
+set HADOOP_YARN_HOME $HADOOP_HOME
+set HADOOP_COMMON_LIB_NATIVE_DIR $HADOOP_HOME/lib/native
+set PATH $PATH $HADOOP_HOME/sbin:$HADOOP_HOME/bin
+set HADOOP_OPTS "-Djava.library.path=$HADOOP_HOME/lib/native"
+
 #set JRE_HOME /usr/lib/jvm/java-8-openjdk/jre/
 # set HADOOP_HOME /usr/local/hadoop
 
