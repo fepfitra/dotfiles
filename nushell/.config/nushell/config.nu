@@ -70,10 +70,17 @@ $env.config.hooks = {
 						return false
 					}
 				}
+				def top_level [path] {
+					try {
+						git -C $path rev-parse --show-toplevel err> /dev/null | into string 
+					} catch {
+						return ""
+					}
+				}
 				if (is_in_git $after) {
 					if (not (is_in_git $before)) {
 						print (onefetch)
-					} else if (basename ($after)) != (basename ($before)) {
+					} else if (top_level $after) != (top_level $before) {
 						print (onefetch)
 					}
 				}
