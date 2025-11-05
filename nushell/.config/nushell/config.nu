@@ -89,6 +89,10 @@ $env.config.hooks = {
 	}
 }
 
+def ipaste [path:string] {
+	wl-paste  -t image/png o> $path e> /dev/null
+}
+
 def --env y [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 	yazi ...$args --cwd-file $tmp
