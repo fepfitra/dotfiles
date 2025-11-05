@@ -50,7 +50,7 @@ return {
       },
       static = {
         enabled = true,
-        char = '▎',
+        char = '▏',
         priority = 1,
         -- specify multiple highlights here for rainbow-style indent guides
         -- highlights = { 'BlinkIndentRed', 'BlinkIndentOrange', 'BlinkIndentYellow', 'BlinkIndentGreen', 'BlinkIndentViolet', 'BlinkIndentCyan' },
@@ -58,7 +58,7 @@ return {
       },
       scope = {
         enabled = true,
-        char = '▎',
+        char = '▏',
         priority = 1024,
         -- set this to a single highlight, such as 'BlinkIndent' to disable rainbow-style indent guides
         -- highlights = { 'BlinkIndent' },

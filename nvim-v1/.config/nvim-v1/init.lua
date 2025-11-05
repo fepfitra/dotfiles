@@ -173,7 +173,7 @@ require('lazy').setup({
   require 'custom.plugins.gdb',
   require 'custom.plugins.hurl',
   -- require 'custom.plugins.image',
-  require 'custom.plugins.indentscope',
+  -- require 'custom.plugins.indentscope',
   require 'custom.plugins.iron',
   require 'custom.plugins.lazygit',
   require 'custom.plugins.markdown-preview',
@@ -184,7 +184,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.gitsigns',
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   -- { import = 'custom.plugins' },
