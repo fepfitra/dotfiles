@@ -73,7 +73,7 @@ return {
         },
         underline = {
           -- enable to show underlines on the line above the current scope
-          enabled = false,
+          enabled = true,
           highlights = {
             'BlinkIndentRedUnderline',
             'BlinkIndentYellowUnderline',
