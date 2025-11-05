@@ -174,6 +174,7 @@ require('lazy').setup({
   require 'custom.plugins.hurl',
   -- require 'custom.plugins.image',
   -- require 'custom.plugins.indentscope',
+  require 'custom.plugins.snacks',
   require 'custom.plugins.iron',
   require 'custom.plugins.lazygit',
   require 'custom.plugins.markdown-preview',
