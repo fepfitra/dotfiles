@@ -168,6 +168,7 @@ require('lazy').setup({
   require 'custom.themes.gruvbox',
   -- require 'kickstart.plugins.neo-tree',
   require 'custom.plugins.colorizer',
+  require 'custom.plugins.trouble',
   require 'custom.plugins.copilot',
   -- require 'custom.plugins.gaslight',
   require 'custom.plugins.gdb',
