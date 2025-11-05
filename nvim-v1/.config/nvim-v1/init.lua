@@ -206,3 +206,24 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.o.updatetime = 250
+
+-- Create an autocommand to open the floating diagnostic window
+-- when the cursor stays put (CursorHold) in Normal or Insert mode (CursorHoldI).
+vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+  pattern = '*', -- Apply to all file types
+  callback = function()
+    -- Open a floating window with diagnostics at the cursor position.
+    -- 'focus = false' means the window opens but doesn't steal your cursor focus.
+    vim.diagnostic.open_float(nil, {
+      scope = 'cursor',
+      focusable = false,
+    })
+  end,
+})
+
+-- OPTIONAL: If you want to disable the inline "virtual text" (like the "Syntax Error" in your image)
+-- and only rely on the hover window for messages:
+vim.diagnostic.config {
+  virtual_text = false,
+}
