@@ -151,18 +151,6 @@ require 'lazyinit'
 --    :Lazy update
 --
 require('lazy').setup({
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
   require 'custom.plugins.which-key',
   -- require 'custom.plugins.autocompletion',
   require 'custom.plugins.blink',
