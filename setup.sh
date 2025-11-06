@@ -80,7 +80,6 @@ fi
 
 unset I3
 "$(pwd)"/apps.sh
-"$(pwd)"/modules.sh
 
 echo ""
 echo "##### ALL DONE"
