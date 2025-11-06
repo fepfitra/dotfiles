@@ -5,7 +5,9 @@ return {
     version = '1.*',
     opts = {}, -- lazy.nvim will implicitly calls `setup {}`
     config = function()
-      require('lspconfig')['tinymist'].setup {
+      vim.lsp.enable 'tinymist'
+
+      vim.lsp.config.tinymist = {
         settings = {
           formatterMode = 'typstyle',
           exportPdf = 'onType',
