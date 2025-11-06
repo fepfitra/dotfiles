@@ -36,7 +36,7 @@ return {
     -- keymap = { preset = 'default' },
     keymap = {
       preset = 'none',
-      ['<C-j>'] = {
+      ['<Tab>'] = {
         function(cmp)
           if has_words_before() then
             return cmp.insert_next()
@@ -44,7 +44,7 @@ return {
         end,
         'fallback',
       },
-      ['<C-k>'] = {
+      ['<S-Tab>'] = {
         function(cmp)
           if has_words_before() then
             return cmp.insert_prev()

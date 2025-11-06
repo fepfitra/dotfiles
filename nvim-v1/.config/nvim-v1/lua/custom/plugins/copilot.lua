@@ -1,7 +1,10 @@
 return {
   {
     'github/copilot.vim',
-    config = function() end,
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.api.nvim_set_keymap('i', '<M-Enter>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+    end,
   },
   {
     'zbirenbaum/copilot.lua',
