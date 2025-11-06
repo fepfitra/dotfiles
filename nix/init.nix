@@ -12,6 +12,9 @@ in
   home.username = "fep";
   home.homeDirectory = "/home/fep";
   home.stateVersion = "24.05";
+	home.file = {
+		".test".source = ./init.nix;
+	};
 
   home.sessionVariables = {
     NIXPKGS_ALLOW_UNFREE="1";
@@ -24,8 +27,8 @@ in
   home.packages = with pkgs; [
     anki
     google-chrome
-    kdenlive
-    korganizer
+    # kdenlive
+    # korganizer
     nix
     #qutebrowser
   ] 

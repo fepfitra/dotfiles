@@ -3,7 +3,7 @@
 let
   prod = with pkgs; [
     telegram-desktop
-    whatsapp-for-linux
+    # whatsapp-for-linux
   ];
 in
   prod
