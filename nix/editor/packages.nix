@@ -3,7 +3,7 @@
 let
   editor = with pkgs; [
     zotero
-    onlyoffice-bin_latest
+    onlyoffice-desktopeditors
     neovim
     zathura
     texliveFull

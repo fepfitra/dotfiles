@@ -37,6 +37,7 @@ alias rm = trash
 alias ff = fastfetch
 alias cat = bat
 alias cd = z
+alias dot = ~/.nix-profile/bin/home-manager switch -f ~/GitProject/dotfiles/nix/init.nix
 
 fortune
 print "\n"
@@ -56,7 +57,8 @@ def --env cdtemp [name?:string] {
 }
 
 use std/util "path add"
-path add ($env.HOME | path join ".bun" "bin")
+path add '~/.bun/bin'
+path add '~/.nix-profile/bin'	
 
 $env.config.hooks = {
 	env_change: {
