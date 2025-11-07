@@ -26,7 +26,6 @@ useronly=(
   starship
   sway
   tmux
-  tofi
 )
 
 hostnames=(
