@@ -51,7 +51,7 @@ return {
       },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
-
+        vim.cmd [[highlight GitSignsCurrentLineBlame guifg=#FFFFFF]]
         local function map(mode, l, r, opts)
           opts = opts or {}
           opts.buffer = bufnr
