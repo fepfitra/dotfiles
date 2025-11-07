@@ -13,6 +13,12 @@ export let eggs = #{
 			templates: ["./fish/*"],
 			enabled: true,
 		},
+		git: #{
+			targets: "~",
+			templates: ["./git/*"],
+			enabled: true,
+			strategy: "merge"
+		},
 		waybar: #{
 			targets: "~/.config/waybar",
 			templates: ["./waybar/*"],
