@@ -2,15 +2,6 @@ export let data = #{
     for_vcs: LOCAL,
     cool_setting: if SYSTEM.hostname == "foo" { 10 } else { 25 }
 };
-fn scream_or_not(should_scream) {
-	print(should_scream);
-  if should_scream {
-    get_yolk_text().to_upper()
-  } else {
-    get_yolk_text().to_lower()
-  }
-}
-
 export let eggs = #{
 		alacritty: #{
 			targets: "~/.config/alacritty",
