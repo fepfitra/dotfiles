@@ -47,6 +47,13 @@ export let eggs = #{
 				post_undeploy: "yay -R i3 i3lock-fancy-git --noconfirm",
 			}
 		},
+		niri: #{
+			targets: "~/.config/niri",
+			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy niri --noconfirm",
+			}
+		},
 		nushell: #{
 			targets: "~/.config/nushell",
 			enabled: true,
