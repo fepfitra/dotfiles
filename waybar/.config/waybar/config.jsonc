@@ -10,7 +10,7 @@
         "clock",
         "custom/weather",
         "custom/moon",
-        "cava",
+        // "cava",
         "custom/wall",
         "niri/workspaces",
         "wlr/taskbar"
