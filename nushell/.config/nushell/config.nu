@@ -37,7 +37,10 @@ alias rm = trash
 alias ff = fastfetch
 alias cat = bat
 alias cd = z
-alias yy = yolk --yolk-dir . sync
+alias yolk = yolk --yolk-dir .
+alias ya = yolk git add .
+alias yy = yolk sync
+alias ycm = yolk git commit -m
 
 fortune
 print "\n"
