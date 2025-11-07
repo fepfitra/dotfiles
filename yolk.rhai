@@ -19,6 +19,10 @@ export let eggs = #{
 				post_undeploy: "yay -R fish fisher --noconfirm",
 			}
 		},
+		fonts: #{
+			targets: "~/.local/share/fonts",
+			enabled: true,
+		},
 		fuzzel: #{
 			targets: "~/.config",
 			enabled: false,
