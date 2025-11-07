@@ -18,4 +18,9 @@ export let eggs = #{
 			templates: ["./waybar/*"],
 			enabled: true,
 		},
+		zathura: #{
+			targets: "~/.config/zathurarc",
+			templates: ["./zathura/*"],
+			enabled: true,
+		},
 };
