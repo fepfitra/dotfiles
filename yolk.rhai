@@ -19,6 +19,11 @@ export let eggs = #{
 			enabled: true,
 			strategy: "merge"
 		},
+		tofi: #{
+			targets: "~/.config/tofi",
+			templates: ["./tofi/*"],
+			enabled: true,
+		},
 		waybar: #{
 			targets: "~/.config/waybar",
 			templates: ["./waybar/*"],
