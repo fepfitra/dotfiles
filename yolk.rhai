@@ -61,6 +61,9 @@ export let eggs = #{
 				post_undeploy: "yay -R picom --noconfirm",
 			}
 		},
+		pip: #{
+			targets: "~/.config/pip",
+		},
 		qutebrowser: #{
 			targets: "~/.config/qutebrowser",
 			enabled: true,

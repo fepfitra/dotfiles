@@ -15,7 +15,6 @@ useronly=(
   #fuzzel
   i3
   niri
-  pip
   rofi
   sway
 )
