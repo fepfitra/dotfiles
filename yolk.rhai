@@ -7,11 +7,19 @@ export let eggs = #{
 			targets: "~/.config/alacritty",
 			templates: ["./alacritty/alacritty.toml"],
 			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy alacritty --noconfirm",
+				post_undeploy: "yay -R alacritty --noconfirm",
+			}
 		},
 		fish: #{
 			targets: "~/.config/fish",
 			templates: ["./fish/*"],
 			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy fish fisher --noconfirm",
+				post_undeploy: "yay -R fish fisher --noconfirm",
+			}
 		},
 		git: #{
 			targets: "~",
@@ -22,16 +30,28 @@ export let eggs = #{
 		tofi: #{
 			targets: "~/.config/tofi",
 			templates: ["./tofi/*"],
-			enabled: true,
+			enabled: false,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy tofi --noconfirm",
+				post_undeploy: "yay -R tofi --noconfirm",
+			}
 		},
 		waybar: #{
 			targets: "~/.config/waybar",
 			templates: ["./waybar/*"],
 			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy waybar ananicy-cpp doxygen --noconfirm",
+				post_undeploy: "yay -R waybar --noconfirm",
+			}
 		},
 		zathura: #{
 			targets: "~/.config/zathurarc",
 			templates: ["./zathura/*"],
 			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy zathura --noconfirm",
+				post_undeploy: "yay -R zathura --noconfirm",
+			}
 		},
 };
