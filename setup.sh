@@ -13,7 +13,6 @@ useronly=(
   # qutebrowser
   # rofi
   #fuzzel
-  i3
   niri
   sway
 )

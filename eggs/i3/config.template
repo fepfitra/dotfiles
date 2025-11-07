@@ -224,3 +224,65 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# {% if SYSTEM.hostname == "archie" %}
+bar {
+  position top
+  font pango:FontAwesome, CascadiaCode 13
+  status_command i3status-rs ~/.config/i3status-rust/top.toml
+}
+bar {
+  font pango:FontAwesome, CascadiaCode 13
+  status_command i3status-rs ~/.config/i3status-rust/bottom.toml
+}
+# {% else %}
+# {% if SYSTEM.hostname == "archer" %}
+exec xrandr --output DP-1 --mode 1600x1200 --right-of HDMI-1 --rotate left
+bar {
+        # status_command i3status
+
+  font pango:FontAwesome, CascadiaCode 11
+  status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
+    memory pasink pasource datetime  \
+    -p interval=1 root.path=/ disk.format="{used}/{size}" \
+    nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
+    -t dracula-powerline
+}
+# {% else %}
+#setup for other
+
+# bar {
+#         # status_command i3status
+#
+#   font pango:FontAwesome, CascadiaCode 11
+#   status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
+#     memory pasink pasource datetime  \
+#     -p interval=1 root.path=/ disk.format="{used}/{size}" \
+#     nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
+#     -t dracula-powerline
+# }
+#
+#setup for archie
+bar {
+        # status_command i3status
+
+  font pango:FontAwesome, CascadiaCode 13
+  position top
+  # status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
+  #   memory battery pasink pasource bluetooth datetime  \
+  #   -p interval=1 root.path=/ disk.format="{used}/{size}" \
+  #   battery.device=BAT0,BAT1 nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
+  #   -t solarized-powerline
+  status_command /usr/bin/i3status-rs ~/.config/i3status-rust/top.toml
+}
+bar {
+        # status_command i3status
+  font pango:FontAwesome, CascadiaCode 13
+  # status_command /usr/bin/bumblebee-status -m mpd nic disk:root cpu \
+  #   memory battery pasink pasource bluetooth datetime  \
+  #   -p interval=1 root.path=/ disk.format="{used}/{size}" \
+  #   battery.device=BAT0,BAT1 nic.format="{intf} {ip}" memory.format="{percent:05.02f}%" \
+  #   -t solarized-powerline
+  status_command /usr/bin/i3status-rs ~/.config/i3status-rust/bottom.toml
+}
+# {% end %}
+# {% end %}
