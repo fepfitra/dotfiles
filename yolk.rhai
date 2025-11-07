@@ -7,16 +7,16 @@ export let eggs = #{
 			targets: "~/.config/alacritty",
 			enabled: false,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy alacritty --noconfirm",
-				post_undeploy: "yay -R alacritty --noconfirm",
+				post_deploy: "paru -Sy alacritty --noconfirm",
+				post_undeploy: "paru -R alacritty --noconfirm",
 			}
 		},
 		fish: #{
 			targets: "~/.config/fish",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy fish fisher --noconfirm",
-				post_undeploy: "yay -R fish fisher --noconfirm",
+				post_deploy: "paru -Sy fish fisher --noconfirm",
+				post_undeploy: "paru -R fish fisher --noconfirm",
 			}
 		},
 		fonts: #{
@@ -28,8 +28,8 @@ export let eggs = #{
 			enabled: false,
 			strategy: "merge",
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy fuzzel --noconfirm",
-				post_undeploy: "yay -R fuzzel --noconfirm",
+				post_deploy: "paru -Sy fuzzel --noconfirm",
+				post_undeploy: "paru -R fuzzel --noconfirm",
 			}
 		},
 		git: #{
@@ -43,39 +43,39 @@ export let eggs = #{
 			templates: ["config"],
 			unsafe_shell_hooks: #{
 				pre_deploy: "cp ./eggs/i3/config.template ./eggs/i3/config",
-				post_deploy: "yay -Sy i3 i3lock-fancy-git --noconfirm",
-				post_undeploy: "yay -R i3 i3lock-fancy-git --noconfirm",
+				post_deploy: "paru -Sy i3 i3lock-fancy-git --noconfirm",
+				post_undeploy: "paru -R i3 i3lock-fancy-git --noconfirm",
 			}
 		},
 		niri: #{
 			targets: "~/.config/niri",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy niri --noconfirm",
+				post_deploy: "paru -Sy niri --noconfirm",
 			}
 		},
 		nushell: #{
 			targets: "~/.config/nushell",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy nushell --noconfirm",
-				post_undeploy: "yay -R nushell --noconfirm",
+				post_deploy: "paru -Sy nushell --noconfirm",
+				post_undeploy: "paru -R nushell --noconfirm",
 			}
 		},
 		"nvim-v1": #{
 			targets: "~/.config/nvim-v1",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy neovim --noconfirm",
-				post_undeploy: "yay -R neovim --noconfirm",
+				post_deploy: "paru -Sy neovim --noconfirm",
+				post_undeploy: "paru -R neovim --noconfirm",
 			}
 		},
 		picom: #{
 			targets: "~/.config/picom",
 			enabled: false,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy picom --noconfirm",
-				post_undeploy: "yay -R picom --noconfirm",
+				post_deploy: "paru -Sy picom --noconfirm",
+				post_undeploy: "paru -R picom --noconfirm",
 			}
 		},
 		pip: #{
@@ -85,16 +85,16 @@ export let eggs = #{
 			targets: "~/.config/qutebrowser",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy qutebrowser --noconfirm",
-				post_undeploy: "yay -R qutebrowser --noconfirm",
+				post_deploy: "paru -Sy qutebrowser --noconfirm",
+				post_undeploy: "paru -R qutebrowser --noconfirm",
 			}
 		},
 		rofi_conf: #{
 			targets: "~/.config/rofi",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy rofi --noconfirm",
-				post_undeploy: "yay -R rofi --noconfirm",
+				post_deploy: "paru -Sy rofi --noconfirm",
+				post_undeploy: "paru -R rofi --noconfirm",
 			}
 		},
 		rofi_local: #{
@@ -107,16 +107,16 @@ export let eggs = #{
 			templates: ["config"],
 			unsafe_shell_hooks: #{
 				pre_deploy: "cp ./eggs/sway/config.template ./eggs/sway/config", //broken fix later
-				post_deploy: "yay -Sy swayfx --noconfirm",
-				post_undeploy: "yay -R swayfx --noconfirm",
+				post_deploy: "paru -Sy swayfx --noconfirm",
+				post_undeploy: "paru -R swayfx --noconfirm",
 			}
 		},
 		tofi: #{
 			targets: "~/.config/tofi",
 			enabled: false,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy tofi --noconfirm",
-				post_undeploy: "yay -R tofi --noconfirm",
+				post_deploy: "paru -Sy tofi --noconfirm",
+				post_undeploy: "paru -R tofi --noconfirm",
 			}
 		},
 		starship: #{
@@ -124,8 +124,8 @@ export let eggs = #{
 			enabled: true,
 			strategy: "merge",
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy starship --noconfirm",
-				post_undeploy: "yay -R starship --noconfirm",
+				post_deploy: "paru -Sy starship --noconfirm",
+				post_undeploy: "paru -R starship --noconfirm",
 			}
 		},
 		tmux: #{
@@ -137,16 +137,16 @@ export let eggs = #{
 			targets: "~/.config/waybar",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy waybar ananicy-cpp doxygen --noconfirm",
-				post_undeploy: "yay -R waybar --noconfirm",
+				post_deploy: "paru -Sy waybar ananicy-cpp doxygen --noconfirm",
+				post_undeploy: "paru -R waybar --noconfirm",
 			}
 		},
 		zathura: #{
 			targets: "~/.config/zathurarc",
 			enabled: true,
 			unsafe_shell_hooks: #{
-				post_deploy: "yay -Sy zathura --noconfirm",
-				post_undeploy: "yay -R zathura --noconfirm",
+				post_deploy: "paru -Sy zathura --noconfirm",
+				post_undeploy: "paru -R zathura --noconfirm",
 			}
 		},
 };
