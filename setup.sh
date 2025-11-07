@@ -13,7 +13,6 @@ useronly=(
   # qutebrowser
   # rofi
   #fuzzel
-  fonts
   i3
   mime
   niri
