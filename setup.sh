@@ -19,7 +19,6 @@ useronly=(
   nvim-v1
   picom
   pip
-  qutebrowser
 	nushell
   rofi
   sway
