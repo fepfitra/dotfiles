@@ -48,10 +48,12 @@ export let eggs = #{
 		},
 		i3: #{
 			targets: "~/.config/i3",
-			enabled: true,
+			enabled: false,
 			templates: ["config"],
 			unsafe_shell_hooks: #{
 				pre_deploy: "cp ./eggs/i3/config.template ./eggs/i3/config",
+				post_deploy: "yay -Sy i3 i3lock-fancy-git --noconfirm",
+				post_undeploy: "yay -R i3 i3lock-fancy-git --noconfirm",
 			}
 		},
 		nushell: #{
