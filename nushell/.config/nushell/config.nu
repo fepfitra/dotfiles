@@ -37,7 +37,7 @@ alias rm = trash
 alias ff = fastfetch
 alias cat = bat
 alias cd = z
-alias dot = ~/.nix-profile/bin/home-manager switch -f ~/GitProject/dotfiles/nix/init.nix
+alias yy = yolk --yolk-dir . sync
 
 fortune
 print "\n"
