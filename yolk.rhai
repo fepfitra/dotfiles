@@ -21,7 +21,7 @@ export let eggs = #{
 		},
 		fuzzel: #{
 			targets: "~/.config",
-			enabled: true,
+			enabled: false,
 			strategy: "merge",
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy fuzzel --noconfirm",
