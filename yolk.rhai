@@ -6,7 +6,7 @@ export let eggs = #{
 		alacritty: #{
 			targets: "~/.config/alacritty",
 			templates: ["./alacritty/alacritty.toml"],
-			enabled: true,
+			enabled: false,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy alacritty --noconfirm",
 				post_undeploy: "yay -R alacritty --noconfirm",
