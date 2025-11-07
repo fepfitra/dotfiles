@@ -23,7 +23,6 @@ useronly=(
   qutebrowser
 	nushell
   rofi
-  starship
   sway
 )
 
