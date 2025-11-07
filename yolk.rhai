@@ -5,7 +5,6 @@ export let data = #{
 export let eggs = #{
 		alacritty: #{
 			targets: "~/.config/alacritty",
-			templates: ["./alacritty/alacritty.toml"],
 			enabled: false,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy alacritty --noconfirm",
@@ -14,22 +13,28 @@ export let eggs = #{
 		},
 		fish: #{
 			targets: "~/.config/fish",
-			templates: ["./fish/*"],
 			enabled: true,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy fish fisher --noconfirm",
 				post_undeploy: "yay -R fish fisher --noconfirm",
 			}
 		},
+		fuzzel: #{
+			targets: "~/.config",
+			enabled: true,
+			strategy: "merge",
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy fuzzel --noconfirm",
+				post_undeploy: "yay -R fuzzel --noconfirm",
+			}
+		},
 		git: #{
 			targets: "~",
-			templates: ["./git/*"],
 			enabled: true,
 			strategy: "merge"
 		},
 		tofi: #{
 			targets: "~/.config/tofi",
-			templates: ["./tofi/*"],
 			enabled: false,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy tofi --noconfirm",
@@ -38,7 +43,6 @@ export let eggs = #{
 		},
 		starship: #{
 			targets: "~/.config",
-			templates: ["./starship/*"],
 			enabled: true,
 			strategy: "merge",
 			unsafe_shell_hooks: #{
@@ -48,13 +52,11 @@ export let eggs = #{
 		},
 		tmux: #{
 			targets: "~",
-			templates: ["./tmux/.tmux.conf"],
 			enabled: true,
 			strategy: "merge"
 		},
 		waybar: #{
 			targets: "~/.config/waybar",
-			templates: ["./waybar/*"],
 			enabled: true,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy waybar ananicy-cpp doxygen --noconfirm",
@@ -63,7 +65,6 @@ export let eggs = #{
 		},
 		zathura: #{
 			targets: "~/.config/zathurarc",
-			templates: ["./zathura/*"],
 			enabled: true,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy zathura --noconfirm",
