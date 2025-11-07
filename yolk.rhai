@@ -101,6 +101,16 @@ export let eggs = #{
 			targets: "~/.local/share/rofi",
 			enabled: true,
 		},
+		sway: #{
+			targets: "~/.config/sway",
+			enabled: false,
+			templates: ["config"],
+			unsafe_shell_hooks: #{
+				pre_deploy: "cp ./eggs/sway/config.template ./eggs/sway/config", //broken fix later
+				post_deploy: "yay -Sy swayfx --noconfirm",
+				post_undeploy: "yay -R swayfx --noconfirm",
+			}
+		},
 		tofi: #{
 			targets: "~/.config/tofi",
 			enabled: false,

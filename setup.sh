@@ -14,7 +14,6 @@ useronly=(
   # rofi
   #fuzzel
   niri
-  sway
 )
 
 hostnames=(
