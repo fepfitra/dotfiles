@@ -2,22 +2,17 @@ export let data = #{
     for_vcs: LOCAL,
     cool_setting: if SYSTEM.hostname == "foo" { 10 } else { 25 }
 };
+import "helper" as helper;
 export let eggs = #{
 	alacritty: #{
 		targets: "~/.config/alacritty",
 		enabled: false,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy alacritty --noconfirm",
-			post_undeploy: "paru -R alacritty --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("alacritty")
 	},
 	fish: #{
 		targets: "~/.config/fish",
 		enabled: true,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy fish fisher --noconfirm",
-			post_undeploy: "paru -R fish fisher --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("fish fisher")
 	},
 	fonts: #{
 		targets: "~/.local/share/fonts",
@@ -27,10 +22,7 @@ export let eggs = #{
 		targets: "~/.config",
 		enabled: false,
 		strategy: "merge",
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy fuzzel --noconfirm",
-			post_undeploy: "paru -R fuzzel --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("fuzzel")
 	},
 	git: #{
 		targets: "~",
@@ -43,40 +35,32 @@ export let eggs = #{
 		templates: ["config"],
 		unsafe_shell_hooks: #{
 			pre_deploy: "cp ./eggs/i3/config.template ./eggs/i3/config",
-			post_deploy: "paru -Sy i3 i3lock-fancy-git --noconfirm",
-			post_undeploy: "paru -R i3 i3lock-fancy-git --noconfirm",
+			post_deploy: helper::pkg_install("i3 i3lock-fancy-git")
 		}
 	},
 	niri: #{
 		targets: "~/.config/niri",
 		enabled: true,
 		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy niri --noconfirm",
+			post_deploy: helper::pkg_postscripts("niri")
 		}
 	},
 	nushell: #{
 		targets: "~/.config/nushell",
 		enabled: true,
 		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy nushell --noconfirm",
-			post_undeploy: "paru -R nushell --noconfirm",
+			post_deploy: helper::pkg_install("nushell"),
 		}
 	},
 	"nvim-v1": #{
 		targets: "~/.config/nvim-v1",
 		enabled: true,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy neovim --noconfirm",
-			post_undeploy: "paru -R neovim --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("neovim")
 	},
 	picom: #{
 		targets: "~/.config/picom",
 		enabled: false,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy picom --noconfirm",
-			post_undeploy: "paru -R picom --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("picom")
 	},
 	pip: #{
 		targets: "~/.config/pip",
@@ -84,18 +68,12 @@ export let eggs = #{
 	qutebrowser: #{
 		targets: "~/.config/qutebrowser",
 		enabled: true,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy qutebrowser --noconfirm",
-			post_undeploy: "paru -R qutebrowser --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("qutebrowser")
 	},
 	rofi_conf: #{
 		targets: "~/.config/rofi",
 		enabled: true,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy rofi --noconfirm",
-			post_undeploy: "paru -R rofi --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("rofi")
 	},
 	rofi_local: #{
 		targets: "~/.local/share/rofi",
@@ -107,26 +85,19 @@ export let eggs = #{
 		templates: ["config"],
 		unsafe_shell_hooks: #{
 			pre_deploy: "cp ./eggs/sway/config.template ./eggs/sway/config", //broken fix later
-			post_deploy: "paru -Sy swayfx --noconfirm",
-			post_undeploy: "paru -R swayfx --noconfirm",
+			post_deploy: helper::pkg_postscripts("swayfx")
 		}
 	},
 	tofi: #{
 		targets: "~/.config/tofi",
 		enabled: false,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy tofi --noconfirm",
-			post_undeploy: "paru -R tofi --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("tofi")
 	},
 	starship: #{
 		targets: "~/.config",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy starship --noconfirm",
-			post_undeploy: "paru -R starship --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("starship")
 	},
 	tmux: #{
 		targets: "~",
@@ -137,16 +108,13 @@ export let eggs = #{
 		targets: "~/.config/waybar",
 		enabled: true,
 		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy waybar ananicy-cpp doxygen --noconfirm",
-			post_undeploy: "paru -R waybar --noconfirm",
+			post_deploy: helper::pkg_install("waybar ananicy-cpp doxygen"),
+			post_undeploy: helper::pkg_uninstall("waybar"),
 		}
 	},
 	zathura: #{
 		targets: "~/.config/zathurarc",
 		enabled: true,
-		unsafe_shell_hooks: #{
-			post_deploy: "paru -Sy zathura --noconfirm",
-			post_undeploy: "paru -R zathura --noconfirm",
-		}
+		unsafe_shell_hooks: helper::pkg_postscripts("zathura")
 	},
 };
