@@ -7,5 +7,10 @@ export let eggs = #{
 			targets: "~/.config/alacritty",
 			templates: ["./alacritty/alacritty.toml"],
 			enabled: true,
-		}
+		},
+		waybar: #{
+			targets: "~/.config/waybar",
+			templates: ["./waybar/*"],
+			enabled: true,
+		},
 };
