@@ -36,6 +36,12 @@ export let eggs = #{
 				post_undeploy: "yay -R tofi --noconfirm",
 			}
 		},
+		tmux: #{
+			targets: "~",
+			templates: ["./tmux/.tmux.conf"],
+			enabled: true,
+			strategy: "merge"
+		},
 		waybar: #{
 			targets: "~/.config/waybar",
 			templates: ["./waybar/*"],
