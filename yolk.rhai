@@ -37,6 +37,14 @@ export let eggs = #{
 			enabled: true,
 			strategy: "merge"
 		},
+		nushell: #{
+			targets: "~/.config/nushell",
+			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy nushell --noconfirm",
+				post_undeploy: "yay -R nushell --noconfirm",
+			}
+		},
 		"nvim-v1": #{
 			targets: "~/.config/nvim-v1",
 			enabled: false,
