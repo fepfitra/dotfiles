@@ -17,7 +17,6 @@ useronly=(
   niri
   picom
   pip
-	nushell
   rofi
   sway
 )
