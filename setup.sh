@@ -13,7 +13,6 @@ useronly=(
   # qutebrowser
   # rofi
   #fuzzel
-  niri
 )
 
 hostnames=(
