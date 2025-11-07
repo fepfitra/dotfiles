@@ -37,6 +37,14 @@ export let eggs = #{
 			enabled: true,
 			strategy: "merge"
 		},
+		"nvim-v1": #{
+			targets: "~/.config/nvim-v1",
+			enabled: false,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy neovim --noconfirm",
+				post_undeploy: "yay -R neovim --noconfirm",
+			}
+		},
 		qutebrowser: #{
 			targets: "~/.config/qutebrowser",
 			enabled: true,
