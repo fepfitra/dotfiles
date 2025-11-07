@@ -13,7 +13,6 @@ useronly=(
   # qutebrowser
   # rofi
   #fuzzel
-  fish
   fonts
   i3
   mime
@@ -28,8 +27,6 @@ useronly=(
   sway
   tmux
   tofi
-  waybar
-  zathura
 )
 
 hostnames=(
