@@ -8,6 +8,11 @@ export let eggs = #{
 			templates: ["./alacritty/alacritty.toml"],
 			enabled: true,
 		},
+		fish: #{
+			targets: "~/.config/fish",
+			templates: ["./fish/*"],
+			enabled: true,
+		},
 		waybar: #{
 			targets: "~/.config/waybar",
 			templates: ["./waybar/*"],
