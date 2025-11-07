@@ -47,7 +47,7 @@ export let eggs = #{
 		},
 		"nvim-v1": #{
 			targets: "~/.config/nvim-v1",
-			enabled: false,
+			enabled: true,
 			unsafe_shell_hooks: #{
 				post_deploy: "yay -Sy neovim --noconfirm",
 				post_undeploy: "yay -R neovim --noconfirm",
