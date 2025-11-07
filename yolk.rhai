@@ -53,6 +53,14 @@ export let eggs = #{
 				post_undeploy: "yay -R neovim --noconfirm",
 			}
 		},
+		picom: #{
+			targets: "~/.config/picom",
+			enabled: false,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy picom --noconfirm",
+				post_undeploy: "yay -R picom --noconfirm",
+			}
+		},
 		qutebrowser: #{
 			targets: "~/.config/qutebrowser",
 			enabled: true,
