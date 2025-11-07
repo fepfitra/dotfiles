@@ -72,6 +72,18 @@ export let eggs = #{
 				post_undeploy: "yay -R qutebrowser --noconfirm",
 			}
 		},
+		rofi_conf: #{
+			targets: "~/.config/rofi",
+			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy rofi --noconfirm",
+				post_undeploy: "yay -R rofi --noconfirm",
+			}
+		},
+		rofi_local: #{
+			targets: "~/.local/share/rofi",
+			enabled: true,
+		},
 		tofi: #{
 			targets: "~/.config/tofi",
 			enabled: false,
