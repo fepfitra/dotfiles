@@ -33,6 +33,14 @@ export let eggs = #{
 			enabled: true,
 			strategy: "merge"
 		},
+		qutebrowser: #{
+			targets: "~/.config/qutebrowser",
+			enabled: true,
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy qutebrowser --noconfirm",
+				post_undeploy: "yay -R qutebrowser --noconfirm",
+			}
+		},
 		tofi: #{
 			targets: "~/.config/tofi",
 			enabled: false,
