@@ -2,6 +2,15 @@ export let data = #{
     for_vcs: LOCAL,
     cool_setting: if SYSTEM.hostname == "foo" { 10 } else { 25 }
 };
+fn scream_or_not(should_scream) {
+	print(should_scream);
+  if should_scream {
+    get_yolk_text().to_upper()
+  } else {
+    get_yolk_text().to_lower()
+  }
+}
+
 export let eggs = #{
 		alacritty: #{
 			targets: "~/.config/alacritty",
@@ -36,6 +45,14 @@ export let eggs = #{
 			targets: "~",
 			enabled: true,
 			strategy: "merge"
+		},
+		i3: #{
+			targets: "~/.config/i3",
+			enabled: true,
+			templates: ["config"],
+			unsafe_shell_hooks: #{
+				pre_deploy: "cp ./eggs/i3/config.template ./eggs/i3/config",
+			}
 		},
 		nushell: #{
 			targets: "~/.config/nushell",
