@@ -36,6 +36,16 @@ export let eggs = #{
 				post_undeploy: "yay -R tofi --noconfirm",
 			}
 		},
+		starship: #{
+			targets: "~/.config",
+			templates: ["./starship/*"],
+			enabled: true,
+			strategy: "merge",
+			unsafe_shell_hooks: #{
+				post_deploy: "yay -Sy starship --noconfirm",
+				post_undeploy: "yay -R starship --noconfirm",
+			}
+		},
 		tmux: #{
 			targets: "~",
 			templates: ["./tmux/.tmux.conf"],
