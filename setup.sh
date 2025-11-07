@@ -15,7 +15,6 @@ useronly=(
   #fuzzel
   fish
   fonts
-  git
   i3
   mime
   niri
