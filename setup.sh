@@ -14,7 +14,6 @@ useronly=(
   # rofi
   #fuzzel
   i3
-  mime
   niri
   nvim-v1
   picom
