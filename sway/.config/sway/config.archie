@@ -1,2 +1,0 @@
-#setup for archie
-exec --no-startup-id waybar
