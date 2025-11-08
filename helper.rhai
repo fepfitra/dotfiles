@@ -13,3 +13,16 @@ fn pkg_postscripts(pkg) {
 		post_undeploy: pkg_uninstall(pkg),
 	}
 }
+
+fn cargo_install(pkg) {
+	return "cargo binstall " + pkg
+}
+fn cargo_uninstall(pkg) {
+	return "cargo uninstall " + pkg
+}
+fn cargo_postscripts(pkg) {
+	return  #{
+		post_deploy: cargo_install(pkg),
+		post_undeploy: cargo_uninstall(pkg),
+	}
+}
