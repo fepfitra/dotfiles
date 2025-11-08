@@ -7,6 +7,10 @@ import "editor" as editor;
 import "helper" as helper;
 import "wmdesktop" as wmdesktop;
 import "workflow" as workflow;
+import "themes/themes" as themes;
+
+export const theme = themes::themes["gruvbox_dark"];
+
 
 let eggs = #{
 	fonts: #{
