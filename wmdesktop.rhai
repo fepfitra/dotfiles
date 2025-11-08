@@ -1,0 +1,61 @@
+import "helper" as helper;
+
+export let wmdesktop = #{
+	niri: #{
+		targets: "~/.config/niri",
+		enabled: true,
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("niri"),
+		}
+	},
+	i3: #{
+		targets: "~/.config/i3",
+		enabled: false,
+		templates: ["config"],
+		unsafe_shell_hooks: #{
+			pre_deploy: "cp ./eggs/i3/config.template ./eggs/i3/config",
+			post_deploy: helper::pkg_install("i3 i3lock-fancy-git")
+		}
+	},
+	sway: #{
+		targets: "~/.config/sway",
+		enabled: false,
+		templates: ["config"],
+		unsafe_shell_hooks: #{
+			pre_deploy: "cp ./eggs/sway/config.template ./eggs/sway/config", //broken fix later
+			post_deploy: helper::pkg_postscripts("swayfx")
+		}
+	},
+	rofi: #{
+		targets: #{
+				"rofi_conf": "~/.config/rofi",
+				"rofi_local": "~/.local/share/rofi",
+		},
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("rofi")
+	},
+	tofi: #{
+		targets: "~/.config/tofi",
+		enabled: false,
+		unsafe_shell_hooks: helper::pkg_postscripts("tofi")
+	},
+	waybar: #{
+		targets: "~/.config/waybar",
+		enabled: true,
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("waybar ananicy-cpp doxygen"),
+			post_undeploy: helper::pkg_uninstall("waybar"),
+		}
+	},
+	fuzzel: #{
+		targets: "~/.config",
+		enabled: false,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("fuzzel")
+	},
+	picom: #{
+		targets: "~/.config/picom",
+		enabled: false,
+		unsafe_shell_hooks: helper::pkg_postscripts("picom")
+	},
+};

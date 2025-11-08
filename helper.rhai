@@ -2,10 +2,10 @@ fn some_function(data) {
     "echo test" + data;
 };
 fn pkg_install(pkg) {
-	return "paru -Sy " + pkg +  " --noconfirm";
+	return "paru -Q "+ pkg + " 2>/dev/null || paru -Sy " + pkg +  " --noconfirm";
 }
 fn pkg_uninstall(pkg) {
-	return "paru -R " + pkg +  " --noconfirm";
+	return "paru -Q "+ pkg + " 2>/dev/null && paru -R " + pkg +  " --noconfirm";
 }
 fn pkg_postscripts(pkg) {
 	return  #{
