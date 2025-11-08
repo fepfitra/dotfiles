@@ -5,6 +5,7 @@ export let data = #{
 import "helper" as helper;
 import "wmdesktop" as wmdesktop;
 import "workflow" as workflow;
+import "dev" as dev;
 
 export let eggs = #{
 	i3			: wmdesktop::wmdesktop.i3,
@@ -28,12 +29,6 @@ export let eggs = #{
 		targets: "~/.local/share/fonts",
 		enabled: true,
 	},
-	git: #{
-		targets: "~",
-		enabled: true,
-		strategy: "merge"
-	},
-	pip: #{
-		targets: "~/.config/pip",
-	},
+	git: dev::dev.git,
+	pip: dev::dev.git,
 };
