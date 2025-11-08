@@ -18,11 +18,6 @@ export let workflow = #{
 			post_deploy: helper::pkg_install("nushell"),
 		}
 	},
-	"nvim-v1": #{
-		targets: "~/.config/nvim-v1",
-		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("neovim")
-	},
 	starship: #{
 		targets: "~/.config",
 		enabled: true,
@@ -33,11 +28,6 @@ export let workflow = #{
 		targets: "~",
 		enabled: true,
 		strategy: "merge"
-	},
-	zathura: #{
-		targets: "~/.config/zathurarc",
-		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("zathura zathura-pdf-mupdf")
 	},
 	qutebrowser: #{
 		targets: "~/.config/qutebrowser",
