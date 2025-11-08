@@ -158,6 +158,7 @@ require('lazy').setup({
   require 'custom.plugins.autoformat',
   require 'custom.plugins.lsp',
   require 'custom.plugins.telescope',
+  require 'custom.plugins.rhai',
   -- require 'custom.themes.tokyonight',
   require 'custom.plugins.comments',
   require 'custom.plugins.lualine',
