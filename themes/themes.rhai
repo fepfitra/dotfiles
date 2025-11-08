@@ -43,6 +43,10 @@ export let themes = #{
                 bg: gruvbox::gruvbox.dark0,
                 fg: gruvbox::gruvbox.light1,
             },
-        }
+        },
+		nvim: #{
+			colorscheme: "gruvbox",
+			background: "dark",
+		},
     }
 }

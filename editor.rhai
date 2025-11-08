@@ -29,6 +29,7 @@ export let editor = #{
 	"nvim-v1": #{
 		targets: "~/.config/nvim-v1",
 		enabled: true,
+		templates: ["init.lua"],
 		unsafe_shell_hooks: helper::pkg_postscripts("neovim")
 	},
 };

@@ -159,13 +159,13 @@ require('lazy').setup({
   require 'custom.plugins.lsp',
   require 'custom.plugins.telescope',
   require 'custom.plugins.rhai',
-  -- require 'custom.themes.tokyonight',
+  require 'custom.themes.tokyonight',
   require 'custom.plugins.comments',
   require 'custom.plugins.lualine',
   require 'custom.plugins.surrond',
   require 'custom.plugins.mini',
   require 'custom.plugins.treesitter',
-  -- require 'custom.themes.solarized',
+  require 'custom.themes.solarized',
   require 'custom.themes.gruvbox',
   -- require 'kickstart.plugins.neo-tree',
   require 'custom.plugins.colorizer',
@@ -349,3 +349,6 @@ vim.api.nvim_create_autocmd('VimResized', {
     vim.diagnostic.show()
   end,
 })
+
+vim.o.background = 'dark' -- # {< replace_in(`'`, theme.nvim.background) >}
+vim.cmd.colorscheme 'gruvbox' -- # {< replace_in(`'`, theme.nvim.colorscheme) >}
