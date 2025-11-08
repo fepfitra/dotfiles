@@ -27,7 +27,8 @@ export let workflow = #{
 	tmux: #{
 		targets: "~",
 		enabled: true,
-		strategy: "merge"
+		strategy: "merge",
+		templates: [".tmux.conf"],
 	},
 	qutebrowser: #{
 		targets: "~/.config/qutebrowser",
