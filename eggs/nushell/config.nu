@@ -68,11 +68,6 @@ $env.config.hooks = {
 		PWD: [
 			{|before, after|
 				tmux rename-window (basename ($after))
-				let yolk_dir = ($after | path join ".yolk_git")
-				if ($yolk_dir | path exists ) {
-					$env.GIT_DIR = $yolk_dir
-					print "yolk_dir:" $yolk_dir
-				}
 
 				def is_in_git [path] {
 					try {
