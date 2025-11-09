@@ -68,25 +68,21 @@ $env.config.hooks = {
 		PWD: [
 			{|before, after|
 				tmux rename-window (basename ($after))
-				def is_in_git [path] {
-					try {
-						git -C $path rev-parse --is-inside-work-tree err> /dev/null | into bool --relaxed
-					} catch {
-						return false
+				let yolk_dir = ($after | path join ".yolk_git")
+				if ($yolk_dir | path exists ) {
+					$env.GIT_DIR = $yolk_dir
+				} else {
+					
+					if ($env | 'GIT_DIR' in $env) {
+							 $env.GIT_DIR = null
 					}
-				}
-				def top_level [path] {
-					try {
-						git -C $path rev-parse --show-toplevel err> /dev/null | into string 
-					} catch {
-						return ""
-					}
-				}
-				if (is_in_git $after) {
-					if (not (is_in_git $before)) {
-						print (onefetch)
-					} else if (top_level $after) != (top_level $before) {
-						print (onefetch)
+
+					if (is_in_git $after) {
+							if (not (is_in_git $before)) {
+									onefetch
+							} else if (top_level $after) != (top_level $before) {
+									onefetch
+							}
 					}
 				}
 			}
