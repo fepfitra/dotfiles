@@ -32,7 +32,7 @@ return {
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
-        delay = 1000,
+        delay = 0,
         ignore_whitespace = false,
         virt_text_priority = 100,
         use_focus = true,
@@ -52,6 +52,18 @@ return {
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
         vim.cmd [[highlight GitSignsCurrentLineBlame guifg=#FFFFFF]]
+
+        vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
+          callback = function()
+            -- Only run the linter in buffers that you can modify in order to
+            -- avoid superfluous noise, notably within the handy LSP pop-ups that
+            -- describe the hovered symbol using Markdown.
+            if vim.opt_local.modifiable:get() then
+              gitsigns.refresh()
+            end
+          end,
+        })
+
         local function map(mode, l, r, opts)
           opts = opts or {}
           opts.buffer = bufnr
