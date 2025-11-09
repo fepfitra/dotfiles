@@ -87,6 +87,21 @@ export let themes = #{
             warning: gruvbox::gruvbox.neutral_orange,
             // Original: #F00
             critical: gruvbox::gruvbox.bright_red,
+        },
+		niri: #{
+            // focus-ring active
+            focus_active: gruvbox::gruvbox.bright_blue,         // Original: #7fc8ff
+            // focus-ring inactive
+            focus_inactive: gruvbox::gruvbox.dark2,             // Original: #505050
+            
+            // border active
+            border_active: gruvbox::gruvbox.bright_orange,      // Original: #ffc87f
+            // border inactive
+            border_inactive: gruvbox::gruvbox.dark2,            // Original: #505050
+    
+            // shadow color
+            // Original: #0007 (shorthand for #00000077)
+            shadow_color: gruvbox::gruvbox.dark0_hard + "77",
         }
     }
 }

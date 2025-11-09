@@ -4,6 +4,7 @@ export let wmdesktop = #{
 	niri: #{
 		targets: "~/.config/niri",
 		enabled: true,
+		templates: ["config.kdl"],
 		unsafe_shell_hooks: #{
 			post_deploy: helper::pkg_install("niri"),
 		}
