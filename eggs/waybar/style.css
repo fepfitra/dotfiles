@@ -8,43 +8,43 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: #1d2021; /*#{< replace_color(theme.waybar.transparent_bg) >}*/
+    color: #ebdbb2;  /*#{< replace_color(theme.waybar.main_fg) >};*/
 }
 
 tooltip {
-    background: #1e1e2e;
+    background: #3c3836; /*#{< replace_color(theme.waybar.main_bg) >};*/
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: #282828; /*#{< replace_color(theme.waybar.alt_bg) >};*/
 }
 
 #workspaces button {
     padding: 5px;
-    color: #636777;
+    color: #928374; /*#{< replace_color(theme.waybar.ws_inactive_fg) >};*/
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    background-color: #000;
+    background-color: #000; /*#{< replace_color(theme.waybar.ws_active_bg) >};*/
 }
 
 #workspaces button.focused {
-    color: #a6adc8;
-    background: #ffffff;
+    color: #ebdbb2; /*#{< replace_color(theme.waybar.ws_focused_fg) >};*/
+    background: #fbf1c7; /*#{< replace_color(theme.waybar.ws_focused_bg) >};*/
     border-radius: 10px;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: #282828; /*#{< replace_color(theme.waybar.alt_bg) >};*/
+    background: #8ec07c; /*#{< replace_color(theme.waybar.ws_urgent_bg) >};*/
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #11111b;
+    background: #282828; /*#{< replace_color(theme.waybar.alt_bg) >};*/
+    color: #ebdbb2; /*#{< replace_color(theme.waybar.main_fg) >};*/
     border-radius: 5px;
 }
 
@@ -67,17 +67,17 @@ tooltip {
 #workspaces,
 #tray,
 #backlight {
-    background: #1e1e2e;
+    background: #3c3836; /*#{< replace_color(theme.waybar.main_bg) >};*/
     opacity: 0.8;
     padding: 0px 10px;
     /* margin: 3px 0px; */
     margin: 0px 0px;
     margin-top: 10px;
-    border: 1px solid #181825;
+    border: 1px solid #1d2021; /*#{< replace_color(theme.waybar.border) >};*/
 }
 
 #custom-memory {
-    color: #eba0ac;
+    color: #fb4934; /*#{< replace_color(theme.waybar.red) >};*/
 }
 
 #cpu {
@@ -98,7 +98,7 @@ tooltip {
 }
 
 #workspaces {
-    background: #1e1e2e;
+    background: #3c3836; /*#{< replace_color(theme.waybar.main_bg) >};*/
     border-radius: 10px;
     margin-left: 10px;
     padding-right: 0px;
@@ -106,7 +106,7 @@ tooltip {
 }
 
 #custom-power_profile {
-    color: #a6e3a1;
+    color: #8ec07c; /*#{< replace_color(theme.waybar.green_aqua) >};*/
     border-left: 0px;
     border-right: 0px;
 }
@@ -118,33 +118,33 @@ tooltip {
 }
 
 #clock {
-    color: #fab387;
+    color: #fe8019; /*#{< replace_color(theme.waybar.orange) >};*/
     border-radius: 10px 0px 0px 10px;
     margin-left: 10px;
     border-right: 0px;
 }
 
 #network {
-    color: #f9e2af;
+    color: #fabd2f; /*#{< replace_color(theme.waybar.yellow) >};*/
     border-radius: 10px 0px 0px 10px;
     border-left: 0px;
     border-right: 0px;
 }
 
 #bluetooth {
-    color: #89b4fa;
+    color: #83a598; /*#{< replace_color(theme.waybar.blue) >};*/
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px
 } 
 
 #pulseaudio {
-    color: #89b4fa;
+    color: #83a598; /*#{< replace_color(theme.waybar.blue) >};*/
     border-left: 0px;
     border-right: 0px;
 }
 
 #pulseaudio.microphone {
-    color: #cba6f7;
+    color: #d3869b; /*#{< replace_color(theme.waybar.purple) >};*/
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 10px 10px 0px;
@@ -152,16 +152,16 @@ tooltip {
 }
 
 #battery {
-    color: #a6e3a1;
+    color: #b8bb26; /*#{< replace_color(theme.waybar.green) >}*/
     border-radius: 0 10px 10px 0;
     margin-right: 10px;
     border-left: 0px;
 }
 #battery.warning {
-    color: #FFA500;
+    color: #d65d0e; /*#{< replace_color(theme.waybar.warning) >};*/
 }
 #battery.critical {
-    color: #F00;
+    color: #F00; /*#{< replace_color(theme.waybar.critical) >};*/
 } 
 #taskbar {
     margin-left: 10px;
