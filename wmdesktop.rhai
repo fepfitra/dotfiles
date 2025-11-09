@@ -42,6 +42,7 @@ export let wmdesktop = #{
 	waybar: #{
 		targets: "~/.config/waybar",
 		enabled: true,
+		templates: ["style.css"],
 		unsafe_shell_hooks: #{
 			post_deploy: helper::pkg_install("waybar ananicy-cpp doxygen"),
 			post_undeploy: helper::pkg_uninstall("waybar"),
