@@ -12,7 +12,11 @@ return {
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
-    image = { enabled = true },
+    image = {
+      enabled = true,
+      max_width = 80,
+      max_height = 40,
+    },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
