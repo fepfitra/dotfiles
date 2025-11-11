@@ -1,3 +1,5 @@
+import "helper" as helper;
+
 export let dev = #{
 	git: #{
 		targets: "~",
@@ -7,5 +9,10 @@ export let dev = #{
 	pip: #{
 		targets: "~/.config/pip",
 		enabled: true,
+	},
+	sqlite: #{
+		targets: "~/.config/sqlite",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("sqlite sqlitebrowser")
 	},
 }
