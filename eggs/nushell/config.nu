@@ -41,6 +41,7 @@ alias yolk = yolk --yolk-dir .
 alias ya = yolk git add .
 alias yy = yolk sync
 alias ycm = yolk git commit -m
+alias ip = ip -c
 
 fortune
 print "\n"
