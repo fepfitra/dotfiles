@@ -63,5 +63,8 @@ export let wmdesktop = #{
 	"xdg-desktop-portal": #{
 		targets: "~/.config/xdg-desktop-portal",
 		enabled: true,
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-gnome"),
+		}
 	},
 };
