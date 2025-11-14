@@ -60,4 +60,8 @@ export let wmdesktop = #{
 		enabled: false,
 		unsafe_shell_hooks: helper::pkg_postscripts("picom")
 	},
+	"xdg-desktop-portal": #{
+		targets: "~/.config/xdg-desktop-portal",
+		enabled: true,
+	},
 };
