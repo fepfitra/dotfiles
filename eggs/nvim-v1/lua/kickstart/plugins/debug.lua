@@ -34,21 +34,24 @@ return {
       desc = 'Debug: Start/Continue',
     },
     {
-      '<F1>',
+      -- '<F1>',
+      '<leader>bi',
       function()
         require('dap').step_into()
       end,
       desc = 'Debug: Step Into',
     },
     {
-      '<F2>',
+      -- '<F2>',
+      '<leader>bo',
       function()
         require('dap').step_over()
       end,
       desc = 'Debug: Step Over',
     },
     {
-      '<F3>',
+      -- '<F3>',
+      '<leader>bb',
       function()
         require('dap').step_out()
       end,
@@ -156,8 +159,17 @@ return {
         type = 'lldb',
         name = 'Debug',
         request = 'launch',
-        program = '${workspaceFolder}/target/debug/${workspaceFolder:t}',
-        cwd = '${workspaceFolder}',
+        -- In VSCode launch.json people often use ${workspaceFolder} style variables.
+        -- nvim-dap does not expand those, so provide a function that asks
+        -- for the path to the executable with a sensible default.
+        program = function()
+          local cwd = vim.fn.getcwd()
+          -- Default to target/debug/<workspace-folder-name>
+          local default = cwd .. '/target/debug/' .. vim.fn.fnamemodify(cwd, ':t')
+          return vim.fn.input('Path to executable: ', default, 'file')
+        end,
+        -- Use current working dir as the cwd for the debug session
+        cwd = vim.fn.getcwd(),
         stopOnEntry = false,
         args = {},
         runInTerminal = false,
