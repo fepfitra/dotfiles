@@ -154,6 +154,7 @@ require 'lazyinit'
 require('lazy').setup({
   require 'custom.plugins.which-key',
   -- require 'custom.plugins.autocompletion',
+  require 'custom.plugins.database',
   require 'custom.plugins.blink',
   require 'custom.plugins.blink_cmp',
   require 'custom.plugins.autoformat',
