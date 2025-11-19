@@ -13,11 +13,11 @@ let eggs = #{
 		targets: "~/.local/share/fonts",
 		enabled: true,
 	},
-	timr: #{
-		targets: "~/.local/share/timr",
+	fun: #{
+		targets: "~/.config/fun",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("timr-bin")
-	},
+		unsafe_shell_hooks: helper::pkg_postscripts("timr-bin activate-linux")
+	}
 };
 eggs.mixin(dev::dev);
 eggs.mixin(editor::editor);
