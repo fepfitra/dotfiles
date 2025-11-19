@@ -22,7 +22,7 @@ export let editor = #{
 		unsafe_shell_hooks: helper::pkg_postscripts("mermaid-cli mermaid-filter")
 	},
 	latex: #{
-		enabled: false,
+		enabled: true,
 		targets: "~/.config/latex",
 		unsafe_shell_hooks: helper::pkg_postscripts("texlive-bin texlive-fontsrecommended texlive-latexextra texlive-latex texlive-latexrecommended texlive-basic texlive-plaingeneric texlive-pictures texlive-binextra texlive-xetex dvisvgm")
 	},
