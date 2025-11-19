@@ -17,7 +17,13 @@ let eggs = #{
 		targets: "~/.config/fun",
 		enabled: true,
 		unsafe_shell_hooks: helper::pkg_postscripts("timr-bin activate-linux")
-	}
+	},
+	cysec: #{
+		targets: "~/.config/cysec",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("airgeddon airgrack-ng apkleaks steghide stegsolve sqlmap")
+	},
+
 };
 eggs.mixin(dev::dev);
 eggs.mixin(editor::editor);
