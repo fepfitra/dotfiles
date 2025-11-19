@@ -21,7 +21,7 @@ let eggs = #{
 	cysec: #{
 		targets: "~/.config/cysec",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("airgeddon airgrack-ng apkleaks steghide stegsolve sqlmap")
+		unsafe_shell_hooks: helper::pkg_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap")
 	},
 
 };
