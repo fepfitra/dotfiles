@@ -63,6 +63,7 @@ def --env cdtemp [name?:string] {
 use std/util "path add"
 path add '~/.bun/bin'
 path add '~/.nix-profile/bin'	
+path add '~/.local/bin'
 
 $env.config.hooks = {
 	env_change: {
