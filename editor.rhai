@@ -21,6 +21,11 @@ export let editor = #{
 		enabled: false,
 		unsafe_shell_hooks: helper::pkg_postscripts("mermaid-cli mermaid-filter")
 	},
+	onlyoffice: #{
+		targets: "~/.config/onlyoffice",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("onlyoffice-bin")
+	},
 	latex: #{
 		enabled: true,
 		targets: "~/.config/latex",
