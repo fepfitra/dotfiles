@@ -208,16 +208,32 @@ return {
           filetypes = { 'astro' },
         },
         lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
+          -- Add common settings so the Lua language server (emmylua / lua_ls)
+          -- recognizes Neovim's runtime and the current workspace.
           settings = {
             Lua = {
+              runtime = {
+                -- Tell the language server which Lua runtime to expect (Neovim uses LuaJIT)
+                version = 'LuaJIT',
+                -- Use the current package.path so luasnip/completion works correctly
+                path = vim.split(package.path, ';'),
+              },
+              diagnostics = {
+                -- Recognize the `vim` global
+                globals = { 'vim' },
+              },
+              workspace = {
+                -- Make the server aware of Neovim runtime files and the whole workspace
+                library = vim.api.nvim_get_runtime_file('', true),
+                -- Avoid prompting about third-party workspaces
+                checkThirdParty = false,
+              },
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              -- telemetry = {
+              --   enable = false,
+              -- },
             },
           },
         },
