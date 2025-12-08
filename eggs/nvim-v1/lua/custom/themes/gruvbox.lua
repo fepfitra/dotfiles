@@ -4,7 +4,7 @@ return {
   config = true,
   opts = {
     overrides = {
-      LspInlayHint = { fg = '#d3869b', italic = true, bg = 'NONE' },
+      LspInlayHint = { fg = '#928374', italic = true, bg = 'NONE' },
     },
   },
 }

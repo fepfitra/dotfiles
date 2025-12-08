@@ -4,7 +4,7 @@ return {
     modes = {
       symbols = {
         win = {
-          position = 'left',
+          -- position = 'right',
         },
       },
     },
@@ -18,7 +18,7 @@ return {
     },
     {
       '<leader>tt',
-      '<cmd>Trouble todo toggle focus=true<cr>',
+      '<cmd>Trouble todo toggle type=float<cr>',
       desc = 'Todo (Trouble)',
     },
     {
