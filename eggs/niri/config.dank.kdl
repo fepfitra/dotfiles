@@ -54,7 +54,6 @@ input {
         numlock
     }
     touchpad {
-			natural-scroll
     }
     mouse {
     }
