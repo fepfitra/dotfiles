@@ -42,6 +42,7 @@ alias ya = yolk git add .
 alias yy = yolk sync
 alias ycm = yolk git commit -m
 alias ip = ip -c
+alias tt = curl http://badssl.com
 
 fortune
 print "\n"
