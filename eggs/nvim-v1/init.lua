@@ -167,6 +167,7 @@ require('lazy').setup({
   require 'custom.plugins.telescope',
   require 'custom.plugins.rhai',
   require 'custom.themes.tokyonight',
+  require 'custom.plugins.diff',
   require 'custom.plugins.comments',
   require 'custom.plugins.lualine',
   require 'custom.plugins.surrond',
