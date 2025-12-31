@@ -67,21 +67,39 @@ path add '~/.nix-profile/bin'
 path add '~/.local/bin'
 
 $env.config.hooks = {
+	pre_prompt: [{ ||
+		if (term size).columns > 0 {
+			print -n $"(ansi osc)133;D;($env.LAST_EXIT_CODE? | default 0)(ansi st)"
+			print -n $"(ansi osc)133;A(ansi st)"
+		}
+	}]
+	pre_execution: [{ ||
+		if (term size).columns > 0 {
+			print -n $"(ansi osc)133;B(ansi st)"
+			print -n $"(ansi osc)133;C(ansi st)"
+		}
+	}]
 	env_change: {
 		PWD: [
 			{|before, after|
+				if (term size).columns > 0 {
+					let host = (sys host).hostname
+					let path = ($after | str replace --all '\\' '/')
+					print -n $"(ansi osc)7;file://($host)($path)(ansi st)"
+				}
+
 				tmux rename-window (basename ($after))
 
 				def is_in_git [path] {
 					try {
-						git -C $path rev-parse --is-inside-work-tree err> /dev/null | into bool --relaxed
+						git -C $path rev-parse --is-inside-work-tree e> /dev/null | into bool --relaxed
 					} catch {
 						return false
 					}
 				}
 				def top_level [path] {
 					try {
-						git -C $path rev-parse --show-toplevel err> /dev/null | into string 
+						git -C $path rev-parse --show-toplevel e> /dev/null | into string 
 					} catch {
 						return ""
 					}
