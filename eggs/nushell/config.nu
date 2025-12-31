@@ -105,10 +105,14 @@ $env.config.hooks = {
 					}
 				}
 				if (is_in_git $after) {
-					if (not (is_in_git $before)) {
-						print (onefetch)
-					} else if (top_level $after) != (top_level $before) {
-						print (onefetch)
+					let repo_root = (top_level $after | str trim)
+					if (not (is_in_git $before)) or ($repo_root != (top_level $before | str trim)) {
+						let excludes = (ls $repo_root | where name ends-with ".ignore" | get name | path parse | get stem)
+						if ($excludes | is-empty) {
+							print (onefetch)
+						} else {
+							print (onefetch -e ...$excludes)
+						}
 					}
 				}
 			}
