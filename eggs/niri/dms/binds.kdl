@@ -14,6 +14,9 @@ binds {
         // spawn "dms" "ipc" "call" "spotlight" "toggle";
 				spawn "vicinae" "toggle"; 
     }
+    Mod+G hotkey-overlay-title="Google Launcher" {
+				spawn "vicinae" "deeplink" "vicinae://extensions/mblode/google-search/index"; 
+    }
     Mod+V hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }

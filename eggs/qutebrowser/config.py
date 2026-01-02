@@ -2113,7 +2113,7 @@ c.colors.webpage.darkmode.enabled = True
 ##   - dns: Use DNS requests (might be slow!).
 ##   - never: Never search automatically.
 ##   - schemeless: Always search automatically unless URL explicitly contains a scheme.
-c.url.auto_search = 'dns'
+c.url.auto_search = 'naive'
 
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
@@ -2155,7 +2155,7 @@ c.url.auto_search = 'dns'
 ## the search engine name to the search term, e.g. `:open google
 ## qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}', 'google': 'https://google.com/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
@@ -2389,7 +2389,12 @@ c.url.auto_search = 'dns'
 # config.bind('yt', 'yank title')
 # config.bind('yy', 'yank')
 # config.bind('{{', 'navigate prev -t')
-# config.bind('}}', 'navigate next -t')
+# config.bind('zl', 'spawn --userscript qute-pass')
+# config.bind('zp', 'spawn --userscript qute-pass --password-only')
+# config.bind('zu', 'spawn --userscript qute-pass --username-only')
+# config.bind('z1', 'spawn --userscript qute-pass --otp-only')
+config.bind('<Ctrl-p>', 'spawn --userscript qute-pass')
+config.bind('yo', 'spawn --userscript yomichad')
 
 ## Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
