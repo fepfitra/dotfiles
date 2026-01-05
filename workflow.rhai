@@ -6,6 +6,11 @@ export let workflow = #{
 		enabled: false,
 		unsafe_shell_hooks: helper::pkg_postscripts("alacritty")
 	},
+	carapace: #{
+		targets: "~/.config/carapace",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("carapace-bin")
+	},
 	fish: #{
 		targets: "~/.config/fish",
 		enabled: true,
