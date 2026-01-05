@@ -26,12 +26,13 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 source ~/.zoxide.nu
+source ~/.config/nushell/uv_completions.nu
 
 alias nvim = env NVIM_APPNAME=nvim-v1 nvim
 alias n1 = nvim
 
 # alias cdtemp = cd (mktemp -d)
-alias cddot = cd ~/GitProject/dotfiles/
+alias cddot = cd ~/.config/yolk
 alias la = ls -la
 alias rm = trash
 alias ff = fastfetch

@@ -2,10 +2,10 @@ fn some_function(data) {
     "echo test" + data;
 };
 fn pkg_install(pkg) {
-	return "bin=$(command -v paru || command -v yay); $bin -Q "+ pkg + " 2>/dev/null || $bin -S " + pkg +  " --noconfirm";
+	return "bin=$(command -v yay || command -v paru); $bin -Q "+ pkg + " 2>/dev/null || $bin -S " + pkg +  " --noconfirm";
 }
 fn pkg_uninstall(pkg) {
-	return "bin=$(command -v paru || command -v yay); $bin -Q "+ pkg + " 2>/dev/null && $bin -R " + pkg +  " --noconfirm";
+	return "bin=$(command -v yay || command -v paru); $bin -Q "+ pkg + " 2>/dev/null && $bin -R " + pkg +  " --noconfirm";
 }
 fn pkg_postscripts(pkg) {
 	return  #{

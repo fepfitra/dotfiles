@@ -24,7 +24,7 @@ set PATH $BUN_INSTALL/bin $PATH
 if test -f "$HOME/.cargo/env.fish"
     source "$HOME/.cargo/env.fish"
 end
-set DOT $HOME/GitProject/dotfiles/
+set DOT ~/.config/yolk
 
 set ANDROID_HOME $HOME/android-sdk
 set ANDROID_NDK_HOME $HOME/android-sdk/ndk/26.3.11579264/
