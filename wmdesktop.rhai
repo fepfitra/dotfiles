@@ -74,5 +74,6 @@ export let wmdesktop = #{
 	vicinae: #{
 		targets: "~/.config/vicinae",
 		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("vicinae")
 	},
 };
