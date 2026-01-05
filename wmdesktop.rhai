@@ -71,4 +71,8 @@ export let wmdesktop = #{
 		targets: "~/.config/DankMaterialShell",
 		enabled: true,
 	},
+	vicinae: #{
+		targets: "~/.config/vicinae",
+		enabled: true,
+	},
 };
