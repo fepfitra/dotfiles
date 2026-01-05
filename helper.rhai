@@ -2,10 +2,10 @@ fn some_function(data) {
     "echo test" + data;
 };
 fn pkg_install(pkg) {
-	return "paru -Q "+ pkg + " 2>/dev/null || paru -Sy " + pkg +  " --noconfirm";
+	return "bin=$(command -v paru || command -v yay); $bin -Q "+ pkg + " 2>/dev/null || $bin -S " + pkg +  " --noconfirm";
 }
 fn pkg_uninstall(pkg) {
-	return "paru -Q "+ pkg + " 2>/dev/null && paru -R " + pkg +  " --noconfirm";
+	return "bin=$(command -v paru || command -v yay); $bin -Q "+ pkg + " 2>/dev/null && $bin -R " + pkg +  " --noconfirm";
 }
 fn pkg_postscripts(pkg) {
 	return  #{
@@ -15,7 +15,7 @@ fn pkg_postscripts(pkg) {
 }
 
 fn cargo_install(pkg) {
-	return "cargo binstall " + pkg
+	return "(cargo binstall -V 2>/dev/null || cargo install cargo-binstall) && cargo binstall " + pkg
 }
 fn cargo_uninstall(pkg) {
 	return "cargo uninstall " + pkg

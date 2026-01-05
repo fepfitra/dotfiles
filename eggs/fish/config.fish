@@ -21,7 +21,9 @@ pyenv init - fish | source
 
 set BUN_INSTALL $HOME/.bun
 set PATH $BUN_INSTALL/bin $PATH
-source "$HOME/.cargo/env.fish"
+if test -f "$HOME/.cargo/env.fish"
+    source "$HOME/.cargo/env.fish"
+end
 set DOT $HOME/GitProject/dotfiles/
 
 set ANDROID_HOME $HOME/android-sdk

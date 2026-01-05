@@ -7,7 +7,7 @@ export let editor = #{
 		unsafe_shell_hooks: helper::cargo_postscripts("typst-cli")
 	},
 	zathura: #{
-		targets: "~/.config/zathurarc",
+		targets: "~/.config/zathura",
 		enabled: true,
 		unsafe_shell_hooks: helper::pkg_postscripts("zathura zathura-pdf-mupdf")
 	},
