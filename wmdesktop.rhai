@@ -67,4 +67,8 @@ export let wmdesktop = #{
 			post_deploy: helper::pkg_install("xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk xdg-desktop-portal-gnome"),
 		}
 	},
+	DankMaterialShell: #{
+		targets: "~/.config/DankMaterialShell",
+		enabled: true,
+	},
 };

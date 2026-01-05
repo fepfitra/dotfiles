@@ -1,0 +1,7 @@
+{
+  "niriWindows": {
+    "enabled": false,
+    "trigger": "!",
+    "noTrigger": false
+  }
+}
