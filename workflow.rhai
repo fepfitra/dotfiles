@@ -23,6 +23,11 @@ export let workflow = #{
 			post_deploy: helper::pkg_install("nushell"),
 		}
 	},
+	onefetch: #{
+		targets: "~/.config/onefetch",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("onefetch")
+	},
 	starship: #{
 		targets: "~/.config",
 		enabled: true,
