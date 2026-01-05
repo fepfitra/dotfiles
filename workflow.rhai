@@ -9,7 +9,11 @@ export let workflow = #{
 	carapace: #{
 		targets: "~/.config/carapace",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("carapace-bin")
+		unsafe_shell_hooks: #{
+			pre_deploy: "mkdir -p eggs/carapace",
+			post_deploy: helper::pkg_install("carapace-bin"),
+			post_undeploy: helper::pkg_uninstall("carapace-bin"),
+		}
 	},
 	fish: #{
 		targets: "~/.config/fish",
@@ -26,7 +30,11 @@ export let workflow = #{
 	onefetch: #{
 		targets: "~/.config/onefetch",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("onefetch")
+		unsafe_shell_hooks: #{
+			pre_deploy: "mkdir -p eggs/onefetch",
+			post_deploy: helper::pkg_install("onefetch"),
+			post_undeploy: helper::pkg_uninstall("onefetch"),
+		}
 	},
 	starship: #{
 		targets: "~/.config",
