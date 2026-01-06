@@ -49,6 +49,9 @@ export let workflow = #{
 		targets: "~/.config/legcord",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: helper::pkg_postscripts("legcord-bin")
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("legcord-bin") + " && sudo sed -i 's/_OPTIONS=\"env ELECTRON_OZONE_PLATFORM_HINT=auto\"/export ELECTRON_OZONE_PLATFORM_HINT=auto/' /usr/bin/legcord && sudo sed -i 's/ \"\\${_OPTIONS}\"//g' /usr/bin/legcord",
+			post_undeploy: helper::pkg_uninstall("legcord-bin"),
+		}
 	},
 }
