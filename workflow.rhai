@@ -87,7 +87,7 @@ export let workflow = #{
 		targets: "~/.megaCmd",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: helper::pkg_postscripts("megacmd")
+		unsafe_shell_hooks: helper::pkg_postscripts("megacmd-bin")
 	},
 	"pacman-hooks": #{
 		targets: "~/.local/share/yolk/pacman-hooks",
