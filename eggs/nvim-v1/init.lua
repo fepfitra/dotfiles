@@ -82,9 +82,9 @@ vim.opt.fillchars = { eob = ' ' }
 vim.cmd 'set tabstop=2'
 vim.cmd 'set shiftwidth=2'
 
-vim.lsp.enable 'ty'
+-- vim.lsp.enable 'ty'
 -- vim.lsp.enable 'emmylua_ls'
-vim.lsp.enable 'astro'
+-- vim.lsp.enable 'astro'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
