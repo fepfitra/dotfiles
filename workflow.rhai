@@ -45,6 +45,11 @@ export let workflow = #{
 		enabled: true,
 		unsafe_shell_hooks: helper::pkg_postscripts("qutebrowser")
 	},
+	"zen-browser": #{
+		targets: "~/.zen",
+		enabled: true,
+		strategy: "merge",
+	},
 	legcord: #{
 		targets: "~/.config/legcord",
 		enabled: true,
