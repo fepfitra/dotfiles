@@ -66,4 +66,12 @@ export let workflow = #{
 		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("element-desktop")
 	},
+	"pacman-hooks": #{
+		targets: "~/.local/share/yolk/pacman-hooks",
+		enabled: true,
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("pacman-contrib") + " && sudo mkdir -p /etc/pacman.d/hooks && sudo cp ./eggs/pacman-hooks/90-paccache.hook /etc/pacman.d/hooks/",
+			post_undeploy: "sudo rm /etc/pacman.d/hooks/90-paccache.hook"
+		}
+	},
 }
