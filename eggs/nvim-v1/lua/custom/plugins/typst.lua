@@ -5,13 +5,15 @@ return {
     version = '1.*',
     opts = {}, -- lazy.nvim will implicitly calls `setup {}`
     config = function()
-      require('lspconfig').tinymist.setup {
+      vim.lsp.config.tinymist = {
+        cmd = { 'tinymist' },
         settings = {
           formatterMode = 'typstyle',
           exportPdf = 'onType',
           semanticTokens = 'enable',
         },
       }
+      vim.lsp.enable 'tinymist'
 
       require('typst-preview').setup {
         -- Setting this true will enable logging debug information to
