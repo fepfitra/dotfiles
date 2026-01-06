@@ -36,8 +36,6 @@ exec feh --bg-scale ~/.config/i3/bg/arch.jpg &
 exec onedriver ./OneDrive &
 # exec compfy &
 # exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
-exec discord &
-exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 exec export GTK_IM_MODULE=fcitx
 exec export QT_IM_MODULE=fcitx
 exec export XMODIFIERS=@im=fcitx

@@ -64,9 +64,7 @@ exec swaybg -i ~/.config/sway/bg/blue_arch_nowatermark.png &
 exec onedriver ./OneDrive &
 # exec compfy &
 # exec_always picom --config ~/.config/picom/picom-inactive-window-blur.conf &
-exec discord &
 exec fcitx5 &
-exec linux-discord-rich-presence --config ~/.config/linux-discord-rich-presencerc &
 # exec xautolock -detectsleep -time 5 -locker "i3lock-fancy"
 # exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 # exec hash dbus-update-activation-environment 2>/dev/null && \
