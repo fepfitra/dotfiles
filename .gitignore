@@ -4,20 +4,17 @@
 .uuid
 
 # Ignore bulky/secret profile files in eggs
-eggs/**/Cache/
+eggs/**/Cache*/
 eggs/**/Code Cache/
 eggs/**/GPUCache/
-eggs/**/*.sqlite
-eggs/**/*.sqlite-wal
-eggs/**/*.sqlite-shm
-eggs/**/*.db
-eggs/**/*.db-shm
-eggs/**/*.db-wal
-eggs/**/.parentlock
-eggs/**/lock
-eggs/**/Singleton*
-eggs/**/Cookies*
-eggs/**/Session Storage/
+eggs/**/CachedData/
+eggs/**/CachedProfilesData/
+eggs/**/logs/
+eggs/**/User/globalStorage/
+eggs/**/User/workspaceStorage/
+eggs/**/machineid
+eggs/**/code.lock
+eggs/**/languagepacks.json
 eggs/**/Local Storage/
 eggs/**/IndexedDB/
 eggs/**/WebStorage/
@@ -33,9 +30,20 @@ eggs/**/extension-store-menus/
 eggs/**/gmp-*
 eggs/**/weave/
 eggs/**/extensions/*.xpi
-eggs/**/*.msf
-eggs/**/*.lz4
-eggs/**/*.mozlz4
+eggs/**/*.sqlite
+eggs/**/*.sqlite-wal
+eggs/**/*.sqlite-shm
+eggs/**/*.db
+eggs/**/*.db-shm
+eggs/**/*.db-wal
+eggs/**/*.vscdb
+eggs/**/*.vscdb-wal
+eggs/**/*.vscdb-shm
+eggs/**/.parentlock
+eggs/**/lock
+eggs/**/Singleton*
+eggs/**/Cookies*
+eggs/**/Session Storage/
 eggs/**/AlternateServices.bin
 eggs/**/SiteSecurityServiceState.bin
 eggs/**/times.json
