@@ -89,6 +89,12 @@ export let workflow = #{
 		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("megacmd-bin")
 	},
+	anki: #{
+		targets: "~/.local/share/Anki2",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("anki-bin anki-debug")
+	},
 	"pacman-hooks": #{
 		targets: "~/.local/share/yolk/pacman-hooks",
 		enabled: true,

@@ -58,6 +58,13 @@ binds {
         spawn "dms" "ipc" "call" "audio" "micmute";
     }
 
+    Alt+Up allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "increment" "3";
+    }
+    Alt+Down allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "decrement" "3";
+    }
+
     // === Brightness Controls ===
     XF86MonBrightnessUp allow-when-locked=true {
        spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
