@@ -58,6 +58,6 @@ export let workflow = #{
 		targets: "~/.config/Beeper",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: helper::pkg_postscripts("beeper-bin")
+		unsafe_shell_hooks: helper::pkg_postscripts("beeper-v4-bin")
 	},
 }
