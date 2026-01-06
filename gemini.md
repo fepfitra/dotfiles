@@ -50,5 +50,6 @@ The system uses **`yolk`** for dotfile and package deployment management.
 
 ## Yolk Git Workflow
 **CRITICAL:** Any changes made to files within `~/.config/yolk/` **MUST** be immediately followed by a git commit using the `yolk` command wrapper.
-- **Stage & Commit:** `yolk git add . && yolk git commit -m "gemini: <description of change>"`
+- **Stage & Commit:** `yolk git add . && yolk git commit -m "<type>(<scope>): <description>"`
+- **Conventional Commits:** Use standard types like `feat`, `fix`, `docs`, `chore`, etc. (e.g., `docs(yolk): update commit convention`).
 - **Do not** use standard `git` commands in this directory; always prefix with `yolk`.
