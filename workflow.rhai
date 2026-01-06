@@ -66,6 +66,12 @@ export let workflow = #{
 		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("element-desktop")
 	},
+	bottles: #{
+		targets: "~/.config/bottles",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("bottles")
+	},
 	"pacman-hooks": #{
 		targets: "~/.local/share/yolk/pacman-hooks",
 		enabled: true,
