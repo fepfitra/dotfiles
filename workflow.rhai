@@ -54,4 +54,10 @@ export let workflow = #{
 			post_undeploy: helper::pkg_uninstall("legcord-bin"),
 		}
 	},
+	beeper: #{
+		targets: "~/.config/Beeper",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("beeper-bin")
+	},
 }
