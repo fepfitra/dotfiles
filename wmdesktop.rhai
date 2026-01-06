@@ -71,6 +71,13 @@ export let wmdesktop = #{
 		targets: "~/.config/DankMaterialShell",
 		enabled: true,
 	},
+	sddm: #{
+		targets: "~/.local/share/yolk/sddm",
+		enabled: true,
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("sddm qt5-graphicaleffects qt5-quickcontrols2 qt5-svg") + " && ./eggs/sddm/install.sh",
+		}
+	},
 	vicinae: #{
 		targets: "~/.config/vicinae",
 		enabled: true,
