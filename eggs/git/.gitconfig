@@ -15,3 +15,5 @@ lg = lg1
 	postBuffer = 157286400
 [pack]
 	window = 1
+[pull]
+	rebase = true
