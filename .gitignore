@@ -2,3 +2,26 @@
 /.deployed_cache
 /.yolk_git
 .uuid
+
+# Ignore bulky/secret profile files in eggs
+eggs/**/Cache/
+eggs/**/Code Cache/
+eggs/**/GPUCache/
+eggs/**/*.sqlite
+eggs/**/*.sqlite-wal
+eggs/**/*.sqlite-shm
+eggs/**/*.db
+eggs/**/*.db-shm
+eggs/**/*.db-wal
+eggs/**/.parentlock
+eggs/**/lock
+eggs/**/Singleton*
+eggs/**/Cookies*
+eggs/**/Session Storage/
+eggs/**/Local Storage/
+eggs/**/IndexedDB/
+eggs/**/WebStorage/
+eggs/**/DawnGraphiteCache/
+eggs/**/DawnWebGPUCache/
+eggs/**/Shared Dictionary/
+eggs/**/Crashpad/
