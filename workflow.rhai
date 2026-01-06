@@ -46,8 +46,9 @@ export let workflow = #{
 		unsafe_shell_hooks: helper::pkg_postscripts("qutebrowser")
 	},
 	legcord: #{
-		targets: "~/.config/Legcord",
+		targets: "~/.config/legcord",
 		enabled: true,
+		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("legcord-bin")
 	},
 }

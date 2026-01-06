@@ -129,38 +129,3 @@ set HADOOP_OPTS "-Djava.library.path=$HADOOP_HOME/lib/native"
 
 #set FLUME_HOME $BIG_DATA_HOME/apache-flume-1.6.0-bin
 #set FLUME_CONF $FLUME_HOME/conf
-
-
-complete -c dvm -n __fish_use_subcommand -s h -l help -d 'Print help'
-complete -c dvm -n __fish_use_subcommand -s V -l version -d 'Print version'
-complete -c dvm -n __fish_use_subcommand -f -a install -d 'Install the latest <type> of discord'
-complete -c dvm -n __fish_use_subcommand -f -a install-open-asar -d 'Install openasar for <type> of discord'
-complete -c dvm -n __fish_use_subcommand -f -a update -d 'Update to the latest <type> of discord'
-complete -c dvm -n __fish_use_subcommand -f -a remove -d 'Remove the installed <type> of discord'
-complete -c dvm -n __fish_use_subcommand -f -a list -d 'Show all installed versions'
-complete -c dvm -n __fish_use_subcommand -f -a completions -d 'Get shell completions'
-complete -c dvm -n __fish_use_subcommand -f -a run -d 'Run discord with specific options'
-complete -c dvm -n __fish_use_subcommand -f -a help -d 'Print this message or the help of the given subcommand(s)'
-complete -c dvm -n "__fish_seen_subcommand_from install" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from install" -s o -l open-asar
-complete -c dvm -n "__fish_seen_subcommand_from install" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from install-open-asar" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from install-open-asar" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from update" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from update" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from remove" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from remove" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from list" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from list" -s c -l check
-complete -c dvm -n "__fish_seen_subcommand_from list" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from completions" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from run" -s v -l verbose
-complete -c dvm -n "__fish_seen_subcommand_from run" -s h -l help -d 'Print help'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a install -d 'Install the latest <type> of discord'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a install-open-asar -d 'Install openasar for <type> of discord'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a update -d 'Update to the latest <type> of discord'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a remove -d 'Remove the installed <type> of discord'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a list -d 'Show all installed versions'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a completions -d 'Get shell completions'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a run -d 'Run discord with specific options'
-complete -c dvm -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from install; and not __fish_seen_subcommand_from install-open-asar; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from remove; and not __fish_seen_subcommand_from list; and not __fish_seen_subcommand_from completions; and not __fish_seen_subcommand_from run; and not __fish_seen_subcommand_from help" -f -a help -d 'Print this message or the help of the given subcommand(s)'
