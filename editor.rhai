@@ -37,4 +37,10 @@ export let editor = #{
 		templates: ["init.lua"],
 		unsafe_shell_hooks: helper::pkg_postscripts("neovim")
 	},
+	antigravity: #{
+		targets: "~/.config/Antigravity",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("antigravity")
+	},
 };
