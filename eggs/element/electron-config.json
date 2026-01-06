@@ -1,0 +1,17 @@
+{
+	"warnBeforeExit": true,
+	"minimizeToTray": true,
+	"spellCheckerEnabled": true,
+	"autoHideMenuBar": true,
+	"disableHardwareAcceleration": false,
+	"enableContentProtection": false,
+	"openAtLoginMinimised": true,
+	"safeStorageBackend": "basic_text",
+	"locale": [
+		"en"
+	],
+	"safeStorage": {
+		"@fitrafep:matrix-org|JPCtoNtyad": "djEwBnTs0o2qA83jlvxkM489R6nMaHCCp6xdKe1JSBmWQErE9fW9dbfCPXgTo++QHvtf",
+		"seshat|@fitrafep:matrix-org|JPCtoNtyad": "djEwSY0arX88LiHq8IORkJpf0K96dWN0ahGPZj13GjKl7kPpvRwSo2ne8Fx90r4f1nTG"
+	}
+}

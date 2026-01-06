@@ -83,4 +83,9 @@ export let wmdesktop = #{
 		enabled: true,
 		unsafe_shell_hooks: helper::pkg_postscripts("vicinae")
 	},
+	satty: #{
+		targets: "~/.config/satty",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("satty")
+	},
 };
