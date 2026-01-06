@@ -161,7 +161,6 @@ require('lazy').setup({
   -- require 'custom.plugins.autocompletion',
   require 'custom.plugins.database',
   require 'custom.plugins.blink',
-  require 'custom.plugins.blink_cmp',
   require 'custom.plugins.autoformat',
   require 'custom.plugins.lsp',
   require 'custom.plugins.telescope',
