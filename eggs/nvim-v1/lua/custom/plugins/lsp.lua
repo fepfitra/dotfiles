@@ -29,9 +29,7 @@ return {
         opts = {
           notification = {
             window = {
-              avoid = {
-                'NvimTree',
-              },
+              winblend = 0,
             },
           },
         },
@@ -252,12 +250,11 @@ return {
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
+      local servers_to_install = vim.tbl_keys(servers or {})
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'astro',
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
         handlers = {
@@ -272,9 +269,11 @@ return {
             vim.lsp.config = server
           end,
         },
-        ensure_installed = ensure_installed,
+        ensure_installed = servers_to_install,
         automatic_enable = true,
       }
+
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     end,
   },
 }
