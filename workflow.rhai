@@ -60,4 +60,10 @@ export let workflow = #{
 		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("beeper-v4-bin")
 	},
+	element: #{
+		targets: "~/.config/Element",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("element-desktop")
+	},
 }

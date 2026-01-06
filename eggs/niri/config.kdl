@@ -221,6 +221,7 @@ window-rule {
     match app-id="Alacritty"
     match app-id="zen"
     match app-id="Legcord"
+    match app-id="Element"
     match app-id="com.mitchellh.ghostty"
     match app-id="kitty"
     draw-border-with-background false
