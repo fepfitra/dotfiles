@@ -60,3 +60,4 @@ eggs/**/Syno*
 eggs/**/Telemetry*
 eggs/**/Safe Browsing*
 eggs/**/Cloud*
+eggs/**/.megaCmd/

@@ -83,6 +83,12 @@ export let workflow = #{
 		strategy: "merge",
 		unsafe_shell_hooks: helper::pkg_postscripts("thunderbird")
 	},
+	megacmd: #{
+		targets: "~/.megaCmd",
+		enabled: true,
+		strategy: "merge",
+		unsafe_shell_hooks: helper::pkg_postscripts("megacmd")
+	},
 	"pacman-hooks": #{
 		targets: "~/.local/share/yolk/pacman-hooks",
 		enabled: true,
