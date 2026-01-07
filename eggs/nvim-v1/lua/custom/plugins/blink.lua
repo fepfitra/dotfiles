@@ -56,7 +56,13 @@ return {
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
-      documentation = { auto_show = true },
+      documentation = {
+        auto_show = true,
+        treesitter_highlighting = true,
+        window = {
+          border = 'rounded',
+        },
+      },
       menu = {
         draw = {
           components = {
