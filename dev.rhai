@@ -23,4 +23,9 @@ export let dev = #{
 		targets: "~/.config/ty",
 		enabled: true,
 	},
+	bacon: #{
+		targets: "~/.config/bacon",
+		enabled: true,
+		unsafe_shell_hooks: helper::cargo_postscripts("bacon")
+	},
 }
