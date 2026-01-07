@@ -6,6 +6,8 @@ local function has_words_before()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
 end
 
+local hl_colors = require 'nvim-highlight-colors'
+
 return {
   'Saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
@@ -73,7 +75,7 @@ return {
                 local icon = ctx.kind_icon
                 -- if LSP source, check for color derived from documentation
                 if ctx.item.source_name == 'LSP' then
-                  local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                  local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
                   if color_item and color_item.abbr ~= '' then
                     icon = color_item.abbr
                   end
@@ -85,7 +87,7 @@ return {
                 local highlight = 'BlinkCmpKind' .. ctx.kind
                 -- if LSP source, check for color derived from documentation
                 if ctx.item.source_name == 'LSP' then
-                  local color_item = require('nvim-highlight-colors').format(ctx.item.documentation, { kind = ctx.kind })
+                  local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
                   if color_item and color_item.abbr_hl_group then
                     highlight = color_item.abbr_hl_group
                   end
