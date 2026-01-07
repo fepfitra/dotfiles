@@ -207,6 +207,7 @@ return {
             },
           },
         },
+        tailwindcss = {},
 
         astro = {
           capabilities = capabilities,
