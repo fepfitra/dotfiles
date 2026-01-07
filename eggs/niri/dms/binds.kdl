@@ -65,6 +65,16 @@ binds {
         spawn "dms" "ipc" "call" "audio" "decrement" "3";
     }
 
+    Alt+Space allow-when-locked=true hotkey-overlay-title="Play/Pause Media" {
+        spawn "dms" "ipc" "call" "mpris" "playPause";
+    }
+    Alt+Left allow-when-locked=true hotkey-overlay-title="Previous Track" {
+        spawn "dms" "ipc" "call" "mpris" "previous";
+    }
+    Alt+Right allow-when-locked=true hotkey-overlay-title="Next Track" {
+        spawn "dms" "ipc" "call" "mpris" "next";
+    }
+
     // === Brightness Controls ===
     XF86MonBrightnessUp allow-when-locked=true {
        spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
