@@ -41,6 +41,8 @@ return {
       preset = 'enter',
       ['<Tab>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
+      ['<A-j>'] = { 'scroll_documentation_down', 'fallback' },
+      ['<A-k>'] = { 'scroll_documentation_up', 'fallback' },
     },
 
     appearance = {
