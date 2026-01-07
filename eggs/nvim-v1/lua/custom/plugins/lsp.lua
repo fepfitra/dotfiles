@@ -201,13 +201,6 @@ return {
         -- ts_ls = {},
         --
         ruff = {},
-        ty = {
-          cmd = { 'ty', 'server' },
-          filetypes = { 'python' },
-          root_dir = function(fname)
-            return require('lspconfig.util').root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git')(fname) or vim.fn.getcwd()
-          end,
-        },
 
         astro = {
           capabilities = capabilities,
@@ -251,21 +244,25 @@ return {
         },
       }
 
+      -- Custom server registration for 'ty'
+      -- Since 'ty' is not yet in lspconfig, we use an autocommand to start it
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'python',
+        callback = function()
+          vim.lsp.start({
+            name = 'ty',
+            cmd = { 'ty', 'server' },
+            root_dir = vim.fs.root(0, { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git' }) or vim.fn.getcwd(),
+            capabilities = capabilities,
+          })
+        end,
+      })
+
       -- Set up servers directly
       for server_name, server_config in pairs(servers) do
         -- Merge capabilities
         server_config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_config.capabilities or {})
-        
-        -- Use new Neovim 0.11+ LSP API if available
-        if vim.fn.has 'nvim-0.11' == 1 then
-          -- vim.lsp.config is a table-like interface in 0.11 to register/modify configs
-          -- We set the config for the server
-          vim.lsp.config[server_name] = server_config
-          -- Enable the server globally (or for current buffer, but here we want global/default behavior)
-          vim.lsp.enable(server_name)
-        else
-          require('lspconfig')[server_name].setup(server_config)
-        end
+        require('lspconfig')[server_name].setup(server_config)
       end
     end,
   },
