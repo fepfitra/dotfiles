@@ -39,3 +39,16 @@ fn bun_postscripts(pkg) {
 		post_undeploy: bun_uninstall(pkg),
 	}
 }
+
+fn uv_tool_install(pkg) {
+	return "for p in " + pkg + "; do uv tool install $p; done";
+}
+fn uv_tool_uninstall(pkg) {
+	return "for p in " + pkg + "; do uv tool uninstall $p; done";
+}
+fn uv_tool_postscripts(pkg) {
+	return  #{
+		post_deploy: uv_tool_install(pkg),
+		post_undeploy: uv_tool_uninstall(pkg),
+	}
+}
