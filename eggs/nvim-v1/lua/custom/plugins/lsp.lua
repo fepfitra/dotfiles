@@ -204,6 +204,11 @@ return {
           capabilities = capabilities,
           -- on_attach = on_attach,
           filetypes = { 'astro' },
+          init_options = {
+            typescript = {
+              tsdk = vim.fs.normalize '~/.bun/install/global/node_modules/typescript/lib',
+            },
+          },
         },
         lua_ls = {
           -- Add common settings so the Lua language server (emmylua / lua_ls)
