@@ -39,29 +39,29 @@ binds {
     Mod+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "dms" "ipc" "call" "lock" "lock";
     }
-    Mod+Shift+E { quit; }
+    Mod+Shift+E hotkey-overlay-title="Quit Window Manager" { quit; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" {
         spawn "dms" "ipc" "call" "processlist" "focusOrToggle";
     }
 
     // === Audio Controls ===
-    XF86AudioRaiseVolume allow-when-locked=true {
+    XF86AudioRaiseVolume allow-when-locked=true hotkey-overlay-title="Volume Up" {
         spawn "dms" "ipc" "call" "audio" "increment" "3";
     }
-    XF86AudioLowerVolume allow-when-locked=true {
+    XF86AudioLowerVolume allow-when-locked=true hotkey-overlay-title="Volume Down" {
         spawn "dms" "ipc" "call" "audio" "decrement" "3";
     }
-    XF86AudioMute allow-when-locked=true {
+    XF86AudioMute allow-when-locked=true hotkey-overlay-title="Mute Audio" {
         spawn "dms" "ipc" "call" "audio" "mute";
     }
-    XF86AudioMicMute allow-when-locked=true {
+    XF86AudioMicMute allow-when-locked=true hotkey-overlay-title="Mute Mic" {
         spawn "dms" "ipc" "call" "audio" "micmute";
     }
 
-    Alt+Up allow-when-locked=true {
+    Alt+Up allow-when-locked=true hotkey-overlay-title="Volume Up" {
         spawn "dms" "ipc" "call" "audio" "increment" "3";
     }
-    Alt+Down allow-when-locked=true {
+    Alt+Down allow-when-locked=true hotkey-overlay-title="Volume Down" {
         spawn "dms" "ipc" "call" "audio" "decrement" "3";
     }
 
@@ -76,15 +76,15 @@ binds {
     }
 
     // === Brightness Controls ===
-    XF86MonBrightnessUp allow-when-locked=true {
+    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="Brightness Up" {
        spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
     }
-    XF86MonBrightnessDown allow-when-locked=true {
+    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="Brightness Down" {
        spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
     }
 
     // === Window Management ===
-    Mod+Shift+Q repeat=false { close-window; }
+    Mod+Shift+Q repeat=false hotkey-overlay-title="Close Window" { close-window; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+Shift+T { toggle-window-floating; }
