@@ -85,3 +85,4 @@ eggs/**/session
 eggs/**/installs.ini
 eggs/**/profiles.ini
 eggs/**/wtqcjdu6.default-release/
+eggs/qutebrowser/bookmarks
