@@ -38,11 +38,10 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'enter',
-      ['<Tab>'] = {
-        function(cmp)
-          if cmp.is_visible() then
-            return cmp.select_next()
-          end
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
+      ['<A-CR>'] = {
+        function()
           local ok, copilot = pcall(require, 'copilot.suggestion')
           if ok and copilot.is_visible() then
             copilot.accept()
@@ -51,7 +50,6 @@ return {
         end,
         'fallback',
       },
-      ['<S-Tab>'] = { 'select_prev', 'fallback' },
       ['<A-j>'] = { 'scroll_documentation_down', 'fallback' },
       ['<A-k>'] = { 'scroll_documentation_up', 'fallback' },
     },
