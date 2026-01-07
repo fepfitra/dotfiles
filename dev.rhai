@@ -15,4 +15,12 @@ export let dev = #{
 		enabled: true,
 		unsafe_shell_hooks: helper::arch_postscripts("sqlite sqlitebrowser")
 	},
+	ruff: #{
+		targets: "~/.config/ruff",
+		enabled: true,
+	},
+	ty: #{
+		targets: "~/.config/ty",
+		enabled: true,
+	},
 }

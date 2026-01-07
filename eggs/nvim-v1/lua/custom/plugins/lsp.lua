@@ -202,7 +202,9 @@ return {
         --
         ruff = {
           settings = {
-            args = { "--ignore", "F403,F405" },
+            lint = {
+              ignore = { "F403", "F405" },
+            },
           },
         },
 
