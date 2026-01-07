@@ -6,14 +6,11 @@ local function has_words_before()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
 end
 
-local hl_colors = require 'nvim-highlight-colors'
-
 return {
   'Saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
   dependencies = {
     'rafamadriz/friendly-snippets',
-    'giuxtaposition/blink-cmp-copilot',
   },
 
   -- use a release tag to download pre-built binaries
@@ -41,7 +38,19 @@ return {
     -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
       preset = 'enter',
-      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<Tab>'] = {
+        function(cmp)
+          if cmp.is_visible() then
+            return cmp.select_next()
+          end
+          local ok, copilot = pcall(require, 'copilot.suggestion')
+          if ok and copilot.is_visible() then
+            copilot.accept()
+            return true
+          end
+        end,
+        'fallback',
+      },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
       ['<A-j>'] = { 'scroll_documentation_down', 'fallback' },
       ['<A-k>'] = { 'scroll_documentation_up', 'fallback' },
@@ -51,9 +60,6 @@ return {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
-      kind_icons = {
-        Copilot = '',
-      },
     },
 
     -- (Default) Only show the documentation popup when manually triggered
@@ -75,9 +81,12 @@ return {
                 local icon = ctx.kind_icon
                 -- if LSP source, check for color derived from documentation
                 if ctx.item.source_name == 'LSP' then
-                  local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
-                  if color_item and color_item.abbr ~= '' then
-                    icon = color_item.abbr
+                  local ok, hl_colors = pcall(require, 'nvim-highlight-colors')
+                  if ok then
+                    local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
+                    if color_item and color_item.abbr ~= '' then
+                      icon = color_item.abbr
+                    end
                   end
                 end
                 return icon .. ctx.icon_gap
@@ -87,9 +96,12 @@ return {
                 local highlight = 'BlinkCmpKind' .. ctx.kind
                 -- if LSP source, check for color derived from documentation
                 if ctx.item.source_name == 'LSP' then
-                  local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
-                  if color_item and color_item.abbr_hl_group then
-                    highlight = color_item.abbr_hl_group
+                  local ok, hl_colors = pcall(require, 'nvim-highlight-colors')
+                  if ok then
+                    local color_item = hl_colors.format(ctx.item.documentation, { kind = ctx.kind })
+                    if color_item and color_item.abbr_hl_group then
+                      highlight = color_item.abbr_hl_group
+                    end
                   end
                 end
                 return highlight
@@ -103,24 +115,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
-      providers = {
-        copilot = {
-          name = 'copilot',
-          module = 'blink-cmp-copilot',
-          score_offset = 100,
-          async = true,
-          transform_items = function(_, items)
-            local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
-            local kind_idx = #CompletionItemKind + 1
-            CompletionItemKind[kind_idx] = 'Copilot'
-            for _, item in ipairs(items) do
-              item.kind = kind_idx
-            end
-            return items
-          end,
-        },
-      },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
