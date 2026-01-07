@@ -9,7 +9,10 @@ end
 return {
   'Saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  dependencies = {
+    'rafamadriz/friendly-snippets',
+    'giuxtaposition/blink-cmp-copilot',
+  },
 
   -- use a release tag to download pre-built binaries
   version = 'v0.*',
@@ -34,34 +37,19 @@ return {
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    -- keymap = { preset = 'default' },
     keymap = {
-      preset = 'none',
-      ['<Tab>'] = {
-        function(cmp)
-          if has_words_before() then
-            return cmp.insert_next()
-          end
-        end,
-        'fallback',
-      },
-      ['<S-Tab>'] = {
-        function(cmp)
-          if has_words_before() then
-            return cmp.insert_prev()
-          end
-        end,
-        'fallback',
-      },
-      ['<A-j>'] = { 'scroll_documentation_down', 'fallback' },
-      ['<A-k>'] = { 'scroll_documentation_up', 'fallback' },
-      ['<CR>'] = { 'accept', 'fallback' },
+      preset = 'enter',
+      ['<Tab>'] = { 'select_next', 'fallback' },
+      ['<S-Tab>'] = { 'select_prev', 'fallback' },
     },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
+      kind_icons = {
+        Copilot = '',
+      },
     },
 
     -- (Default) Only show the documentation popup when manually triggered
@@ -105,7 +93,24 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+      providers = {
+        copilot = {
+          name = 'copilot',
+          module = 'blink-cmp-copilot',
+          score_offset = 100,
+          async = true,
+          transform_items = function(_, items)
+            local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
+            local kind_idx = #CompletionItemKind + 1
+            CompletionItemKind[kind_idx] = 'Copilot'
+            for _, item in ipairs(items) do
+              item.kind = kind_idx
+            end
+            return items
+          end,
+        },
+      },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

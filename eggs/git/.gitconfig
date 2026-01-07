@@ -17,3 +17,5 @@ lg = lg1
 	window = 1
 [pull]
 	rebase = true
+[credential]
+	helper = store
