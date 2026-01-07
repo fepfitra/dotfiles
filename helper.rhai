@@ -26,3 +26,16 @@ fn cargo_postscripts(pkg) {
 		post_undeploy: cargo_uninstall(pkg),
 	}
 }
+
+fn bun_install(pkg) {
+	return "bun install -g " + pkg
+}
+fn bun_uninstall(pkg) {
+	return "bun remove -g " + pkg
+}
+fn bun_postscripts(pkg) {
+	return  #{
+		post_deploy: bun_install(pkg),
+		post_undeploy: bun_uninstall(pkg),
+	}
+}

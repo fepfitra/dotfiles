@@ -54,13 +54,12 @@ binds {
     XF86AudioMute allow-when-locked=true hotkey-overlay-title="Mute Audio" {
         spawn "dms" "ipc" "call" "audio" "mute";
     }
-    Alt+M allow-when-locked=true hotkey-overlay-title="Mute Audio" {
-        spawn "dms" "ipc" "call" "audio" "mute";
-    }
     XF86AudioMicMute allow-when-locked=true hotkey-overlay-title="Mute Mic" {
         spawn "dms" "ipc" "call" "audio" "micmute";
     }
-
+    Alt+M allow-when-locked=true hotkey-overlay-title="Mute Audio" {
+        spawn "dms" "ipc" "call" "audio" "mute";
+    }
     Alt+Up allow-when-locked=true hotkey-overlay-title="Volume Up" {
         spawn "dms" "ipc" "call" "audio" "increment" "3";
     }

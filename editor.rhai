@@ -35,7 +35,10 @@ export let editor = #{
 		targets: "~/.config/nvim-v1",
 		enabled: true,
 		templates: ["init.lua"],
-		unsafe_shell_hooks: helper::pkg_postscripts("neovim ripgrep fd")
+		unsafe_shell_hooks: #{
+			post_deploy: helper::pkg_install("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_install("@astrojs/language-server"),
+			post_undeploy: helper::pkg_uninstall("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_uninstall("@astrojs/language-server"),
+		}
 	},
 	antigravity: #{
 		targets: "~/.config/Antigravity",
