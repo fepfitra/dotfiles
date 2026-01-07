@@ -245,24 +245,41 @@ return {
       }
 
       -- Custom server registration for 'ty'
-      -- Since 'ty' is not yet in lspconfig, we use an autocommand to start it
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = 'python',
-        callback = function()
-          vim.lsp.start({
-            name = 'ty',
-            cmd = { 'ty', 'server' },
-            root_dir = vim.fs.root(0, { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git' }) or vim.fn.getcwd(),
-            capabilities = capabilities,
-          })
-        end,
-      })
+      if vim.fn.has 'nvim-0.11' == 1 then
+        vim.lsp.config('ty', {
+          cmd = { 'ty', 'server' },
+          filetypes = { 'python' },
+          root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git' },
+        })
+        servers.ty = servers.ty or {}
+      else
+        local configs = require 'lspconfig.configs'
+        if not configs.ty then
+          configs.ty = {
+            default_config = {
+              cmd = { 'ty', 'server' },
+              filetypes = { 'python' },
+              root_dir = function(fname)
+                return require('lspconfig.util').root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git')(fname) or vim.fn.getcwd()
+              end,
+              settings = {},
+            },
+          }
+        end
+        servers.ty = servers.ty or {}
+      end
 
-      -- Set up servers directly
+      -- Set up servers
       for server_name, server_config in pairs(servers) do
         -- Merge capabilities
         server_config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_config.capabilities or {})
-        require('lspconfig')[server_name].setup(server_config)
+
+        if vim.fn.has 'nvim-0.11' == 1 then
+          vim.lsp.config(server_name, server_config)
+          vim.lsp.enable(server_name)
+        else
+          require('lspconfig')[server_name].setup(server_config)
+        end
       end
     end,
   },

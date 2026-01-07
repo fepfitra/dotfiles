@@ -1,34 +1,22 @@
-local client_id = vim.lsp.start_client({
-  name = 'ty',
-  cmd = { 'ty', 'server' },
-  root_dir = vim.fn.getcwd(),
-})
-
-if not client_id then
-  print("Failed to start client")
-  os.exit(1)
-end
-
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
-    if args.data.client_id == client_id then
-      print("Ty attached to " .. vim.api.nvim_buf_get_name(args.buf))
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    print("Attached: " .. client.name)
+    if client.name == 'ty' then
       vim.defer_fn(function()
-        print("Requesting completion...")
+        print("Requesting completion from ty...")
         vim.lsp.buf_request(args.buf, 'textDocument/completion', {
           textDocument = { uri = vim.uri_from_bufnr(args.buf) },
           position = { line = 1, character = 5 }
-        }, function(err, result, ctx, config)
-          if err then
-            print("Completion error: " .. vim.inspect(err))
-          elseif not result then
-            print("No completion result")
-          else
-            print("Completion items found: " .. #result.items)
-            for i, item in ipairs(result.items) do
-              if i > 5 then break end
-              print(" - " .. item.label)
+        }, function(err, result)
+          if err then print("Error: " .. vim.inspect(err)) end
+          if result then
+            print("Items: " .. #result.items)
+            for i=1,math.min(5, #result.items) do
+              print(" - " .. result.items[i].label)
             end
+          else
+            print("No items")
           end
           os.exit(0)
         end)
@@ -36,5 +24,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end
 })
-
 vim.cmd('e test_comp.py')

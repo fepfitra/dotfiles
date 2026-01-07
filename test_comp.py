@@ -1,2 +1,2 @@
-x: str = "hello"
-x.
+def hello(): pass
+hel
