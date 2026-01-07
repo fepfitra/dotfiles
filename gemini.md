@@ -53,3 +53,18 @@ The system uses **`yolk`** for dotfile and package deployment management.
 - **Stage & Commit:** `yolk git add . && yolk git commit -m "<type>(<scope>): <description>"`
 - **Conventional Commits:** Use standard types like `feat`, `fix`, `docs`, `chore`, etc. (e.g., `docs(yolk): update commit convention`).
 - **Do not** use standard `git` commands in this directory; always prefix with `yolk`.
+
+## Sync Method
+When updating configurations or dependencies via `yolk` (especially when adding new packages), follow this reliable pattern to ensure changes are fully applied and hooks are triggered:
+
+1.  **Disable the egg:**
+    - Edit the relevant `.rhai` file (e.g., `editor.rhai`).
+    - Set `enabled: false` for the target egg.
+2.  **Sync:**
+    - Run `yolk sync`. This cleans up the previous state if needed.
+3.  **Enable the egg:**
+    - Edit the `.rhai` file again.
+    - Set `enabled: true`.
+4.  **Sync:**
+    - Run `yolk sync`. This triggers the installation hooks (`pkg_install`) and deploys the configuration.
+

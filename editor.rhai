@@ -35,7 +35,7 @@ export let editor = #{
 		targets: "~/.config/nvim-v1",
 		enabled: true,
 		templates: ["init.lua"],
-		unsafe_shell_hooks: helper::pkg_postscripts("neovim")
+		unsafe_shell_hooks: helper::pkg_postscripts("neovim ripgrep fd")
 	},
 	antigravity: #{
 		targets: "~/.config/Antigravity",
