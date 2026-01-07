@@ -69,3 +69,19 @@ eggs/**/Telemetry*
 eggs/**/Safe Browsing*
 eggs/**/Cloud*
 eggs/**/.megaCmd/
+
+# Logs
+*.log
+eggs/**/*.log*
+
+# Application State & Metadata
+eggs/**/Network Persistent State
+eggs/**/Preferences
+eggs/**/Trust Tokens*
+eggs/**/lockMCMD
+eggs/**/megacmd.cfg
+eggs/**/megacmd.version
+eggs/**/session
+eggs/**/installs.ini
+eggs/**/profiles.ini
+eggs/**/wtqcjdu6.default-release/
