@@ -200,6 +200,14 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        ruff = {},
+        ty = {
+          cmd = { 'ty', 'server' },
+          filetypes = { 'python' },
+          root_dir = function(fname)
+            return require('lspconfig.util').root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git')(fname) or vim.fn.getcwd()
+          end,
+        },
 
         astro = {
           capabilities = capabilities,

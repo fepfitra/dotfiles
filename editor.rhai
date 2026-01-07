@@ -36,8 +36,8 @@ export let editor = #{
 		enabled: true,
 		templates: ["init.lua"],
 		unsafe_shell_hooks: #{
-			post_deploy: helper::arch_install("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli rust-analyzer") + " && " + helper::bun_install("@astrojs/language-server"),
-			post_undeploy: helper::arch_uninstall("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli rust-analyzer") + " && " + helper::bun_uninstall("@astrojs/language-server"),
+			post_deploy: helper::arch_install("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli rust-analyzer") + " && " + helper::bun_install("@astrojs/language-server") + " && uv tool install ruff && uv tool install ty",
+			post_undeploy: helper::arch_uninstall("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli rust-analyzer") + " && " + helper::bun_uninstall("@astrojs/language-server") + " && uv tool uninstall ruff && uv tool uninstall ty",
 		}
 	},
 	antigravity: #{
