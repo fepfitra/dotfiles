@@ -7,7 +7,7 @@ local function has_words_before()
 end
 
 return {
-  'saghen/blink.nvim',
+  'Saghen/blink.cmp',
   -- optional: provides snippets for the snippet source
   dependencies = { 'rafamadriz/friendly-snippets' },
 
