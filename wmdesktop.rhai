@@ -88,4 +88,9 @@ export let wmdesktop = #{
 		enabled: true,
 		unsafe_shell_hooks: helper::pkg_postscripts("satty")
 	},
+	fcitx5: #{
+		targets: "~/.config/fcitx5",
+		enabled: true,
+		unsafe_shell_hooks: helper::pkg_postscripts("fcitx5 fcitx5-mozc fcitx5-gtk fcitx5-qt fcitx5-configtool")
+	},
 };

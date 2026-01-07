@@ -144,9 +144,13 @@ spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 spawn-sh-at-startup "vicinae server"
 spawn-at-startup "activate-linux"
+spawn-at-startup "fcitx5" "-d"
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
+  GTK_IM_MODULE "fcitx"
+  QT_IM_MODULE "fcitx"
+  XMODIFIERS "@im=fcitx"
 }
 hotkey-overlay {
     skip-at-startup
