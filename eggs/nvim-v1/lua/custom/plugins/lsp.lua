@@ -200,7 +200,11 @@ return {
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        ruff = {},
+        ruff = {
+          settings = {
+            args = { "--ignore", "F403,F405" },
+          },
+        },
 
         astro = {
           capabilities = capabilities,
@@ -245,29 +249,31 @@ return {
       }
 
       -- Custom server registration for 'ty'
+      -- Since 'ty' is not yet in lspconfig, we define its default configuration
+      local ty_config = {
+        cmd = { 'ty', 'server' },
+        filetypes = { 'python' },
+        root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git' },
+        settings = {},
+      }
+
       if vim.fn.has 'nvim-0.11' == 1 then
         vim.lsp.config('ty', {
-          cmd = { 'ty', 'server' },
-          filetypes = { 'python' },
-          root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git' },
+          default_config = ty_config,
         })
-        servers.ty = servers.ty or {}
       else
         local configs = require 'lspconfig.configs'
         if not configs.ty then
           configs.ty = {
-            default_config = {
-              cmd = { 'ty', 'server' },
-              filetypes = { 'python' },
+            default_config = vim.tbl_extend('force', ty_config, {
               root_dir = function(fname)
-                return require('lspconfig.util').root_pattern('pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git', '.yolk_git')(fname) or vim.fn.getcwd()
+                return require('lspconfig.util').root_pattern(unpack(ty_config.root_markers))(fname) or vim.fn.getcwd()
               end,
-              settings = {},
-            },
+            }),
           }
         end
-        servers.ty = servers.ty or {}
       end
+      servers.ty = servers.ty or {}
 
       -- Set up servers
       for server_name, server_config in pairs(servers) do
@@ -275,6 +281,8 @@ return {
         server_config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_config.capabilities or {})
 
         if vim.fn.has 'nvim-0.11' == 1 then
+          -- In 0.11, vim.lsp.config(name, config) sets/merges the configuration
+          -- and vim.lsp.enable(name) enables it for appropriate filetypes
           vim.lsp.config(server_name, server_config)
           vim.lsp.enable(server_name)
         else

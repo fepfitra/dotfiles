@@ -43,6 +43,9 @@ fn bun_postscripts(pkg) {
 fn uv_tool_install(pkg) {
 	return "for p in " + pkg + "; do uv tool install $p; done";
 }
+fn uv_tool_install_with(pkg, deps) {
+	return "for p in " + pkg + "; do uv tool install $p --with " + deps + " --force; done";
+}
 fn uv_tool_uninstall(pkg) {
 	return "for p in " + pkg + "; do uv tool uninstall $p; done";
 }
