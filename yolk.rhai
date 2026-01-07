@@ -16,12 +16,12 @@ let eggs = #{
 	fun: #{
 		targets: "~/.config/fun",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("timr-bin activate-linux")
+		unsafe_shell_hooks: helper::arch_postscripts("timr-bin activate-linux")
 	},
 	cysec: #{
 		targets: "~/.config/cysec",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools")
+		unsafe_shell_hooks: helper::arch_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools")
 	},
 
 };

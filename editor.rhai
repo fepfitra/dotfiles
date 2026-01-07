@@ -9,41 +9,41 @@ export let editor = #{
 	zathura: #{
 		targets: "~/.config/zathura",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("zathura zathura-pdf-mupdf")
+		unsafe_shell_hooks: helper::arch_postscripts("zathura zathura-pdf-mupdf")
 	},
 	pandoc: #{
 		targets: "~/.config/pandoc",
 		enabled: false,
-		unsafe_shell_hooks: helper::pkg_postscripts("pandoc-cli")
+		unsafe_shell_hooks: helper::arch_postscripts("pandoc-cli")
 	},
 	mermaid: #{
 		targets: "~/.config/mermaid",
 		enabled: false,
-		unsafe_shell_hooks: helper::pkg_postscripts("mermaid-cli mermaid-filter")
+		unsafe_shell_hooks: helper::arch_postscripts("mermaid-cli mermaid-filter")
 	},
 	onlyoffice: #{
 		targets: "~/.config/onlyoffice",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("onlyoffice-bin")
+		unsafe_shell_hooks: helper::arch_postscripts("onlyoffice-bin")
 	},
 	latex: #{
 		enabled: true,
 		targets: "~/.config/latex",
-		unsafe_shell_hooks: helper::pkg_postscripts("texlive-bin texlive-fontsrecommended texlive-latexextra texlive-latex texlive-latexrecommended texlive-basic texlive-plaingeneric texlive-pictures texlive-binextra texlive-xetex dvisvgm")
+		unsafe_shell_hooks: helper::arch_postscripts("texlive-bin texlive-fontsrecommended texlive-latexextra texlive-latex texlive-latexrecommended texlive-basic texlive-plaingeneric texlive-pictures texlive-binextra texlive-xetex dvisvgm")
 	},
 	"nvim-v1": #{
 		targets: "~/.config/nvim-v1",
 		enabled: true,
 		templates: ["init.lua"],
 		unsafe_shell_hooks: #{
-			post_deploy: helper::pkg_install("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_install("@astrojs/language-server"),
-			post_undeploy: helper::pkg_uninstall("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_uninstall("@astrojs/language-server"),
+			post_deploy: helper::arch_install("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_install("@astrojs/language-server"),
+			post_undeploy: helper::arch_uninstall("neovim ripgrep fd lua-language-server stylua delve markdownlint-cli") + " && " + helper::bun_uninstall("@astrojs/language-server"),
 		}
 	},
 	antigravity: #{
 		targets: "~/.config/Antigravity",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: helper::pkg_postscripts("antigravity")
+		unsafe_shell_hooks: helper::arch_postscripts("antigravity")
 	},
 };

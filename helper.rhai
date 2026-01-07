@@ -1,16 +1,16 @@
 fn some_function(data) {
     "echo test" + data;
 };
-fn pkg_install(pkg) {
+fn arch_install(pkg) {
 	return "bin=$(command -v yay || command -v paru); $bin -Q "+ pkg + " 2>/dev/null || $bin -S " + pkg +  " --noconfirm";
 }
-fn pkg_uninstall(pkg) {
+fn arch_uninstall(pkg) {
 	return "bin=$(command -v yay || command -v paru); $bin -Q "+ pkg + " 2>/dev/null && $bin -R " + pkg +  " --noconfirm";
 }
-fn pkg_postscripts(pkg) {
+fn arch_postscripts(pkg) {
 	return  #{
-		post_deploy: pkg_install(pkg),
-		post_undeploy: pkg_uninstall(pkg),
+		post_deploy: arch_install(pkg),
+		post_undeploy: arch_uninstall(pkg),
 	}
 }
 

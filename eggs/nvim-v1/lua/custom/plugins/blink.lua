@@ -16,45 +16,12 @@ return {
   -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
   -- build = 'cargo build --release',
 
-  keys = {
-    -- chartoggle
-    {
-      ';',
-      function()
-        require('blink.chartoggle').toggle_char_eol ';'
-      end,
-      mode = { 'n', 'v' },
-      desc = 'Toggle ; at eol',
-    },
-    {
-      ',',
-      function()
-        require('blink.chartoggle').toggle_char_eol ','
-      end,
-      mode = { 'n', 'v' },
-      desc = 'Toggle , at eol',
-    },
-  },
-
   -- all modules handle lazy loading internally
   lazy = false,
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    chartoggle = { enabled = true },
-    delimiters = {
-      enabled = true,
-      highlights = {
-        'RainbowOrange',
-        'RainbowPurple',
-        'RainbowBlue',
-      },
-      priority = 200,
-      ns = vim.api.nvim_create_namespace 'blink.delimiters',
-      debug = false,
-    },
-
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
     -- 'enter' for enter to accept

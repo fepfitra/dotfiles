@@ -13,6 +13,6 @@ export let dev = #{
 	sqlite: #{
 		targets: "~/.config/sqlite",
 		enabled: true,
-		unsafe_shell_hooks: helper::pkg_postscripts("sqlite sqlitebrowser")
+		unsafe_shell_hooks: helper::arch_postscripts("sqlite sqlitebrowser")
 	},
 }

@@ -40,7 +40,7 @@ The system uses **`yolk`** for dotfile and package deployment management.
 - **Key Files:**
     - `yolk.rhai`: Main entry point.
     - `wmdesktop.rhai`: Window manager and desktop tool configurations (e.g., `niri`, `waybar`, `vicinae`).
-    - `helper.rhai`: Contains helper functions like `pkg_postscripts` which uses `yay`/`paru` for AUR installations.
+    - `helper.rhai`: Contains helper functions like `arch_postscripts` which uses `yay`/`paru` for AUR installations.
 - **Common Alias:** `yy` -> `yolk sync`
 
 ## Important Cleanup Notes
@@ -66,5 +66,5 @@ When updating configurations or dependencies via `yolk` (especially when adding 
     - Edit the `.rhai` file again.
     - Set `enabled: true`.
 4.  **Sync:**
-    - Run `yolk sync`. This triggers the installation hooks (`pkg_install`) and deploys the configuration.
+    - Run `yolk sync`. This triggers the installation hooks (`arch_install`) and deploys the configuration.
 
