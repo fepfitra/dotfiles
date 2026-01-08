@@ -64,6 +64,7 @@ def --env cdtemp [name?:string] {
 }
 
 use std/util "path add"
+path add '~/.cargo/bin'
 path add '~/.bun/bin'
 path add '~/.nix-profile/bin'	
 path add '~/.local/bin'

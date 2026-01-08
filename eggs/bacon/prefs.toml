@@ -1,0 +1,5 @@
+[keybindings]
+ctrl-j = "scroll-lines(1)"
+ctrl-k = "scroll-lines(-1)"
+ctrl-d = "scroll-lines(5)"
+ctrl-u = "scroll-lines(-5)"

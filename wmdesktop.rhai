@@ -88,6 +88,11 @@ export let wmdesktop = #{
 		enabled: true,
 		unsafe_shell_hooks: helper::arch_postscripts("satty")
 	},
+	feh: #{
+		targets: "~/.config/feh",
+		enabled: false,
+		unsafe_shell_hooks: helper::arch_postscripts("feh")
+	},
 	fcitx5: #{
 		targets: "~/.config/fcitx5",
 		enabled: true,
