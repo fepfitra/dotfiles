@@ -93,7 +93,10 @@ export let workflow = #{
 		targets: "~/.local/share/Anki2",
 		enabled: true,
 		strategy: "merge",
-		unsafe_shell_hooks: helper::arch_postscripts("anki-bin anki-debug")
+		unsafe_shell_hooks: #{
+			post_deploy: helper::arch_install("anki-bin anki-debug") + " && mkdir -p ~/.local/bin && echo '#!/bin/sh' > ~/.local/bin/anki && echo 'PYTHONPATH=/usr/lib/python3.13/site-packages uv run --quiet --python 3.13 --with requests --with beautifulsoup4 --with flask --with protobuf --with waitress --with decorator --with PyQt6 --with PyQt6-WebEngine --with distro /usr/bin/anki \"$@\"' >> ~/.local/bin/anki && chmod +x ~/.local/bin/anki && mkdir -p ~/.local/share/applications && cp /usr/share/applications/anki.desktop ~/.local/share/applications/anki.desktop && sed -i 's|^Exec=.*|Exec=/home/fep/.local/bin/anki %f|' ~/.local/share/applications/anki.desktop && sed -i 's|^TryExec=.*|TryExec=/home/fep/.local/bin/anki|' ~/.local/share/applications/anki.desktop",
+			post_undeploy: helper::arch_uninstall("anki-bin anki-debug") + " && rm -f ~/.local/bin/anki && rm -f ~/.local/share/applications/anki.desktop"
+		}
 	},
 	"pacman-hooks": #{
 		targets: "~/.local/share/yolk/pacman-hooks",
