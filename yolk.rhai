@@ -9,6 +9,13 @@ export const theme = themes::themes["gruvbox_dark"];
 
 
 let eggs = #{
+	anu: #{
+		targets: "~/.config/anu",
+		enabled: false,
+		unsafe_shell_hooks: #{
+			post_undeploy: "exit 0"
+		}
+	},
 	fonts: #{
 		targets: "~/.local/share/fonts",
 		enabled: true,
@@ -21,7 +28,7 @@ let eggs = #{
 	cysec: #{
 		targets: "~/.config/cysec",
 		enabled: true,
-		unsafe_shell_hooks: helper::arch_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools")
+		unsafe_shell_hooks: helper::arch_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools python-pwntools")
 	},
 
 };

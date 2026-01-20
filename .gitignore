@@ -86,3 +86,11 @@ eggs/**/installs.ini
 eggs/**/profiles.ini
 eggs/**/wtqcjdu6.default-release/
 eggs/qutebrowser/bookmarks
+
+# Antigravity & Electron Garbage
+eggs/**/Backups/
+eggs/**/DIPS*
+eggs/**/Dictionaries/
+eggs/**/SharedStorage*
+eggs/**/TransportSecurity
+eggs/**/History/
