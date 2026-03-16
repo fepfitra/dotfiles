@@ -10,13 +10,15 @@ binds {
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+return hotkey-overlay-title="Open Terminal with Tmux" { spawn "ghostty" "-e" "tmux"; }
 
+    Mod+z hotkey-overlay-title="Open Terminal with Zellij" { spawn "ghostty" "-e" "zellij"; }
+
     Mod+P hotkey-overlay-title="Application Launcher" {
-        // spawn "dms" "ipc" "call" "spotlight" "toggle";
-				spawn "vicinae" "toggle"; 
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+				// spawn "vicinae" "toggle"; 
     }
-    Mod+G hotkey-overlay-title="Google Launcher" {
-				spawn "vicinae" "deeplink" "vicinae://extensions/mblode/google-search/index"; 
-    }
+    // Mod+G hotkey-overlay-title="Google Launcher" {
+    // spawn "vicinae" "deeplink" "vicinae://extensions/mblode/google-search/index"; 
+    // }
     Mod+V hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }

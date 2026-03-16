@@ -162,6 +162,7 @@ require('lazy').setup({
   require 'custom.plugins.database',
   require 'custom.plugins.blink',
   require 'custom.plugins.autoformat',
+  require 'custom.plugins.glow',
   require 'custom.plugins.lsp',
   require 'custom.plugins.telescope',
   require 'custom.plugins.rhai',

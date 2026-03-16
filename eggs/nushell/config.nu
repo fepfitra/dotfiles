@@ -45,6 +45,7 @@ alias ycm = yolk git commit -m
 alias ip = ip -c
 alias tt = curl http://badssl.com
 alias gib = bun
+alias ani-cli = ani-cli --rofi
 
 fortune
 print "\n"
@@ -64,10 +65,12 @@ def --env cdtemp [name?:string] {
 }
 
 use std/util "path add"
-path add '~/.cargo/bin'
 path add '~/.bun/bin'
-path add '~/.nix-profile/bin'	
+path add '~/.cargo/bin'
 path add '~/.local/bin'
+path add '~/.nix-profile/bin'	
+path add '~/.npm-global/bin'
+path add `~/.opencode/bin`
 
 $env.config.hooks = {
 	pre_prompt: [{ ||
