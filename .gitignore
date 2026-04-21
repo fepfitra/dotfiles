@@ -94,3 +94,6 @@ eggs/**/Dictionaries/
 eggs/**/SharedStorage*
 eggs/**/TransportSecurity
 eggs/**/History/
+
+# FVM Version Cache
+.fvm/

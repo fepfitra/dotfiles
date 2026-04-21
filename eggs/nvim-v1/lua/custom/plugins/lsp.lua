@@ -194,6 +194,7 @@ return {
               compilationDatabase = 'build',
               fallbackFlags = {
                 '-Ibuild',
+                '-Iinclude',
               },
             },
           },

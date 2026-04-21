@@ -14,6 +14,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Format on save (toggle with <leader>tf)
+vim.g.format_on_save = true
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -187,6 +190,7 @@ require('lazy').setup({
   -- require 'custom.plugins.indentscope',
   require 'custom.plugins.snacks',
   require 'custom.plugins.iron',
+  require 'custom.plugins.flutter',
   require 'custom.plugins.lazygit',
   require 'custom.plugins.markdown-preview',
   require 'custom.plugins.nvim-tree',

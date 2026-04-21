@@ -71,6 +71,7 @@ path add '~/.local/bin'
 path add '~/.nix-profile/bin'	
 path add '~/.npm-global/bin'
 path add `~/.opencode/bin`
+path add `~/fvm/default/bin`
 
 $env.config.hooks = {
 	pre_prompt: [{ ||
