@@ -13,7 +13,7 @@ let eggs = #{
 		targets: "~/.config/anu",
 		enabled: false,
 		unsafe_shell_hooks: #{
-			post_undeploy: "exit 0"
+			pre_undeploy: "exit 0"
 		}
 	},
 	fonts: #{
@@ -23,12 +23,12 @@ let eggs = #{
 	fun: #{
 		targets: "~/.config/fun",
 		enabled: true,
-		unsafe_shell_hooks: helper::arch_postscripts("timr-bin activate-linux")
+		unsafe_shell_hooks: helper::arch_prescripts("timr-bin activate-linux")
 	},
 	cysec: #{
 		targets: "~/.config/cysec",
 		enabled: true,
-		unsafe_shell_hooks: helper::arch_postscripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools python-pwntools")
+		unsafe_shell_hooks: helper::arch_prescripts("bully airgeddon aircrack-ng apkleaks steghide stegsolve sqlmap seccomp-tools python-pwntools")
 	},
 
 };

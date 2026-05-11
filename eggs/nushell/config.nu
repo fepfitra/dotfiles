@@ -72,6 +72,7 @@ path add '~/.nix-profile/bin'
 path add '~/.npm-global/bin'
 path add `~/.opencode/bin`
 path add `~/fvm/default/bin`
+path add `~/.evonic/bin/`
 
 $env.config.hooks = {
 	pre_prompt: [{ ||

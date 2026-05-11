@@ -7,10 +7,10 @@ fn arch_install(pkg) {
 fn arch_uninstall(pkg) {
 	return "bin=$(command -v yay || command -v paru); $bin -Q "+ pkg + " 2>/dev/null && $bin -R " + pkg +  " --noconfirm";
 }
-fn arch_postscripts(pkg) {
+fn arch_prescripts(pkg) {
 	return  #{
-		post_deploy: arch_install(pkg),
-		post_undeploy: arch_uninstall(pkg),
+		pre_deploy: arch_install(pkg),
+		pre_undeploy: arch_uninstall(pkg),
 	}
 }
 
@@ -20,10 +20,10 @@ fn cargo_install(pkg) {
 fn cargo_uninstall(pkg) {
 	return "cargo uninstall " + pkg
 }
-fn cargo_postscripts(pkg) {
+fn cargo_prescripts(pkg) {
 	return  #{
-		post_deploy: cargo_install(pkg),
-		post_undeploy: cargo_uninstall(pkg),
+		pre_deploy: cargo_install(pkg),
+		pre_undeploy: cargo_uninstall(pkg),
 	}
 }
 
@@ -33,10 +33,10 @@ fn bun_install(pkg) {
 fn bun_uninstall(pkg) {
 	return "bun remove -g " + pkg
 }
-fn bun_postscripts(pkg) {
+fn bun_prescripts(pkg) {
 	return  #{
-		post_deploy: bun_install(pkg),
-		post_undeploy: bun_uninstall(pkg),
+		pre_deploy: bun_install(pkg),
+		pre_undeploy: bun_uninstall(pkg),
 	}
 }
 
@@ -49,9 +49,9 @@ fn uv_tool_install_with(pkg, deps) {
 fn uv_tool_uninstall(pkg) {
 	return "for p in " + pkg + "; do uv tool uninstall $p; done";
 }
-fn uv_tool_postscripts(pkg) {
+fn uv_tool_prescripts(pkg) {
 	return  #{
-		post_deploy: uv_tool_install(pkg),
-		post_undeploy: uv_tool_uninstall(pkg),
+		pre_deploy: uv_tool_install(pkg),
+		pre_undeploy: uv_tool_uninstall(pkg),
 	}
 }

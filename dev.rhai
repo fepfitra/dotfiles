@@ -13,7 +13,7 @@ export let dev = #{
 	sqlite: #{
 		targets: "~/.config/sqlite",
 		enabled: true,
-		unsafe_shell_hooks: helper::arch_postscripts("sqlite sqlitebrowser")
+		unsafe_shell_hooks: helper::arch_prescripts("sqlite sqlitebrowser")
 	},
 	ruff: #{
 		targets: "~/.config/ruff",
@@ -25,7 +25,7 @@ export let dev = #{
 	},
 	bacon: #{
 		targets: "~/.config/bacon",
-		enabled: true,
-		unsafe_shell_hooks: helper::cargo_postscripts("bacon")
+		enabled: false,
+		unsafe_shell_hooks: helper::cargo_prescripts("bacon")
 	},
 }

@@ -2,6 +2,12 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- add yolk eggs config to runtime path for lazyinit module
+vim.opt.runtimepath:prepend('~/.config/yolk/eggs/nvim-v1/lua')
+
+-- add npm global bins to PATH for LSP servers
+vim.env.PATH = (vim.env.PATH or '') .. ':/home/fep/.npm-global/bin'
+
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 

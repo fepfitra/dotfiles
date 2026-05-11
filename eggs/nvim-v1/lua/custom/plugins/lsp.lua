@@ -84,7 +84,17 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', function()
+            local clients = vim.lsp.get_active_clients({ bufnr = event.buf })
+            if #clients == 0 then
+              vim.cmd('LspStart ts_ls')
+              vim.defer_fn(function()
+                vim.lsp.buf.definition()
+              end, 500)
+            else
+              vim.lsp.buf.definition()
+            end
+          end, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -208,7 +218,32 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {
+          cmd = function()
+            return { 'node', '/home/fep/.npm-global/lib/node_modules/typescript-language-server/lib/cli.mjs', '--stdio' }
+          end,
+          capabilities = capabilities,
+          filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact' },
+          autostart = true,
+          root_dir = function(fname)
+            return require('lspconfig').util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')(fname)
+          end,
+          init_options = {
+            typescript = {
+              tsdk = '/home/fep/.bun/install/global/node_modules/typescript/lib',
+            },
+          },
+        },
+        vtsls = {
+          cmd = function()
+            return { 'node', '/home/fep/.npm-global/lib/node_modules/@vtsls/language-server/bin/vtsls.js', '--stdio' }
+          end,
+          capabilities = capabilities,
+          filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact' },
+          root_dir = function(fname)
+            return require('lspconfig').util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')(fname)
+          end,
+        },
         --
         ruff = {
           settings = {
@@ -220,9 +255,12 @@ return {
         tailwindcss = {},
 
         astro = {
+          cmd = { 'astro-ls', '--stdio' },
           capabilities = capabilities,
-          -- on_attach = on_attach,
           filetypes = { 'astro' },
+          root_dir = function(fname)
+            return require('lspconfig').util.root_pattern('.git')(fname) or vim.fn.getcwd()
+          end,
           init_options = {
             typescript = {
               tsdk = vim.fs.normalize '~/.bun/install/global/node_modules/typescript/lib',
